@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "next",
-        "build": "next build"
+        "test": "echo Nothing to do"
     },
     "dependencies": {
         "next": "^7.0.2",
