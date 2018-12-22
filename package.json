@@ -1,12 +1,27 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "next",
-        "test": "echo Nothing to do"
-    },
-    "dependencies": {
-        "next": "^7.0.2",
-        "react": "^16.7.0",
-        "react-dom": "^16.7.0"
-    }
+  "private": true,
+  "engines": {
+    "node": "10.14.2",
+    "yarn": "1.12.3"
+  },
+  "scripts": {
+    "dev": "next",
+    "format-watch": "onchange 'pages/**/*.js' 'src/**/*.js' -- prettier --write {{changed}}",
+    "format": "prettier --write 'pages/**/*.js' 'src/**/*.js'",
+    "test": "echo Nothing to do"
+  },
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "onchange": "^5.2.0",
+    "prettier": "^1.15.3"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "trailingComma": "all"
+  }
 }
