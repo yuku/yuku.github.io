@@ -1,3 +1,7 @@
-module.exports = {
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/blog' : ''
-}
+const withSass = require("@zeit/next-sass")
+
+module.exports = withSass({
+  exportPathMap: () => ({
+    "/": { page: "/" }
+  })
+})

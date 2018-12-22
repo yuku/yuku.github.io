@@ -11,11 +11,15 @@
     "test": "echo Nothing to do"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "bootstrap": "^4.2.1",
     "next": "^7.0.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "node-sass": "^4.11.0",
     "onchange": "^5.2.0",
     "prettier": "^1.15.3"
   },
