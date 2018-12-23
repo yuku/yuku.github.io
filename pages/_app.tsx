@@ -5,7 +5,7 @@ import Head from "next/head"
 import "../src/main.scss"
 
 class MyApp extends App {
-  render() {
+  public render() {
     const { Component, pageProps } = this.props
 
     return (
