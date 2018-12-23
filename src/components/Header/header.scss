@@ -1,0 +1,51 @@
+@import "../../variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+.masthead {
+  // TIP: Background images are set within the HTML using inline CSS!
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: $gray-600;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $gray-900;
+  opacity: 0.5;
+}
+
+.site-heading {
+  padding: 200px 0 150px;
+  color: white;
+  @media only screen and (min-width: 768px) {
+    padding: 200px 0;
+  }
+}
+
+.site-heading {
+  text-align: center;
+  h1 {
+    font-size: 50px;
+    margin-top: 0;
+  }
+  .subheading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+  }
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 57px;
+    }
+  }
+}
