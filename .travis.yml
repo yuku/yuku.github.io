@@ -11,10 +11,11 @@ before_deploy:
   - touch ./out/.nojekyll
 deploy:
   provider: pages
-  local-dir: ./out
-  skip-cleanup: true
+  fqdn: yuku.takahashi.coffee
   github-token: $GITHUB_TOKEN
   keep-history: true
-  fqdn: yuku.takahashi.coffee
+  local-dir: ./out
+  skip-cleanup: true
+  target-branch: master
   on:
-    branch: master
+    branch: workspace
