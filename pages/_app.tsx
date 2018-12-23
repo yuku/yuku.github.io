@@ -14,6 +14,10 @@ class MyApp extends App {
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <title key="title">Yuku Takahashi</title>
+          <link
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,900&amp;subset=japanese"
+            rel="stylesheet"
+          />
         </Head>
         <Component {...pageProps} />
       </Container>
