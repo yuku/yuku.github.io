@@ -1,6 +1,64 @@
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
 
-h1 {
+body {
+  font-size: 20px;
+  color: $gray-900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 900;
+}
+
+p {
+  line-height: 1.5;
+  margin: 30px 0;
+  a {
+    text-decoration: underline;
+  }
+}
+
+a {
+  color: $gray-900;
+
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+
+  &:focus,
+  &:hover {
+    color: $primary;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  color: $gray-600;
+}
+
+::-moz-selection {
+  color: $white;
+  background: $primary;
+  text-shadow: none;
+}
+
+::selection {
+  color: $white;
+  background: $primary;
+  text-shadow: none;
+}
+
+img::selection {
+  color: $white;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: $white;
+  background: transparent;
 }

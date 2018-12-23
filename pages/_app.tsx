@@ -4,6 +4,8 @@ import Head from "next/head"
 
 import "../src/main.scss"
 
+import Footer from "../src/components/Footer/Footer"
+
 class MyApp extends App {
   public render() {
     const { Component, pageProps } = this.props
@@ -18,8 +20,10 @@ class MyApp extends App {
             href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,900&amp;subset=japanese"
             rel="stylesheet"
           />
+          <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"/>
         </Head>
         <Component {...pageProps} />
+        <Footer />
       </Container>
     )
   }
