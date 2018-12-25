@@ -5,6 +5,7 @@ import Header from "../src/components/Header/Header"
 import ResumeSection from "../src/components/ResumeSection/ResumeSection"
 import Timeline from "../src/components/Timeline/Timeline"
 import WorkExperience from "../src/components/WorkExperience/WorkExperience"
+import PublicationEntry from "../src/components/PublicationEntry/PublicationEntry"
 
 const WorkExperiencesSection = () => (
   <ResumeSection title="Work Experiences">
@@ -81,6 +82,109 @@ const EducationSection = () => (
   </ResumeSection>
 )
 
+const PublicationSection = () => (
+  <ResumeSection title="Publication">
+    <Row>
+      <Col md="10" lg="8" className="mx-auto">
+        <h4>Journal Papers</h4>
+        <ul>
+          <li className="mb-2">
+            <PublicationEntry
+              title="Evaluating Significance of Historical Entity using Wikipedia Link Structure"
+              author={
+                <span>
+                  <strong>Yuku Takahashi</strong>, Hiroaki Ohshima, Mitsuo Yamamoto, Hirotoshi Iwasaki, Satoshi Oyama,
+                  Katsumi Tanaka
+                </span>
+              }
+              name="Journal of the DBSJ, Vol. 10, No. 1, pp. 25 -- 30, June 2011"
+            />
+          </li>
+          <li className="mb-2">
+            <PublicationEntry
+              title="Evaluating Significance of Historical Entities Based on Impacts Calculation"
+              author={
+                <span>
+                  <strong>Yuku Takahashi</strong>, Hiroaki Ohshima, Mitsuo Yamamoto, Hirotoshi Iwasaki, Satoshi Oyama,
+                  Katsumi Tanaka
+                </span>
+              }
+              name="Journal of the IPSC, Vol. 52, No. 12, pp. 3542 -- 3557, December 2011"
+            />
+          </li>
+          <li className="mb-2">
+            <PublicationEntry
+              title="Extraction and Geographical Navigation of Important Historical Events in the Web"
+              author={
+                <span>
+                  Mitsuo Yamamoto, <strong>Yuku Takahashi</strong>, Hirotoshi Iwasaki, Satoshi Oyama, Hiroaki Ohshima,
+                  Katsumi Tanaka Katsumi Tanaka
+                </span>
+              }
+              name="Transactions in GIS, Blackwell Publishing Ltd, 2011"
+            />
+          </li>
+        </ul>
+        <h4>Conference Papers</h4>
+        <ul>
+          <li className="mb-2">
+            <PublicationEntry
+              title="Evaluating Significance of Historical Entities Based on Tempo-Spatial Impacts Using Wikipedia Link
+            Structure"
+              author={
+                <span>
+                  <strong>Yuku Takahashi</strong>, Hiroaki Ohshima, Mitsuo Yamamoto, Hirotoshi Iwasaki, Satoshi Oyama,
+                  Katsumi Tanaka
+                </span>
+              }
+              name={
+                <span>
+                  The 22nd ACM Conference on Hypertext and Hypermedia (<abbr className="initialism">HT2011</abbr>),
+                  June, 2011
+                </span>
+              }
+            />
+          </li>
+          <li className="mb-2">
+            <PublicationEntry
+              title="Extraction and Geographical Navigation of Important Historical Events in the Web"
+              author={
+                <span>
+                  Mitsuo Yamamoto, <strong>Yuku Takahashi</strong>, Hirotoshi Iwasaki, Satoshi Oyama, Hiroaki Ohshima,
+                  Katsumi Tanaka
+                </span>
+              }
+              name={
+                <span>
+                  The 10th International Symposium on Web &amp; Wireless Geographical Information Systems (
+                  <abbr className="initialism">W2GIS2011</abbr>), LNCS 6574, pp.21-35, March, 2011
+                </span>
+              }
+            />
+          </li>
+        </ul>
+        <h4>Magazine</h4>
+        <ul>
+          <li className="mb-2">
+            <PublicationEntry
+              title="切りひらくRuby 第7回 ElasticsearchをRubyから使おう"
+              author={<strong>髙橋侑久</strong>}
+              name="WEB+DB PRESS Vol. 87"
+            />
+          </li>
+          <li className="mb-2">
+            <PublicationEntry
+              title="切りひらくRuby 第10回 RailsでReactを使う"
+              author={<strong>髙橋侑久</strong>}
+              name="WEB+DB PRESS Vol. 90"
+            />
+          </li>
+        </ul>
+      </Col>
+    </Row>
+  </ResumeSection>
+)
+
 export default () => (
   <div>
     <Header className="bg-primary">
@@ -100,6 +204,7 @@ export default () => (
     <Container>
       <WorkExperiencesSection />
       <EducationSection />
+      <PublicationSection />
     </Container>
   </div>
 )
