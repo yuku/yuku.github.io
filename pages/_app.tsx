@@ -8,6 +8,15 @@ import Footer from "../src/components/Footer/Footer"
 import Navigation from "../src/components/Navigation/Navigation"
 
 class MyApp extends App {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      isOpen: false,
+    }
+    this.close = this.close.bind(this)
+    this.toggle = this.toggle.bind(this)
+  }
+
   public render() {
     const { Component, pageProps } = this.props
 
@@ -23,11 +32,25 @@ class MyApp extends App {
           />
           <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" />
         </Head>
-        <Navigation />
-        <Component {...pageProps} />
-        <Footer />
+        <Navigation isOpen={(this.state as any).isOpen} onClickToggler={this.toggle} />
+        <div onClick={this.close}>
+          <Component {...pageProps} />
+          <Footer />
+        </div>
       </Container>
     )
+  }
+
+  private toggle() {
+    this.setState({
+      isOpen: !(this.state as any).isOpen,
+    })
+  }
+
+  private close() {
+    this.setState({
+      isOpen: false,
+    })
   }
 }
 
