@@ -11,12 +11,14 @@
     "test": "tslint 'pages/**/*.tsx' 'src/**/*.tsx'"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.6",
     "@types/next": "^7.0.5",
     "@types/react": "^16.7.18",
     "@types/reactstrap": "^6.4.3",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "bootstrap": "^4.2.1",
+    "classnames": "^2.2.6",
     "next": "^7.0.2",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",

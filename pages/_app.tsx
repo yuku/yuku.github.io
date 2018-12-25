@@ -17,10 +17,10 @@ class MyApp extends App {
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <title key="title">Yuku Takahashi</title>
           <link
-            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,900&amp;subset=japanese"
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,900&amp;subset=japanese"
             rel="stylesheet"
           />
-          <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"/>
+          <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" />
         </Head>
         <Component {...pageProps} />
         <Footer />

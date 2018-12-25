@@ -1,0 +1,68 @@
+@import "../../variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$leftWidth: 200px;
+$borderWidth: 3px;
+
+.timeline {
+  border-left: $borderWidth solid $primary;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  position: relative;
+  padding: 0 30px;
+  margin-left: $leftWidth;
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      left: -43px;
+      top: 7px;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-clip: padding-box;
+      background: $white;
+      border: $borderWidth solid $primary;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 13px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-clip: padding-box;
+      background: $primary;
+      z-index: 10;
+    }
+  }
+
+  .head {
+    position: relative;
+  }
+
+  .left {
+    position: absolute;
+    left: -$leftWidth;
+    top: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 0;
+    padding-right: 0;
+
+    .left {
+      position: static;
+      margin-bottom: 15px;
+    }
+  }
+}
