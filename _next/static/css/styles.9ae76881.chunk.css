@@ -6993,9 +6993,6 @@ img::-moz-selection {
         .mainnav .navbar-nav > li.nav-item > a:focus, .mainnav .navbar-nav > li.nav-item > a:hover {
           color: rgba(255, 255, 255, 0.8); } }
 
-.resume-section {
-  margin-top: 45px; }
-
 .timeline {
   border-left: 3px solid #00BCD4;
   border-bottom-right-radius: 2px;
