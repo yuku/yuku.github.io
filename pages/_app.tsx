@@ -5,6 +5,7 @@ import Head from "next/head"
 import "../src/main.scss"
 
 import Footer from "../src/components/Footer/Footer"
+import Navigation from "../src/components/Navigation/Navigation"
 
 class MyApp extends App {
   public render() {
@@ -22,6 +23,7 @@ class MyApp extends App {
           />
           <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" />
         </Head>
+        <Navigation />
         <Component {...pageProps} />
         <Footer />
       </Container>

@@ -2,7 +2,6 @@ import { Container, Col, Row } from "reactstrap"
 
 import Education from "../src/components/Education/Education"
 import Header from "../src/components/Header/Header"
-import Navigation from "../src/components/Navigation/Navigation"
 import ResumeSection from "../src/components/ResumeSection/ResumeSection"
 import Timeline from "../src/components/Timeline/Timeline"
 import WorkExperience from "../src/components/WorkExperience/WorkExperience"
@@ -84,7 +83,6 @@ const EducationSection = () => (
 
 export default () => (
   <div>
-    <Navigation />
     <Header className="bg-primary">
       <div className="site-heading text-white">
         <Row>
