@@ -7010,7 +7010,7 @@ img::-moz-selection {
       content: "";
       position: absolute;
       left: -43px;
-      top: 0;
+      top: 7px;
       display: inline-block;
       width: 22px;
       height: 22px;
@@ -7022,7 +7022,7 @@ img::-moz-selection {
       content: "";
       position: absolute;
       left: -37px;
-      top: 6px;
+      top: 13px;
       width: 10px;
       height: 10px;
       border-radius: 50%;
