@@ -1,9 +1,14 @@
 import { Col, Row } from "reactstrap"
+import Head from "next/head"
 
+import config from "../src/config"
 import Header from "../src/components/Header/Header"
 
 export default () => (
   <div>
+    <Head>
+      <title key="title">About Me - {config.siteName}</title>
+    </Head>
     <Header className="bg-primary" fullScreen>
       <div className="text-white">
         <Row>

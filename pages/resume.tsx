@@ -1,12 +1,13 @@
 import { Container, Col, Row } from "reactstrap"
+import Head from "next/head"
 
-import Header from "../src/components/Header/Header"
-
+import config from "../src/config"
 import Education from "../src/components/Education/Education"
+import Header from "../src/components/Header/Header"
+import PublicationEntry from "../src/components/PublicationEntry/PublicationEntry"
 import ResumeSection from "../src/components/ResumeSection/ResumeSection"
 import Timeline from "../src/components/Timeline/Timeline"
 import WorkExperience from "../src/components/WorkExperience/WorkExperience"
-import PublicationEntry from "../src/components/PublicationEntry/PublicationEntry"
 
 const SummarySection = () => (
   <ResumeSection title="Summary">
@@ -193,6 +194,9 @@ const PublicationSection = () => (
 
 export default () => (
   <div>
+    <Head>
+      <title key="title">Resume - {config.siteName}</title>
+    </Head>
     <Header className="bg-secondary" />
     <Container>
       <Row>
