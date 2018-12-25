@@ -34,7 +34,12 @@ class Navigation extends React.Component<{}, IState> {
               </NavItem>
               <NavItem>
                 <Link href="/about">
-                  <NavLink href="/about">About</NavLink>
+                  <NavLink href="/about">About Me</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="/resume">
+                  <NavLink href="/resume">Resume</NavLink>
                 </Link>
               </NavItem>
             </Nav>

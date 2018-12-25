@@ -10,29 +10,54 @@ interface IProps {
   style?: React.CSSProperties
   children?: React.ReactNode
   overlay?: boolean
+  fullScreen?: boolean
 }
 
 const Header = (props: IProps) => {
-  let style: React.CSSProperties = props.style || {}
+  let headerStyle: React.CSSProperties = props.style || {}
+  let containerStyle: React.CSSProperties = {}
   if (props.backgroundImage) {
-    style = {
+    headerStyle = {
       background: "no-repeat center center",
       backgroundAttachment: "scroll",
       backgroundImage: `url('${props.backgroundImage}')`,
       backgroundSize: "cover",
-      ...style,
+      ...headerStyle,
     }
   }
+  if (props.fullScreen) {
+    headerStyle = {
+      height: "100vh",
+      ...headerStyle,
+    }
+    containerStyle = {
+      alignItems: "center",
+      display: "flex",
+      flexDirection: "column",
+      height: "100%",
+      justifyContent: "center",
+      ...containerStyle,
+    }
+  } else if (props.children) {
+    headerStyle = {
+      padding: "200px 0 150px",
+      ...headerStyle,
+    }
+  } else {
+    headerStyle = { height: "63px", ...headerStyle }
+  }
   return (
-    <header className={cn("masthead", props.className)} style={style}>
+    <header className={cn("masthead", props.className)} style={headerStyle}>
       {props.overlay && <div className="overlay" />}
-      <Container>
-        <Row>
-          <Col lg="8" md="10" className="mx-auto">
-            {props.children}
-          </Col>
-        </Row>
-      </Container>
+      {props.children && (
+        <Container style={containerStyle}>
+          <Row>
+            <Col lg="8" md="10" className="mx-auto">
+              {props.children}
+            </Col>
+          </Row>
+        </Container>
+      )}
     </header>
   )
 }

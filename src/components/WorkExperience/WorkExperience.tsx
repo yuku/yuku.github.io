@@ -14,7 +14,6 @@ interface IProps {
 
 const WorkExperience = (props: IProps) => (
   <Item
-    className="work-experience"
     head={
       <div>
         <div className="d-flex justify-content-between">
