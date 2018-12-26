@@ -1,6 +1,8 @@
 import React from "react"
 import App, { Container } from "next/app"
 import Head from "next/head"
+import Router from "next/router"
+import withGA from "next-ga"
 
 import "../src/main.scss"
 
@@ -74,4 +76,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default withGA("UA-4932407-15", Router)(MyApp)

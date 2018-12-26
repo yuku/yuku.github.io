@@ -6,8 +6,8 @@
   },
   "scripts": {
     "dev": "next",
-    "format-watch": "onchange 'pages/**/*.tsx' 'src/**/*.tsx' -- prettier --write {{changed}}",
-    "format": "prettier --write 'pages/**/*.tsx' 'src/**/*.tsx'",
+    "format-watch": "onchange 'pages/**/*.tsx' 'src/**/*.tsx' 'types/*.ts' -- prettier --write {{changed}}",
+    "format": "prettier --write 'pages/**/*.tsx' 'src/**/*.tsx' 'types/*.ts'",
     "test": "tslint 'pages/**/*.tsx' 'src/**/*.tsx'"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "bootstrap": "^4.2.1",
     "classnames": "^2.2.6",
     "next": "^7.0.2",
+    "next-ga": "^2.3.4",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
