@@ -6,6 +6,8 @@ import "../src/main.scss"
 
 import config from "../src/config"
 import Footer from "../src/components/Footer/Footer"
+import GoogleTagManager from "../src/components/GoogleTagManager/GoogleTagManager"
+import GoogleTagManagerNoscript from "../src/components/GoogleTagManager/GoogleTagManagerNoscript"
 import Navigation from "../src/components/Navigation/Navigation"
 
 class MyApp extends App {
@@ -50,8 +52,10 @@ class MyApp extends App {
             href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,900&amp;subset=japanese"
             rel="stylesheet"
           />
+          <GoogleTagManager />
           <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" />
         </Head>
+        <GoogleTagManagerNoscript />
         <Navigation isOpen={(this.state as any).isOpen} onClickToggler={this.toggle} />
         <div onClick={this.close}>
           <Component {...pageProps} />
