@@ -3,7 +3,7 @@ module "next-ga" {
 
   export default function withGA(code: string, router: typeof Router): (app: React.ComponentType) => React.ComponentType
 
-  export interface Analytics {
+  export interface IAnalytics {
     pageview: () => void
     event: (category: string, action: string) => void
     exception: (description: string, fatal: boolean = false) => void

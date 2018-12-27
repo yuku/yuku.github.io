@@ -5,10 +5,11 @@
     "yarn": "1.12.3"
   },
   "scripts": {
-    "dev": "next",
-    "format-watch": "onchange 'pages/**/*.tsx' 'src/**/*.tsx' 'types/*.ts' -- prettier --write {{changed}}",
-    "format": "prettier --write 'pages/**/*.tsx' 'src/**/*.tsx' 'types/*.ts'",
-    "test": "tslint 'pages/**/*.tsx' 'src/**/*.tsx'"
+    "build": "next build && next export",
+    "format-watch": "onchange '{pages,src,types}/**/*.{tsx,ts,jsx}' '*.{js,json}' -- prettier --write {{changed}}",
+    "format": "prettier --write '{pages,src,types}/**/*.{tsx,ts,jsx}' '*.{js,json}'",
+    "start": "next",
+    "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'"
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",

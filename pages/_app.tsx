@@ -6,7 +6,7 @@ import withGA from "next-ga"
 
 import "../src/main.scss"
 
-import config from "../src/config"
+import { SITE_NAME } from "../src/constants"
 import Footer from "../src/components/Footer/Footer"
 import Navigation from "../src/components/Navigation/Navigation"
 
@@ -28,7 +28,7 @@ class MyApp extends App {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          <title key="title">{config.siteName}</title>
+          <title key="title">{SITE_NAME}</title>
           <link rel="apple-touch-icon" sizes="57x57" href="/static/icons/apple-icon-57x57.png" />
           <link rel="apple-touch-icon" sizes="60x60" href="/static/icons/apple-icon-60x60.png" />
           <link rel="apple-touch-icon" sizes="72x72" href="/static/icons/apple-icon-72x72.png" />

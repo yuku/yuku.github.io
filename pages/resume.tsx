@@ -1,7 +1,7 @@
 import { Container, Col, Row } from "reactstrap"
 import Head from "next/head"
 
-import config from "../src/config"
+import { SITE_NAME } from "../src/constants"
 import Education from "../src/components/Education/Education"
 import Header from "../src/components/Header/Header"
 import PublicationEntry from "../src/components/PublicationEntry/PublicationEntry"
@@ -195,7 +195,7 @@ const PublicationSection = () => (
 export default () => (
   <div>
     <Head>
-      <title key="title">Resume - {config.siteName}</title>
+      <title key="title">Resume - {SITE_NAME}</title>
     </Head>
     <Header className="bg-secondary" />
     <Container>

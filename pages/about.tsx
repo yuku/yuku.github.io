@@ -1,13 +1,13 @@
 import { Col, Row } from "reactstrap"
 import Head from "next/head"
 
-import config from "../src/config"
+import { SITE_NAME } from "../src/constants"
 import Header from "../src/components/Header/Header"
 
 export default () => (
   <div>
     <Head>
-      <title key="title">About Me - {config.siteName}</title>
+      <title key="title">About Me - {SITE_NAME}</title>
     </Head>
     <Header className="bg-primary" fullScreen>
       <div className="text-white">
