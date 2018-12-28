@@ -4,6 +4,7 @@ declare module "*.mdx" {
 
   export interface IMeta {
     title: string
+    publishedAt: string
     backgroundColor?: string
     backgroundImage?: string
   }
