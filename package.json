@@ -29,6 +29,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "reactstrap": "^6.5.0",
+    "rehype-highlight": "^2.2.1",
     "typescript": "^3.2.2"
   },
   "devDependencies": {
