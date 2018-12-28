@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+const util = require("util")
+const glob = require("glob")
+const fs = require("fs")
+const path = require("path")
+
+const mkdir = util.promisify(fs.mkdir)
+const writeFile = util.promisify(fs.writeFile)
+
+const PAGE_DIR = "pages/blog"
+const PATTERN = "contents/blog/*.mdx"
+const TARGET = "__REPLACE_TARGET__"
+const TEMPLATE = `import React from "react"
+
+import BlogPage from "../../src/components/BlogPage/BlogPage"
+
+import Mdx, { meta } from "../../${TARGET}"
+
+export default () => (
+  <BlogPage {...meta}>
+    <Mdx />
+  </BlogPage>
+)
+`
+
+async function createPage(filename) {
+  const filepath = path.join(PAGE_DIR, `${path.basename(filename, ".mdx")}.tsx`)
+  const filebody = TEMPLATE.replace(TARGET, filename)
+  console.log(filepath)
+  return await writeFile(filepath, filebody)
+}
+
+async function main() {
+  const filenames = glob.sync(PATTERN)
+  await mkdir(PAGE_DIR, { recursive: true })
+  try {
+    await Promise.all(filenames.map(createPage))
+    console.log("DONE")
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+main()

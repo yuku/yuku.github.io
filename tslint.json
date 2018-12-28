@@ -5,5 +5,8 @@
   "rules": {
     "ordered-imports": false
   },
-  "rulesDirectory": []
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["script/*"]
+  }
 }
