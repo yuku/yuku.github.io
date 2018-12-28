@@ -11,7 +11,7 @@ interface IProps extends IMeta {
 const BlogPage = (props: IProps) => (
   <div>
     <Head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/hybrid.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" />
     </Head>
     <Header className="mb-5" backgroundImage={props.backgroundImage} style={{ backgroundColor: props.backgroundColor }}>

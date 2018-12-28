@@ -29,8 +29,8 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "reactstrap": "^6.5.0",
-    "rehype-highlight": "^2.2.1",
     "rehype-katex": "^1.2.0",
+    "rehype-prism": "^0.1.0",
     "remark-math": "^1.0.5",
     "typescript": "^3.2.2"
   },

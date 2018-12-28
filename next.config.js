@@ -2,12 +2,12 @@ const withSass = require("@zeit/next-sass")
 const withTypescript = require("@zeit/next-typescript")
 
 const math = require("remark-math")
-const highlight = require("rehype-highlight")
+const prism = require("rehype-prism")
 const katex = require("rehype-katex")
 const withMDX = require("@zeit/next-mdx")({
   options: {
     mdPlugins: [math],
-    hastPlugins: [highlight, katex],
+    hastPlugins: [prism, katex],
   },
 })
 
