@@ -5,6 +5,7 @@ const withMDX = require("@zeit/next-mdx")()
 module.exports = withTypescript(
   withSass(
     withMDX({
+      pageExtensions: ["js", "jsx", "mdx"],
       exportPathMap: defaultMap => ({
         ...defaultMap,
         "/404.html": { page: "/_error" },
