@@ -1,4 +1,4 @@
-import { Container, Col, Row } from "reactstrap"
+import { Container } from "reactstrap"
 import Head from "next/head"
 
 import { SITE_NAME } from "../src/constants"
@@ -8,6 +8,7 @@ import PublicationEntry from "../src/components/PublicationEntry/PublicationEntr
 import ResumeSection from "../src/components/ResumeSection/ResumeSection"
 import Timeline from "../src/components/Timeline/Timeline"
 import WorkExperience from "../src/components/WorkExperience/WorkExperience"
+import SingleCol from "../src/components/SingleCol/SingleCol"
 
 const SummarySection = () => (
   <ResumeSection title="Summary">
@@ -199,18 +200,16 @@ export default () => (
     </Head>
     <Header className="bg-secondary" />
     <Container>
-      <Row>
-        <Col md="10" lg="8" className="mx-auto">
-          <h2 className="mt-3">
-            <span className="display-3">Yuku Takahashi</span>
-            <p className="text-muted">Software Engineer</p>
-          </h2>
-          <SummarySection />
-          <WorkExperiencesSection />
-          <EducationSection />
-          <PublicationSection />
-        </Col>
-      </Row>
+      <SingleCol>
+        <h2 className="mt-3">
+          <span className="display-3">Yuku Takahashi</span>
+          <p className="text-muted">Software Engineer</p>
+        </h2>
+        <SummarySection />
+        <WorkExperiencesSection />
+        <EducationSection />
+        <PublicationSection />
+      </SingleCol>
     </Container>
   </div>
 )
