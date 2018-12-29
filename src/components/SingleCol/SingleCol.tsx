@@ -1,16 +1,17 @@
-import { Row, Col } from "reactstrap"
+import { Container, Row, Col } from "reactstrap"
 
 interface IProps {
-  className?: string
   children?: React.ReactNode
 }
 
 const SingleCol = (props: IProps) => (
-  <Row className={props.className}>
-    <Col md="10" lg="8" className="mx-auto">
-      {props.children}
-    </Col>
-  </Row>
+  <Container>
+    <Row>
+      <Col md="10" lg="8" className="mx-auto">
+        {props.children}
+      </Col>
+    </Row>
+  </Container>
 )
 
 export default SingleCol

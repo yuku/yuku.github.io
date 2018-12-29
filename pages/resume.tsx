@@ -1,4 +1,3 @@
-import { Container } from "reactstrap"
 import Head from "next/head"
 
 import { SITE_NAME } from "../src/constants"
@@ -199,17 +198,15 @@ export default () => (
       <title key="title">Resume - {SITE_NAME}</title>
     </Head>
     <Header className="bg-secondary" />
-    <Container>
-      <SingleCol>
-        <h2 className="mt-3">
-          <span className="display-3">Yuku Takahashi</span>
-          <p className="text-muted">Software Engineer</p>
-        </h2>
-        <SummarySection />
-        <WorkExperiencesSection />
-        <EducationSection />
-        <PublicationSection />
-      </SingleCol>
-    </Container>
+    <SingleCol>
+      <h2 className="mt-3">
+        <span className="display-3">Yuku Takahashi</span>
+        <p className="text-muted">Software Engineer</p>
+      </h2>
+      <SummarySection />
+      <WorkExperiencesSection />
+      <EducationSection />
+      <PublicationSection />
+    </SingleCol>
   </div>
 )
