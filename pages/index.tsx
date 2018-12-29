@@ -12,7 +12,7 @@ export default () => (
     </Header>
     <SingleCol>
       {entries.map(entry => (
-        <article>
+        <article key={entry.href}>
           <Link href={entry.href}>
             <a>
               <h1 className="h3">{entry.title}</h1>
