@@ -1,5 +1,4 @@
 export const SITE_NAME = "SELECT * FROM life;"
-export const DISQUS_SHORT_NAME = "yuku-blog"
 export const PRIMARY_COLOR = "#00BCD4"
 export const SECONDARY_COLOR = "#6c757d"
 export const SUCCESS_COLOR = "#28a745"
