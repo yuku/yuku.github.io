@@ -1,12 +1,19 @@
 import Head from "next/head"
+import Disqus from "disqus-react"
 
 import { IMeta } from "*.mdx"
+import { DISQUS_SHORT_NAME } from "../../constants"
 import SingleCol from "../SingleCol/SingleCol"
 import Header from "../Header/Header"
 
 interface IProps extends IMeta {
   children: React.ReactNode
 }
+
+const disqusConfig = (meta: IMeta) => ({
+  identifier: meta.id,
+  title: meta.title,
+})
 
 const BlogPage = (props: IProps) => (
   <div>
@@ -19,7 +26,12 @@ const BlogPage = (props: IProps) => (
         <h1 className="display-4 font-weight-bold">{props.title}</h1>
       </SingleCol>
     </Header>
-    <SingleCol>{props.children}</SingleCol>
+    <SingleCol>
+      {props.children}
+      <div>
+        <Disqus.DiscussionEmbed shortname={DISQUS_SHORT_NAME} config={disqusConfig(props)} />
+      </div>
+    </SingleCol>
   </div>
 )
 

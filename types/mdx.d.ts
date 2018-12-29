@@ -3,6 +3,7 @@ declare module "*.mdx" {
   export default MDXComponent
 
   export interface IMeta {
+    id: string
     title: string
     publishedAt: string
     backgroundColor?: string
