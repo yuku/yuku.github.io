@@ -43,10 +43,10 @@ class MyApp extends App {
           <link rel="icon" type="image/png" sizes="96x96" href="/static/icons/favicon-96x96.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png" />
           <link rel="icon" href="/static/icons/favicon.ico" />
-          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="manifest" href="/static/config/manifest.json" />
           <meta name="msapplication-TileColor" content="#00BCD4" />
           <meta name="msapplication-TileImage" content="/static/icons/ms-icon-144x144.png" />
-          <meta name="msapplication-config" content="/static/browserconfig.xml" />
+          <meta name="msapplication-config" content="/static/config/browserconfig.xml" />
           <meta name="theme-color" content="#00BCD4" />
           <meta name="google-site-verification" content="uoCr1A890A-K8B7GkFUvLlQ5ihZlFyR6gzvt4F-62u0" />
           <link

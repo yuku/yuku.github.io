@@ -13,7 +13,7 @@ export default () => (
       <div className="text-white">
         <Row>
           <Col sm="4" className="d-none d-sm-block">
-            <img src="/static/haniwa.png" alt="avatar" className="img-thumbnail rounded-circle" />
+            <img src="/static/images/haniwa.png" alt="avatar" className="img-thumbnail rounded-circle" />
           </Col>
           <Col sm="8" className="d-flex flex-column justify-content-center text-center text-sm-left">
             <h1 className="display-4 font-weight-bold">髙橋 侑久</h1>
