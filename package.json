@@ -5,11 +5,12 @@
     "yarn": "1.12.3"
   },
   "scripts": {
-    "build": "yarn build:entries && next build && next export",
     "build:entries": "node script/extract-metadata",
-    "format-watch": "onchange '{pages,src,types}/**/*.{tsx,ts,jsx,mdx}' '*.{js,json}' -- prettier --write {{changed}}",
-    "format": "prettier --write '{pages,src,types}/**/*.{tsx,ts,jsx,mdx}' '*.{js,json}'",
-    "start": "yarn build:entries && next",
+    "build": "yarn build:entries && next build && next export",
+    "dev": "yarn build:entries && next",
+    "format-watch": "onchange '**/*.{tsx,ts,jsx,js,mdx,json}' -- prettier --write {{changed}}",
+    "format": "prettier --write '**/*.{tsx,ts,jsx,js,mdx,json}'",
+    "start": "run-p format-watch dev",
     "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "typescript": "^3.2.2"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "onchange": "^5.2.0",
     "prettier": "^1.15.3",
     "tslint": "^5.12.0",
