@@ -6993,6 +6993,11 @@ img::-moz-selection {
         .mainnav .navbar-nav > li.nav-item > a:focus, .mainnav .navbar-nav > li.nav-item > a:hover {
           color: rgba(255, 255, 255, 0.8); } }
 
+.blogpage > div > p > a:first-child:last-child > img,
+.blogpage > div > p > img:first-child:last-child {
+  max-width: 100%;
+  height: auto; }
+
 .timeline {
   border-left: 3px solid #00BCD4;
   border-bottom-right-radius: 2px;
