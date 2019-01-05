@@ -4,6 +4,8 @@ import { IMeta } from "*.mdx"
 import SingleCol from "../SingleCol/SingleCol"
 import Header from "../Header/Header"
 
+import "./blogpage.scss"
+
 interface IProps extends IMeta {
   children: React.ReactNode
 }
@@ -21,7 +23,9 @@ const BlogPage = (props: IProps) => (
     >
       <h1 className="display-4 font-weight-bold">{props.title}</h1>
     </Header>
-    <SingleCol>{props.children}</SingleCol>
+    <SingleCol>
+      <div className="blogpage">{props.children}</div>
+    </SingleCol>
   </div>
 )
 

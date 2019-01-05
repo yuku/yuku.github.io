@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/mixins";
+
+.blogpage {
+  > div > p {
+    > a:first-child:last-child > img,
+    > img:first-child:last-child {
+      @include img-fluid;
+    }
+  }
+}
