@@ -1,7 +1,7 @@
 import { Col, Row } from "reactstrap"
 import Head from "next/head"
 
-import { SITE_NAME } from "../src/constants"
+import { AVATAR_PATHNAME, SITE_NAME } from "../src/constants"
 import Header from "../src/components/Header/Header"
 
 export default () => (
@@ -13,7 +13,7 @@ export default () => (
       <div className="text-white">
         <Row>
           <Col sm="4" className="d-none d-sm-block">
-            <img src="/static/images/haniwa.png" alt="avatar" className="img-thumbnail rounded-circle" />
+            <img src={AVATAR_PATHNAME} alt="avatar" className="img-thumbnail rounded-circle" />
           </Col>
           <Col sm="8" className="d-flex flex-column justify-content-center text-center text-sm-left">
             <h1 className="display-4 font-weight-bold">髙橋 侑久</h1>
