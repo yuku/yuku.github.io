@@ -28,7 +28,7 @@ class MyApp extends App {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          <title key="title">{SITE_NAME}</title>
+          <title>{SITE_NAME}</title>
           <link rel="apple-touch-icon" sizes="57x57" href="/static/icons/apple-icon-57x57.png" />
           <link rel="apple-touch-icon" sizes="60x60" href="/static/icons/apple-icon-60x60.png" />
           <link rel="apple-touch-icon" sizes="72x72" href="/static/icons/apple-icon-72x72.png" />
