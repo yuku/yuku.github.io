@@ -1,0 +1,31 @@
+import BlogPage from "../../../../src/components/BlogPage/BlogPage"
+import { PRIMARY_COLOR } from "../../../../src/constants"
+export const meta = {
+  title: "Twitter Card と OGP に対応した",
+  description: "ブログで Twitter Card と Open Graph Protocol に対応するためにやったことの記録",
+  publishedAt: "2019-01-07T22:40:00+09:00",
+  backgroundColor: PRIMARY_COLOR,
+  loadTwitterWidget: true,
+}
+
+export default ({ children }) => <BlogPage {...meta}>{children}</BlogPage>
+
+Commit: [yuku/yuku.github.io@`5fe34e4`](https://github.com/yuku/yuku.github.io/commit/5fe34e4bee6893000c88db02e353c3ae69400876)
+
+[Open Graph protocol (OGP)](http://ogp.me/) と [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started) に対応して Twitter や Facebook でブログ記事の URL が共有されたときにリッチスニペットが表示されるようにしました。
+
+<blockquote className="twitter-tweet" data-lang="ja">
+  <p lang="ja" dir="ltr">
+    ブログ書いてみた<a href="https://t.co/Gehy21W69V">https://t.co/Gehy21W69V</a>
+  </p>
+  &mdash; ゆうく (@yuku_t) <a href="https://twitter.com/yuku_t/status/1082265069449240578?ref_src=twsrc%5Etfw">2019年1月7日</a>
+</blockquote>
+
+それぞれのリンク先のドキュメントを参照しつつ実装し、 Facebook と Twitter が用意しているデバッガーを使って動作確認をします:
+
+- [Card Validator | Twitter Developers](https://cards-dev.twitter.com/validator)
+- [シェアデバッガー - 開発者向け Facebook](https://developers.facebook.com/tools/debug/sharing/)
+
+[Facebook の仕様](https://developers.facebook.com/docs/sharing/webmasters)として `fb:app_id` が求められたので、新しく本ブログ用のプロジェクトを Facebook に作り、その ID を登録してあります。
+
+Web 上の古い情報によると昔は `fb:admins` などもサポートされていたようですが、現在は `fb:app_id` に一本化されているようです。
