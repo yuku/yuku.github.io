@@ -4,7 +4,7 @@ export const meta = {
   title: "ブログの自作とツール選別の背景",
   description: "2019 年になってブログを新しく自作しました。そのモチベーションと利用したツールの選別背景を解説します。",
   publishedAt: "2019-01-05T13:52:00+09:00",
-  modifiedAt: "2019-01-05T20:37:00+09:00",
+  modifiedAt: "2019-01-07T21:49:00+09:00",
   ogImage: "https://yuku.takahashi.coffee/static/images/2019/01/next-vs-gatsby.png",
   backgroundColor: PRIMARY_COLOR,
 }
@@ -13,7 +13,12 @@ export default ({ children }) => <BlogPage {...meta}>{children}</BlogPage>
 
 新しくブログを自作する過程で技術的、経済的あるいは時間的な制約のもとにいろいろな選択をしました。この記事では将来自分がメンテナンス時に読むことを想定して、どういった制約があってその中でどういった選択をしたのか書きます。
 
-免責条項: これが 2019 年にブログを自作するのに最適な構成であると主張するものではありません。
+注意: これが 2019 年にブログを自作するのに最適な構成であると主張するものではありません。
+
+## TL;DR
+
+- 転職後にキャッチアップした Web 技術を実践したり、レコメンデーション機能を実装する場所が欲しくてブログを作ることにした。
+- [GitHub Pages] 上にデプロイされており、 [Next.js] をフレームワークとして使っている。記事は Markdown の中に JSX を書けるようにした [MDX] 記法を使って書いている。
 
 ## 背景、モチベーション
 
@@ -35,10 +40,10 @@ export default ({ children }) => <BlogPage {...meta}>{children}</BlogPage>
 
 以上を踏まえて次のような構成にしました:
 
-- [GitHub Pages](https://pages.github.com/) でホスティング
-- [Travis CI](https://travis-ci.org/) の [GitHub Pages Deployment](https://docs.travis-ci.com/user/deployment/pages/) を使ってデプロイ
-- 静的サイトジェネレータとして [Next.js](https://nextjs.org/) を使う
-- ブログコンテンツは [MDX](https://mdxjs.com/) で記述する
+- [GitHub Pages] でホスティング
+- [Travis CI] の [GitHub Pages Deployment] を使ってデプロイ
+- 静的サイトジェネレータとして [Next.js] を使う
+- ブログコンテンツは [MDX] で記述する
 
 ### ホスティングサービス
 
@@ -54,7 +59,7 @@ GitHub の yuku/yuku.github.io リポジトリの workspace ブランチに push
 
 ### 静的サイトジェネレータ
 
-手元の知識を活かすためにクライアントサイド JavaScript では [React](https://reactjs.org/) を使うことを決めていたので Next.js と [Gatsby](https://www.gatsbyjs.org/) を検討しました。
+手元の知識を活かすためにクライアントサイド JavaScript では [React](https://reactjs.org/) を使うことを決めていたので [Next.js] と [Gatsby](https://www.gatsbyjs.org/) を検討しました。
 
 Gatsby は静的サイトにより特化している雰囲気がある点が魅力的でしたが、 Next.js も static export 機能を使って https://nextjs.org を[作っている](https://www.reddit.com/r/reactjs/comments/992n2r/next_vs_gatsby/e4lrffl/)ので突然サポートを終了するとは考えにくく、結局
 
@@ -71,8 +76,14 @@ npm パッケージのダウンロード数や開発の活発さの比較では�
 
 ブログコンテンツの中で JavaScript を使おうとすると、本文のテキストデータと JavaScript のコードをどのように連携されるのかが問題になります。記事自体は Markdown で書くとして、 Markdown の中で `<script>` を書くの避けたいです。
 
-MDX とは Markdown の中で JSX を使えうようにしたフォーマットです。 MDX を使うと JSX 記法が書かれた場所に対応する React コンポーネントがマウント自動的にマウントされます。広く普及しているツールではありませんが、 Next.js を開発している ZEIT が開発しているのでその点は安心感があります。仮に MDX 記法が仮に使えなくなったとしてもそれまで JSX を書いていた場所に DOM 要素を作り、それに対して React コンポーネントを明示的にマウントするようにすればいいだけなので移行するのは比較的簡単です。
+[MDX] は Markdown の中で JSX を使えうようにしたフォーマットです。簡単な話が JSX 記法が書かれた場所に対応する React コンポーネントが自動的にマウントされます。広く普及しているツールではありませんが、 Next.js を開発している ZEIT が開発しているのでその点は安心感があります。仮に MDX 記法が仮に使えなくなったとしてもそれまで JSX を書いていた場所に DOM 要素を作り、それに対して React コンポーネントを明示的にマウントするようにすればいいだけなので移行するのは比較的簡単だと判断しました。
 
 ## おわりに
 
 ブログを自作することにした理由と、選択したツールについて簡単にまとめました。冒頭でも書いたように、これが万人に対しておすすめできる構成とは考えていませんが、未来の自分を含むどこかの誰かの参考になれば幸いです。
+
+[github pages]: https://pages.github.com/
+[github pages deployment]: https://docs.travis-ci.com/user/deployment/pages/
+[travis ci]: https://travis-ci.org/
+[next.js]: https://nextjs.org/
+[mdx]: https://mdxjs.com/
