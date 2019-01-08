@@ -17,7 +17,7 @@ $borderWidth: 3px;
   .timeline-item {
     position: relative;
     margin-bottom: 45px;
-  
+
     &::before {
       content: "";
       position: absolute;
@@ -31,7 +31,7 @@ $borderWidth: 3px;
       background: $white;
       border: $borderWidth solid $gray-800;
     }
-  
+
     &::after {
       content: "";
       position: absolute;

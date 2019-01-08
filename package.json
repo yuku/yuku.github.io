@@ -9,8 +9,8 @@
     "build:entries": "node script/extract-metadata",
     "build": "yarn build:entries && next build && next export",
     "dev": "yarn build:entries && next",
-    "format-watch": "onchange '**/*.{tsx,ts,jsx,js,mdx,json}' -- prettier --write {{changed}}",
-    "format": "prettier --write '**/*.{tsx,ts,jsx,js,mdx,json}'",
+    "format-watch": "onchange '**/*.{scss,tsx,ts,jsx,js,mdx,json}' -- prettier --write {{changed}}",
+    "format": "prettier --write '**/*.{scss,tsx,ts,jsx,js,mdx,json}'",
     "start": "run-p format-watch dev",
     "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'"
   },
