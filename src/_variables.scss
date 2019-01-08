@@ -1,7 +1,20 @@
+// Bootstrap default
+$font-size-base: 1rem;
+
+// Overriding Bootstrap
 $primary: #00BCD4;
-$font-weight-bold: 900;
+$font-weight-bold: 700;
 $font-family-sans-serif: "Noto Sans JP", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $body-color: #212529; // $gray-900
 $link-color: $body-color;
 $link-decoration: underline;
 $link-hover-color: $primary;
+$h1-font-size: $font-size-base * 1.75;
+$h2-font-size: $font-size-base * 1.60;
+$h3-font-size: $font-size-base * 1.45;
+$h4-font-size: $font-size-base * 1.30;
+$h5-font-size: $font-size-base * 1.15;
+$h6-font-size: $font-size-base;
+
+// Original
+$body-bg-up-lg: #e1e6ed;

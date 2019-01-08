@@ -1,7 +1,7 @@
 module "next-ga" {
   import Router from "next/router"
 
-  export default function withGA(code: string, router: typeof Router): (app: React.ComponentType) => React.ComponentType
+  export default function withGA(code: string, router: typeof Router): (app: React.ComponentType<*>) => React.ComponentType
 
   export interface IAnalytics {
     pageview: () => void

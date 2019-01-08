@@ -1,0 +1,58 @@
+@import "../../variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$side-menu-width: 18rem;
+
+.layout {
+  background-color: #f0f4f7;
+  min-height: 100vh;
+
+  .brand {
+    font-weight: $font-weight-bold;
+    font-size: 1.2rem;
+  }
+
+  .topbar-mobile,
+  .side-menu-inner {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .side-menu-inner {
+    width: $side-menu-width - map-get($spacers, 5) * 2;
+  }
+
+  .list li {
+    margin-top: 1rem;
+  }
+
+  .togger:hover {
+    cursor: pointer;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .layout .side-menu {
+    display: none;
+  }
+  
+  .layout.expanded {
+    .side-menu {
+      display: block;
+      position: fixed;
+      background-color: $white;
+      top: 0;
+      bottom: 0;
+      overflow: auto;
+      box-shadow: 0 0 2rem 0 $gray-500;
+      z-index: $zindex-fixed;
+    }
+
+    .side-menu-inner {
+      width: $side-menu-width - map-get($spacers, 3) * 2;
+    }
+  }
+}

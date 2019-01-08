@@ -1,25 +1,19 @@
 import Head from "next/head"
 
 import { SITE_NAME } from "../src/constants"
-import Education from "../src/components/Education/Education"
-import Header from "../src/components/Header/Header"
-import PublicationEntry from "../src/components/PublicationEntry/PublicationEntry"
-import ResumeSection from "../src/components/ResumeSection/ResumeSection"
-import Timeline from "../src/components/Timeline/Timeline"
-import WorkExperience from "../src/components/WorkExperience/WorkExperience"
-import SingleCol from "../src/components/SingleCol/SingleCol"
+import { Education, PublicationEntry, Section, Timeline, WorkExperience } from "../src/components/Resume"
 
 const SummarySection = () => (
-  <ResumeSection title="Summary">
+  <Section title="Summary">
     <p>
       Energetic software engineer with 7+ years experiences developing Web applications. The first employee of
       Increments, a well-known successful startup company in Japan. Increased the site scale of qiita.com 100+ times.
     </p>
-  </ResumeSection>
+  </Section>
 )
 
 const WorkExperiencesSection = () => (
-  <ResumeSection title="Work Experiences">
+  <Section title="Work Experiences">
     <Timeline>
       <WorkExperience
         workPlace={{
@@ -81,20 +75,20 @@ const WorkExperiencesSection = () => (
         <p>Designed and implemented a system that manages 5,000+ servers.</p>
       </WorkExperience>
     </Timeline>
-  </ResumeSection>
+  </Section>
 )
 
 const EducationSection = () => (
-  <ResumeSection title="Education">
+  <Section title="Education">
     <Timeline>
       <Education name="Kyoto University, Japan" degree="M.S. in Social Informatics" time="2010/04 - 2011/09" />
       <Education name="Kyoto University, Japan" degree="B.S. in Information Science" time="2006/04 - 2010/03" />
     </Timeline>
-  </ResumeSection>
+  </Section>
 )
 
 const PublicationSection = () => (
-  <ResumeSection title="Publication">
+  <Section title="Publication">
     <h4>Journal Papers</h4>
     <ul>
       <li className="mb-2">
@@ -189,24 +183,27 @@ const PublicationSection = () => (
         />
       </li>
     </ul>
-  </ResumeSection>
+  </Section>
 )
 
 export default () => (
-  <div>
+  <div className="container">
     <Head>
-      <title key="title">Resume - {SITE_NAME}</title>
+      <title>Resume - {SITE_NAME}</title>
     </Head>
-    <Header className="bg-secondary" />
-    <SingleCol>
-      <h2 className="mt-3">
-        <span className="display-3">Yuku Takahashi</span>
-        <p className="text-muted">Software Engineer</p>
-      </h2>
-      <SummarySection />
-      <WorkExperiencesSection />
-      <EducationSection />
-      <PublicationSection />
-    </SingleCol>
+    <div className="row">
+      <div className="col-12">
+        <main>
+          <h1 className="font-weight-bold">
+            Yuku Takahashi
+            <p className="text-muted h4">Software Engineer</p>
+          </h1>
+          <SummarySection />
+          <WorkExperiencesSection />
+          <EducationSection />
+          <PublicationSection />
+        </main>
+      </div>
+    </div>
   </div>
 )

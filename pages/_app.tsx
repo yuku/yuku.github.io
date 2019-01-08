@@ -7,19 +7,9 @@ import withGA from "next-ga"
 import "../src/main.scss"
 
 import { SITE_NAME } from "../src/constants"
-import Footer from "../src/components/Footer/Footer"
-import Navigation from "../src/components/Navigation/Navigation"
+import Layout from "../src/components/Layout/Layout"
 
 class MyApp extends App {
-  constructor(props: any) {
-    super(props)
-    this.state = {
-      isOpen: false,
-    }
-    this.close = this.close.bind(this)
-    this.toggle = this.toggle.bind(this)
-  }
-
   public render() {
     const { Component, pageProps } = this.props
 
@@ -49,31 +39,14 @@ class MyApp extends App {
           <meta name="msapplication-config" content="/static/config/browserconfig.xml" />
           <meta name="theme-color" content="#00BCD4" />
           <meta name="google-site-verification" content="uoCr1A890A-K8B7GkFUvLlQ5ihZlFyR6gzvt4F-62u0" />
-          <link
-            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,900&amp;subset=japanese"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700" rel="stylesheet" />
           <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" />
         </Head>
-        <Navigation isOpen={(this.state as any).isOpen} onClickToggler={this.toggle} />
-        <div onClick={this.close}>
+        <Layout>
           <Component {...pageProps} />
-          <Footer />
-        </div>
+        </Layout>
       </Container>
     )
-  }
-
-  private toggle() {
-    this.setState({
-      isOpen: !(this.state as any).isOpen,
-    })
-  }
-
-  private close() {
-    this.setState({
-      isOpen: false,
-    })
   }
 }
 

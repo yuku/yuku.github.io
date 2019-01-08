@@ -1,4 +1,4 @@
-import Item from "../Timeline/Item"
+import TimelineItem from "./TimelineItem"
 
 interface IProps {
   degree: string
@@ -8,12 +8,12 @@ interface IProps {
 }
 
 const Education = (props: IProps) => (
-  <Item
+  <TimelineItem
     className="education"
     head={
       <div>
         <h3>{props.name}</h3>
-        <span className="d-block h5 text-primary">{props.degree}</span>
+        <span className="d-block h5">{props.degree}</span>
       </div>
     }
     left={<div className="text-muted">{props.time}</div>}

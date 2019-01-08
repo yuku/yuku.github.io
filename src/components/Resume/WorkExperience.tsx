@@ -1,4 +1,4 @@
-import Item from "../Timeline/Item"
+import TimelineItem from "./TimelineItem"
 
 interface IProps {
   workPlace: {
@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const WorkExperience = (props: IProps) => (
-  <Item
+  <TimelineItem
     head={
       <div>
         <div className="d-flex justify-content-between">
@@ -23,7 +23,7 @@ const WorkExperience = (props: IProps) => (
             {props.workPlace.location}
           </div>
         </div>
-        <span className="d-block text-primary h5">{props.meta.title}</span>
+        <span className="d-block h5">{props.meta.title}</span>
       </div>
     }
     left={<div className="text-muted">{props.meta.time}</div>}

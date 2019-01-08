@@ -1,26 +1,27 @@
 import Link from "next/link"
 
-import Header from "../src/components/Header/Header"
-import SingleCol from "../src/components/SingleCol/SingleCol"
-
 import entries from "../src/entries"
 
 export default () => (
-  <div>
-    <Header className="mb-5 text-center text-white" backgroundImage="/static/images/home-bg.jpg" overlay>
-      <h1 className="display-4 font-weight-bold">Study Hard, Play Harder</h1>
-    </Header>
-    <SingleCol>
-      {entries.map(entry => (
-        <article key={entry.href}>
-          <Link href={entry.href}>
-            <a>
-              <h1 className="h3">{entry.title}</h1>
-            </a>
-          </Link>
-          {entry.publishedAt.format("YYYY-MM-DD HH:mm")}
-        </article>
-      ))}
-    </SingleCol>
+  <div className="container">
+    <div className="row">
+      <div className="col-12">
+        {entries.map(entry => (
+          <article key={entry.href} className="mb-4">
+            <Link href={entry.href}>
+              <a href={entry.href} className="text-decoration-none">
+                <h1>{entry.title}</h1>
+              </a>
+            </Link>
+            <ul className="list-inline text-dark font-weight-light">
+              <li className="list-inline-item">
+                <i className="fas fa-calendar-day fa-fw" />
+                <span className="ml-1">{entry.publishedAt.format("YYYY-MM-DD HH:mm")}</span>
+              </li>
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
   </div>
 )

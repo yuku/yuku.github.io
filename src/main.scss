@@ -1,6 +1,13 @@
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
 
+@include media-breakpoint-up(lg) {
+  body {
+    margin: 35px;
+    background-color: $body-bg-up-lg;
+  }
+}
+
 a {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -24,12 +31,20 @@ blockquote {
   text-shadow: none;
 }
 
-img::selection {
-  color: $white;
-  background: transparent;
-}
+img {
+  transition: all .3s ease-out;
 
-img::-moz-selection {
-  color: $white;
-  background: transparent;
+  &::selection {
+    color: $white;
+    background: transparent;
+  }
+  
+  &::-moz-selection {
+    color: $white;
+    background: transparent;
+  }
+
+  &:hover {
+    opacity: .9;
+  }
 }

@@ -2,7 +2,7 @@ export const SITE_NAME = "SELECT * FROM life;"
 export const FB_APP_ID = "1188125924685915"
 
 // Static
-export const AVATAR_PATHNAME = "/static/images/haniwa.png"
+export const AVATAR_PATHNAME = "/static/images/haniwa.jpg"
 
 // Colors
 export const PRIMARY_COLOR = "#00BCD4"

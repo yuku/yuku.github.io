@@ -1,11 +1,12 @@
 import React from "react"
 import Head from "next/head"
+import Link from "next/link"
 import { withRouter, WithRouterProps } from "next/router"
+import moment from "moment"
 
 import { IMeta } from "*.mdx"
 import { AVATAR_PATHNAME, FB_APP_ID, SITE_NAME } from "../../constants"
-import SingleCol from "../SingleCol/SingleCol"
-import Header from "../Header/Header"
+import { Widget } from "../Widget"
 
 import "./blogpage.scss"
 
@@ -14,6 +15,13 @@ interface IProps extends IMeta {
 }
 
 class BlogPage extends React.Component<WithRouterProps & IProps> {
+  private publishedAt: string
+
+  constructor(props: WithRouterProps & IProps) {
+    super(props)
+    this.publishedAt = moment(props.publishedAt).format("YYYY-MM-DD HH:mm")
+  }
+
   public componentDidMount() {
     if (this.props.loadTwitterWidget) {
       const script = document.createElement("script")
@@ -26,7 +34,7 @@ class BlogPage extends React.Component<WithRouterProps & IProps> {
 
   public render() {
     return (
-      <div>
+      <div className="blogpage container">
         <Head>
           <title>
             {this.props.title} - {SITE_NAME}
@@ -43,16 +51,57 @@ class BlogPage extends React.Component<WithRouterProps & IProps> {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" />
         </Head>
-        <Header
-          className="mb-5 text-center text-white"
-          backgroundImage={this.props.backgroundImage}
-          style={{ backgroundColor: this.props.backgroundColor }}
-        >
-          <h1 className="display-4 font-weight-bold">{this.props.title}</h1>
-        </Header>
-        <SingleCol>
-          <div className="blogpage">{this.props.children}</div>
-        </SingleCol>
+        <div className="row">
+          <main className="col-xl-8">
+            <article>
+              <header className="header mb-4">
+                <h1>{this.props.title}</h1>
+                <ul className="list-inline text-dark font-weight-light">
+                  <li className="list-inline-item">
+                    <i className="fas fa-calendar-day fa-fw" />
+                    <span className="ml-1">{this.publishedAt}</span>
+                  </li>
+                </ul>
+              </header>
+              <section className="body mb-4">{this.props.children}</section>
+            </article>
+          </main>
+          <div className="col-xl-4">
+            <div className="pl-xl-2">
+              <Widget title="About Me">
+                <div>
+                  <img src={AVATAR_PATHNAME} alt="avatar" className="avatar rounded-circle mb-4 mx-auto d-block" />
+                  <p>
+                    Increments 社最初の従業員として Qiita を開発したり CTO やったりしていました。現在有給消化中。
+                    <Link href="/about">
+                      <a href="/about">もっと読む</a>
+                    </Link>
+                  </p>
+                </div>
+              </Widget>
+              <Widget title="Follow">
+                <ul className="list-inline icons">
+                  <li className="list-inline-item">
+                    <a href="https://twitter.com/yuku_t">
+                      <span className="fa-stack fa-lg">
+                        <i className="fas fa-circle fa-stack-2x" />
+                        <i className="fab fa-twitter fa-stack-1x fa-inverse" />
+                      </span>
+                    </a>
+                  </li>
+                  <li className="list-inline-item">
+                    <a href="https://github.com/yuku">
+                      <span className="fa-stack fa-lg">
+                        <i className="fas fa-circle fa-stack-2x" />
+                        <i className="fab fa-github fa-stack-1x fa-inverse" />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </Widget>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

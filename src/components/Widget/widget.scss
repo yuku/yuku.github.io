@@ -1,0 +1,30 @@
+@import "../../variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.widget {
+  .title {
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      border-bottom: $border-width solid $border-color;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      z-index: 1;
+      position: relative;
+      margin: 1rem auto 2rem 0;
+      border-bottom: $border-width solid $primary;
+    }
+  }
+}
