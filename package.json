@@ -1,5 +1,6 @@
 {
   "private": true,
+  "repository": "yuku/yuku.github.io",
   "engines": {
     "node": "10.14.2",
     "yarn": "1.12.3"
@@ -37,6 +38,7 @@
     "reactstrap": "^6.5.0",
     "rehype-katex": "^1.2.0",
     "rehype-prism": "^0.1.0",
+    "remark-github": "^7.0.6",
     "remark-math": "^1.0.5",
     "typescript": "^3.2.2"
   },
