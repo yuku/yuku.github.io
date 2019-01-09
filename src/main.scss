@@ -9,9 +9,15 @@
 }
 
 a {
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
   transition: all 0.2s;
+
+  > img {
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 blockquote {
@@ -32,8 +38,6 @@ blockquote {
 }
 
 img {
-  transition: all 0.3s ease-out;
-
   &::selection {
     color: $white;
     background: transparent;
@@ -42,9 +46,5 @@ img {
   &::-moz-selection {
     color: $white;
     background: transparent;
-  }
-
-  &:hover {
-    opacity: 0.9;
   }
 }
