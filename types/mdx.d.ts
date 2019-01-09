@@ -5,6 +5,7 @@ declare module "*.mdx" {
   export interface IMeta {
     title: string
     description: string
+    tags: string[]
     publishedAt: string
     modifiedAt?: string
     ogImage?: string

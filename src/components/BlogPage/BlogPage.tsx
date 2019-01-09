@@ -61,6 +61,15 @@ class BlogPage extends React.Component<WithRouterProps & IProps> {
                     <i className="fas fa-calendar-day fa-fw" />
                     <span className="ml-1">{this.publishedAt}</span>
                   </li>
+                  <li className="list-inline-item">
+                    <i className="fas fa-tags fa-fw" />
+                    {this.props.tags.map((tag, i) => [
+                      i > 0 ? "," : null,
+                      <span key={i} className="ml-1">
+                        {tag}
+                      </span>,
+                    ])}
+                  </li>
                 </ul>
               </header>
               <section className="body mb-4">{this.props.children}</section>

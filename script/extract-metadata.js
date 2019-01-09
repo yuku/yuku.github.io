@@ -9,15 +9,16 @@ const moment = require("moment")
 
 const readFileAsync = util.promisify(fs.readFile)
 
-const TITLE_REGEXP = /title: "(?<title>[^"]+)"(,|\n)/
-const PUBLISHED_AT_REGEXP = /publishedAt: "(?<publishedAt>[^"]+)"(,|\n)/
-
 function extractTitle(content) {
-  return TITLE_REGEXP.exec(content).groups.title
+  return /title: ("[^"]+")(,|\n)/.exec(content)[1]
 }
 
 function extractPublishedAt(content) {
-  return PUBLISHED_AT_REGEXP.exec(content).groups.publishedAt
+  return /publishedAt: "([^"]+)"(,|\n)/.exec(content)[1]
+}
+
+function extractTags(content) {
+  return /tags: (\[[^\]]+\])/.exec(content)[1]
 }
 
 function extractHref(string) {
@@ -33,6 +34,7 @@ async function extractMeta(mdxFilepath) {
     moment: moment(publishedAt),
     publishedAt,
     title: extractTitle(content),
+    tags: extractTags(content),
   }
 }
 
@@ -40,7 +42,8 @@ function printEntry(entry) {
   return `{
     href: "${entry.href}",
     publishedAt: moment("${entry.publishedAt}"),
-    title: ${JSON.stringify(entry.title)},
+    tags: ${entry.tags},
+    title: ${entry.title},
   }`
 }
 
