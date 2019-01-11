@@ -46,16 +46,20 @@ class BlogPage extends React.Component<WithRouterProps & IProps> {
           <meta property="og:title" content={`${this.props.title} - ${SITE_NAME}`} />
           <meta property="og:type" content="article" />
           <meta property="og:url" content={`https://yuku.takahashi.coffee${this.props.router!.pathname}`} />
-          <meta property="og:image" content={this.props.ogImage || `https://yuku.takahashi.coffee${AVATAR_PATHNAME}`} />
+          <meta property="og:image" content={this.image()} />
           <meta property="og:description" content={this.props.description} />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" />
         </Head>
         <div className="row">
           <main className="col-xl-8">
-            <article>
+            <article itemScope itemType="http://schema.org/BlogPosting">
+              <meta itemProp="author" content="Yuku Takahashi" />
+              <meta itemProp="datePublished" content={this.props.publishedAt} />
+              {this.props.modifiedAt && <meta itemProp="dateModified" content={this.props.modifiedAt} />}
+              <meta itemProp="image" content={this.image()} />
               <header className="header mb-4">
-                <h1>{this.props.title}</h1>
+                <h1 itemProp="headline">{this.props.title}</h1>
                 <ul className="list-inline text-dark font-weight-light">
                   <li className="list-inline-item">
                     <i className="fas fa-calendar-day fa-fw" />
@@ -72,7 +76,9 @@ class BlogPage extends React.Component<WithRouterProps & IProps> {
                   </li>
                 </ul>
               </header>
-              <section className="body mb-4">{this.props.children}</section>
+              <section className="body mb-4" itemProp="articleBody">
+                {this.props.children}
+              </section>
             </article>
           </main>
           <div className="col-xl-4">
@@ -113,6 +119,10 @@ class BlogPage extends React.Component<WithRouterProps & IProps> {
         </div>
       </div>
     )
+  }
+
+  private image() {
+    return this.props.ogImage || `https://yuku.takahashi.coffee${AVATAR_PATHNAME}`
   }
 }
 
