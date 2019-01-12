@@ -1,4 +1,5 @@
 import Link from "next/link"
+import moment from "moment"
 
 import entries from "../src/entries"
 
@@ -16,7 +17,7 @@ export default () => (
             <ul className="list-inline text-dark font-weight-light">
               <li className="list-inline-item">
                 <i className="fas fa-calendar-day fa-fw" />
-                <span className="ml-1">{entry.publishedAt.format("YYYY-MM-DD HH:mm")}</span>
+                <span className="ml-1">{moment(entry.publishedAt).format("YYYY-MM-DD HH:mm")}</span>
               </li>
               <li className="list-inline-item">
                 <i className="fas fa-tags fa-fw" />

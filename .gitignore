@@ -2,6 +2,7 @@
 node_modules
 npm-debug.log*
 out
+src/entries.ts
+tmp
 yarn-debug.log*
 yarn-error.log*
-src/entries.ts
