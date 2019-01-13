@@ -6,13 +6,13 @@
     "yarn": "^1.12.3"
   },
   "scripts": {
-    "build:entries": "node script/extract-metadata",
-    "build": "yarn build:entries && next build && next export",
-    "dev": "yarn build:entries && next",
-    "format-watch": "onchange '**/*.{scss,tsx,ts,jsx,js,mdx,json}' -- prettier --write {{changed}}",
+    "build": "node script/extract-metadata.js && next build && next export",
+    "dev": "next",
     "format": "prettier --write '**/*.{scss,tsx,ts,jsx,js,mdx,json}'",
-    "start": "run-p format-watch dev",
-    "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'"
+    "start": "run-p watch:* dev",
+    "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'",
+    "watch:entries": "node script/extract-metadata.js -w",
+    "watch:format": "sleep 5 && onchange '**/*.{scss,tsx,ts,jsx,js,mdx,json}' -- prettier --write {{changed}}"
   },
   "dependencies": {
     "@mdx-js/loader": "^0.16.6",
