@@ -1,3 +1,5 @@
 .next
 out
+tmp
 types/next-ga.d.ts
+src/entries.ts
