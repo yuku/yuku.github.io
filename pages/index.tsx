@@ -2,15 +2,21 @@ import React from "react"
 import Link from "next/link"
 import moment from "moment"
 
-import { IMeta } from "*.mdx"
+import { IEntry } from "../entries"
 
 interface IProps {
-  entries: (IMeta & { href: string })[]
+  entries: Array<IEntry & { id: string }>
 }
 
 export default class extends React.Component<IProps> {
-  static async getInitialProps() {
-    const entries = require("../src/entries").default
+  public static async getInitialProps() {
+    const data: Record<string, IEntry> = require("../entries").entries
+    const entries: Array<IEntry & { id: string }> = Object.keys(data)
+      .map(id => ({
+        id,
+        ...data[id],
+      }))
+      .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
     return { entries }
   }
 
@@ -20,9 +26,9 @@ export default class extends React.Component<IProps> {
         <div className="row">
           <div className="col-12">
             {this.props.entries.map(entry => (
-              <article key={entry.href} className="mb-4">
-                <Link href={entry.href}>
-                  <a href={entry.href} className="text-decoration-none">
+              <article key={entry.id} className="mb-4">
+                <Link href={entry.id}>
+                  <a href={entry.id} className="text-decoration-none">
                     <h1>{entry.title}</h1>
                   </a>
                 </Link>

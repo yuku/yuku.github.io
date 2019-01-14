@@ -1,3 +1,5 @@
+const path = require("path")
+
 const withSass = require("@zeit/next-sass")
 const withTypescript = require("@zeit/next-typescript")
 
@@ -12,14 +14,35 @@ const withMDX = require("@zeit/next-mdx")({
   },
 })
 
+const withIpynb = nextConfig => ({
+  ...nextConfig,
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.ipynb$/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: path.resolve("src/loaders/htmltojsx-loader.js"),
+        },
+        "ipynb-loader?cellsOnly=true",
+      ],
+    })
+
+    return nextConfig.webpack ? nextConfig.webpack(config, options) : config
+  },
+})
+
 module.exports = withTypescript(
   withSass(
-    withMDX({
-      pageExtensions: ["js", "jsx", "mdx"],
-      exportPathMap: defaultMap => ({
-        ...defaultMap,
-        "/404.html": { page: "/_error" },
+    withMDX(
+      withIpynb({
+        exportPathMap(defaultMap) {
+          return {
+            ...defaultMap,
+            "/404.html": { page: "/_error" },
+          }
+        },
       }),
-    }),
+    ),
   ),
 )

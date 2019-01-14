@@ -1,17 +1,3 @@
-import BlogPage from "../../../../src/components/BlogPage/BlogPage"
-import { PRIMARY_COLOR } from "../../../../src/constants"
-export const meta = {
-  title: "Twitter Card と OGP に対応した",
-  description: "ブログで Twitter Card と Open Graph Protocol に対応するためにやったことの記録",
-  publishedAt: "2019-01-07T22:40:00+09:00",
-  modifiedAt: "2019-01-07T22:47:00+09:00",
-  backgroundColor: PRIMARY_COLOR,
-  loadTwitterWidget: true,
-  tags: ["ブログ開発記"],
-}
-
-export default ({ children }) => <BlogPage {...meta}>{children}</BlogPage>
-
 Commit: https://github.com/yuku/yuku.github.io/commit/5fe34e4bee6893000c88db02e353c3ae69400876
 
 [Open Graph protocol (OGP)](http://ogp.me/) と [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started) に対応して Twitter や Facebook でブログ記事の URL が共有されたときにリッチスニペットが表示されるようにしました。

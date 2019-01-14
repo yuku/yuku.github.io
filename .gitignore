@@ -1,8 +1,9 @@
+.ipynb_checkpoints
 .next
 node_modules
 npm-debug.log*
 out
-src/entries.ts
+pages/blog/**/*.tsx
 tmp
 yarn-debug.log*
 yarn-error.log*
