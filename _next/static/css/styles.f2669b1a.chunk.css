@@ -7031,7 +7031,7 @@ img::-moz-selection {
   height: auto; }
 
 .blogpage .notebook .header {
-  margin-left: 65px; }
+  margin-left: 60px; }
 
 .blogpage .notebook .anchor-link {
   display: none; }
@@ -7044,7 +7044,7 @@ img::-moz-selection {
   margin: 0px;
   outline: none;
   overflow: visible;
-  padding: 5px;
+  padding: 0;
   position: relative;
   width: 100%; }
 
