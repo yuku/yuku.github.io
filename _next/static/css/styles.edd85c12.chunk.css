@@ -7029,8 +7029,8 @@ img::-moz-selection {
   max-width: 100%;
   height: auto; }
 
-.blogpage .notebook .title {
-  margin-left: 104px; }
+.blogpage .notebook .header {
+  margin-left: 55px; }
 
 .blogpage .notebook .anchor-link {
   display: none; }
@@ -7046,15 +7046,6 @@ img::-moz-selection {
   padding: 5px;
   position: relative;
   width: 100%; }
-  .blogpage .notebook .cell:before {
-    position: absolute;
-    display: block;
-    top: -1px;
-    left: -1px;
-    width: 5px;
-    height: calc(100% + 2px);
-    content: "";
-    background: transparent; }
 
 .blogpage .notebook .text_cell {
   display: flex;
@@ -7121,7 +7112,7 @@ img::-moz-selection {
   color: darkred; }
 
 .blogpage .notebook .prompt {
-  min-width: 14ex;
+  min-width: 50px;
   padding: 0.4em;
   margin: 0px;
   font-family: monospace;
@@ -7134,7 +7125,7 @@ img::-moz-selection {
     padding-bottom: 0; }
 
 @media (max-width: 767.98px) {
-  .blogpage .notebook .title {
+  .blogpage .notebook .header {
     margin-left: 5px; }
   .blogpage .notebook .prompt {
     text-align: left; }
