@@ -7025,8 +7025,8 @@ img::-moz-selection {
   margin-top: 1.8rem;
   margin-bottom: 1rem; }
 
-.blogpage .mdx > div > p > a:first-child:last-child > img,
-.blogpage .mdx > div > p > img:first-child:last-child {
+.blogpage .mdx .body > div > p > a:first-child:last-child > img,
+.blogpage .mdx .body > div > p > img:first-child:last-child {
   max-width: 100%;
   height: auto; }
 
