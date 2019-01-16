@@ -27,10 +27,10 @@ export default class Layout extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div className={cn("layout d-md-flex", { expanded: this.state.expanded })}>
+      <div className={cn("layout mx-md-auto d-md-flex", { expanded: this.state.expanded })}>
         <TopBarMobile className="d-md-none py-4 px-3" onClickToggler={this.toggle} />
         <SideMenu className="d-md-block px-3 p-lg-5 py-4" />
-        <div className="flex-md-grow-1 bg-white px-3 pt-lg-5 py-4" onClick={this.collapse}>
+        <div className="flex-md-grow-1 bg-white px-sm-3 pt-lg-5 py-4" onClick={this.collapse}>
           {this.props.children}
           <Footer />
         </div>

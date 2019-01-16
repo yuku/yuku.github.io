@@ -5,8 +5,8 @@
 
 .blogpage {
   .notebook {
-    $prompt-width: 50px;
-    $cell-padding: 5px;
+    $prompt-width: 60px;
+    $cell-padding: 0;
 
     .header {
       margin-left: $prompt-width + $cell-padding;
@@ -65,7 +65,7 @@
 
       pre {
         margin: 0;
-        padding: 1px 0 1px 0;
+        padding: 0;
         border: 0;
         vertical-align: baseline;
         color: $body-color;
@@ -76,7 +76,7 @@
 
     .output_subarea {
       overflow-x: auto;
-      padding: 0.4em;
+      padding: 1em;
       flex: 1;
       max-width: calc(100% - 14ex);
     }
@@ -110,9 +110,9 @@
     }
 
     .prompt {
-      min-width: $prompt-width;
-      padding: 0.4em;
-      margin: 0px;
+      width: $prompt-width;
+      padding: 5px;
+      margin: 0;
       font-family: monospace;
       text-align: right;
       line-height: 1.21429em;
@@ -157,15 +157,13 @@
     }
 
     .input_prompt {
+      padding-top: 19px;
       color: #07a;
     }
 
     .output_prompt {
+      padding-top: 17px;
       color: #dd4a68;
-    }
-
-    .MathJax_Display {
-      text-align: left !important;
     }
 
     .rendered_html {

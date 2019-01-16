@@ -5,10 +5,12 @@
 
 .blogpage {
   .mdx {
-    & > div > p {
-      > a:first-child:last-child > img,
-      > img:first-child:last-child {
-        @include img-fluid;
+    .body {
+      & > div > p {
+        > a:first-child:last-child > img,
+        > img:first-child:last-child {
+          @include img-fluid;
+        }
       }
     }
   }
