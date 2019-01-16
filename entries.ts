@@ -50,4 +50,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["ブログ開発記"],
     title: "Jupyter Notebook でブログを書けるようにした",
   },
+  "blog/2019/01/hello-pyspark": {
+    description: "Jupyter Lab が提供している Docker イメージで作った動作環境を使って pyspark に入門します。",
+    format: "ipynb",
+    publishedAt: "2019-01-16T20:50:00+09:00",
+    tags: ["pyspark"],
+    title: "Docker を使って pyspark に入門する",
+  },
 }
