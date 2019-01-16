@@ -6956,6 +6956,7 @@ img::-moz-selection {
   background: transparent; }
 
 .layout {
+  max-width: 1449px;
   background-color: #f0f4f7;
   min-height: 100vh; }
   .layout .brand {
@@ -7030,7 +7031,7 @@ img::-moz-selection {
   height: auto; }
 
 .blogpage .notebook .header {
-  margin-left: 55px; }
+  margin-left: 65px; }
 
 .blogpage .notebook .anchor-link {
   display: none; }
@@ -7078,7 +7079,7 @@ img::-moz-selection {
   align-items: stretch; }
   .blogpage .notebook .output_area pre {
     margin: 0;
-    padding: 1px 0 1px 0;
+    padding: 0;
     border: 0;
     vertical-align: baseline;
     color: #212529;
@@ -7087,7 +7088,7 @@ img::-moz-selection {
 
 .blogpage .notebook .output_subarea {
   overflow-x: auto;
-  padding: 0.4em;
+  padding: 1em;
   flex: 1;
   max-width: calc(100% - 14ex); }
 
@@ -7112,9 +7113,9 @@ img::-moz-selection {
   color: darkred; }
 
 .blogpage .notebook .prompt {
-  min-width: 50px;
-  padding: 0.4em;
-  margin: 0px;
+  width: 60px;
+  padding: 5px;
+  margin: 0;
   font-family: monospace;
   text-align: right;
   line-height: 1.21429em;
@@ -7148,13 +7149,12 @@ img::-moz-selection {
   z-index: 1; }
 
 .blogpage .notebook .input_prompt {
+  padding-top: 19px;
   color: #07a; }
 
 .blogpage .notebook .output_prompt {
+  padding-top: 17px;
   color: #dd4a68; }
-
-.blogpage .notebook .MathJax_Display {
-  text-align: left !important; }
 
 .blogpage .notebook .rendered_html table {
   font-size: 0.8em;
