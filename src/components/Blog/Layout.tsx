@@ -38,14 +38,16 @@ const Layout = (props: WithRouterProps & IProps) => (
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" />
     </Head>
     <div className="row">
-      <main className="col-xl-9">
+      <main className={cn("col-xl-8", props.className)}>
         <article itemScope itemType="http://schema.org/BlogPosting">
           <meta itemProp="author" content="Yuku Takahashi" />
           <meta itemProp="datePublished" content={props.meta.publishedAt} />
           {props.meta.modifiedAt && <meta itemProp="dateModified" content={props.meta.modifiedAt} />}
           <meta itemProp="image" content={image()} />
-          <header className="mb-4">
-            <h1 itemProp="headline">{props.meta.title}</h1>
+          <header className="mb-4 header">
+            <h1 className="headline" itemProp="headline">
+              {props.meta.title}
+            </h1>
             <ul className="list-inline text-dark font-weight-light">
               <li className="list-inline-item">
                 <i className="fas fa-calendar-day fa-fw" />
@@ -62,12 +64,12 @@ const Layout = (props: WithRouterProps & IProps) => (
               </li>
             </ul>
           </header>
-          <section className={cn("mb-4", props.className)} itemProp="articleBody">
+          <section className="mb-4 body" itemProp="articleBody">
             {props.children}
           </section>
         </article>
       </main>
-      <div className="col-xl-3">
+      <div className="col-xl-4">
         <div className="pl-xl-2">
           <Widget title="About Me">
             <div>

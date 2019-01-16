@@ -45,6 +45,7 @@ export const entries: Record<string, IEntry> = {
   "blog/2019/01/hello-ipynb": {
     description: "ブログ記事を Jupyter Notebook の ipynb 形式で書けるようにしました。",
     format: "ipynb",
+    modifiedAt: "2019-01-16T13:51:00+09:00",
     publishedAt: "2019-01-15T20:17:00+09:00",
     tags: ["ブログ開発記"],
     title: "Jupyter Notebook でブログを書けるようにした",

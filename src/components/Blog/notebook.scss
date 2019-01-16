@@ -5,8 +5,11 @@
 
 .blogpage {
   .notebook {
-    .title {
-      margin-left: 104px;
+    $prompt-width: 50px;
+    $cell-padding: 5px;
+
+    .header {
+      margin-left: $prompt-width + $cell-padding;
     }
 
     .anchor-link {
@@ -21,20 +24,9 @@
       margin: 0px;
       outline: none;
       overflow: visible;
-      padding: 5px;
+      padding: $cell-padding;
       position: relative;
       width: 100%;
-
-      &:before {
-        position: absolute;
-        display: block;
-        top: -1px;
-        left: -1px;
-        width: 5px;
-        height: calc(100% + 2px);
-        content: "";
-        background: transparent;
-      }
     }
 
     .text_cell {
@@ -118,7 +110,7 @@
     }
 
     .prompt {
-      min-width: 14ex;
+      min-width: $prompt-width;
       padding: 0.4em;
       margin: 0px;
       font-family: monospace;
@@ -134,7 +126,7 @@
     }
 
     @include media-breakpoint-down(sm) {
-      .title {
+      .header {
         margin-left: 5px;
       }
 
