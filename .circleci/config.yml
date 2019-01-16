@@ -49,7 +49,10 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore: master
       - deploy:
           requires:
             - build

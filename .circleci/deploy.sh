@@ -10,7 +10,7 @@ git clone -q --branch=master $CIRCLE_REPOSITORY_URL temp
 
 cd temp
 find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name '..' -exec rm -rf {} \;
-mv ../out/* ../out/.nojekyll .
+mv ../out/* ../out/.nojekyll ../.circleci .
 
 git add -f .
 git commit --allow-empty -m "$(git log origin/workspace -1 --pretty=%B)"
