@@ -1,0 +1,266 @@
+.widget .title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative; }
+  .widget .title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid #dee2e6; }
+  .widget .title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    z-index: 1;
+    position: relative;
+    margin: 1rem auto 2rem 0;
+    border-bottom: 1px solid #00bcd4; }
+
+.blogpage .avatar {
+  max-width: 100%;
+  width: 160px;
+  height: auto; }
+
+.blogpage .icons a {
+  color: #343a40; }
+  .blogpage .icons a:hover {
+    color: #00bcd4; }
+
+.blogpage h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+
+.blogpage h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 1rem; }
+
+.blogpage .mdx .body > div > p > a:first-child:last-child > img,
+.blogpage .mdx .body > div > p > img:first-child:last-child {
+  max-width: 100%;
+  height: auto; }
+
+.blogpage .notebook .header {
+  margin-left: 60px; }
+
+.blogpage .notebook .anchor-link {
+  display: none; }
+
+.blogpage .notebook .cell {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  outline: none;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+
+.blogpage .notebook .text_cell {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; }
+
+.blogpage .notebook .input {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  page-break-inside: avoid; }
+
+.blogpage .notebook .inner_cell {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1; }
+
+.blogpage .notebook .output {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+
+.blogpage .notebook .output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; }
+  .blogpage .notebook .output_area pre {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    color: #212529;
+    background-color: transparent;
+    border-radius: 0; }
+
+.blogpage .notebook .output_subarea {
+  overflow-x: auto;
+  padding: 1em;
+  flex: 1;
+  max-width: calc(100% - 14ex); }
+
+.blogpage .notebook .output_scroll .output_subarea {
+  overflow-x: visible; }
+
+.blogpage .notebook .output_text {
+  text-align: left;
+  color: #000;
+  line-height: 1.21429em; }
+
+.blogpage .notebook .output_stderr {
+  background: #fdd; }
+
+.blogpage .notebook .output_latex {
+  text-align: left; }
+
+.blogpage .notebook .output_javascript:empty {
+  padding: 0; }
+
+.blogpage .notebook .js-error {
+  color: darkred; }
+
+.blogpage .notebook .prompt {
+  width: 60px;
+  padding: 5px;
+  margin: 0;
+  font-family: monospace;
+  text-align: right;
+  line-height: 1.21429em;
+  user-select: none;
+  cursor: default; }
+  .blogpage .notebook .prompt:empty {
+    padding-top: 0;
+    padding-bottom: 0; }
+
+@media (max-width: 767.98px) {
+  .blogpage .notebook .header {
+    margin-left: 5px; }
+  .blogpage .notebook .prompt {
+    text-align: left; }
+  .blogpage .notebook .input {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; }
+  .blogpage .notebook .output_area {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; }
+  .blogpage .notebook .text_cell > .prompt {
+    display: none; } }
+
+.blogpage .notebook .output_wrapper {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1; }
+
+.blogpage .notebook .input_prompt {
+  padding-top: 19px;
+  color: #07a; }
+
+.blogpage .notebook .output_prompt {
+  padding-top: 17px;
+  color: #dd4a68; }
+
+.blogpage .notebook .rendered_html table {
+  font-size: 0.8em;
+  border: none; }
+
+.blogpage .notebook .rendered_html table,
+.blogpage .notebook .rendered_html img {
+  margin-left: 0;
+  margin-right: 0; }
+
+.blogpage .notebook .rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom; }
+
+.blogpage .notebook .rendered_html tr,
+.blogpage .notebook .rendered_html th,
+.blogpage .notebook .rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none; }
+
+.blogpage .notebook .rendered_html th {
+  font-weight: bold; }
+
+.blogpage .notebook .rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5; }
+
+.blogpage .notebook .rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2); }
+
+.blogpage .notebook .dataframe tbody tr th {
+  vertical-align: top; }
+
+.blogpage .notebook .dataframe tbody tr th:only-of-type {
+  vertical-align: middle; }
+
+.blogpage .notebook .dataframe thead th {
+  text-align: right; }
+
+.blogpage .notebook .unconfined,
+.blogpage .notebook .mglyph > img {
+  max-width: none; }
+
+.blogpage .notebook .highlight {
+  background: #f5f2f0;
+  padding: 1em;
+  margin: 0;
+  overflow: auto; }
+  .blogpage .notebook .highlight pre {
+    margin: 0px;
+    border: none;
+    padding: 0px;
+    background-color: transparent; }
+  .blogpage .notebook .highlight .c,
+  .blogpage .notebook .highlight .ch,
+  .blogpage .notebook .highlight .cm,
+  .blogpage .notebook .highlight .c1,
+  .blogpage .notebook .highlight .cpf,
+  .blogpage .notebook .highlight .cs {
+    color: #708090; }
+  .blogpage .notebook .highlight .k,
+  .blogpage .notebook .highlight .kd,
+  .blogpage .notebook .highlight .kn,
+  .blogpage .notebook .highlight .kp,
+  .blogpage .notebook .highlight .kr {
+    color: #07a; }
+  .blogpage .notebook .highlight .kc {
+    color: #905; }
+  .blogpage .notebook .highlight .nb {
+    color: #690; }
+  .blogpage .notebook .highlight .s,
+  .blogpage .notebook .highlight .sa,
+  .blogpage .notebook .highlight .sb,
+  .blogpage .notebook .highlight .sh,
+  .blogpage .notebook .highlight .sc,
+  .blogpage .notebook .highlight .dl,
+  .blogpage .notebook .highlight .sd,
+  .blogpage .notebook .highlight .s1,
+  .blogpage .notebook .highlight .s2 {
+    color: #690; }
+  .blogpage .notebook .highlight .o,
+  .blogpage .notebook .highlight .ow {
+    color: #9a6e3a; }
+  .blogpage .notebook .highlight .m,
+  .blogpage .notebook .highlight .mb,
+  .blogpage .notebook .highlight .mf,
+  .blogpage .notebook .highlight .mh,
+  .blogpage .notebook .highlight .mi,
+  .blogpage .notebook .highlight .mo {
+    color: #905; }
+  .blogpage .notebook .highlight .nc,
+  .blogpage .notebook .highlight .nf {
+    color: #dd4a68; }
+
