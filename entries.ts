@@ -58,4 +58,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["pyspark"],
     title: "Docker を使って pyspark に入門する",
   },
+  "blog/2019/01/google-cloud-sdk-in-docker": {
+    description: "Google Cloud SDK をローカルマシンではなく Docker 内にインストールして使う手順を説明します。",
+    format: "mdx",
+    publishedAt: "2019-01-17T14:43:00+09:00",
+    tags: ["GCP"],
+    title: "Docker で Google Cloud SDK を使う",
+  },
 }
