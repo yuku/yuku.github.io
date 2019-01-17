@@ -53,7 +53,7 @@ export const entries: Record<string, IEntry> = {
   "blog/2019/01/hello-pyspark": {
     description: "Jupyter Lab が提供している Docker イメージで作った動作環境を使って pyspark に入門します。",
     format: "ipynb",
-    modifiedAt: "2019-01-16T23:12:00+09:00",
+    modifiedAt: "2019-01-17T17:54:00+09:00",
     publishedAt: "2019-01-16T20:50:00+09:00",
     tags: ["pyspark"],
     title: "Docker を使って pyspark に入門する",
