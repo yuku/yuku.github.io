@@ -22,7 +22,7 @@ function createPageForMdx(entryName: string, pathname: string) {
     import { IMdx } from "${ROOT}/entries"
 
     interface IProps {
-      meta: IMdxMetadata
+      meta: IMdx
     }
 
     export default class extends React.Component<IProps> {
