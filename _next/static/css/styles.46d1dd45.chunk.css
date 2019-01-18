@@ -406,7 +406,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: #212529;
   word-break: break-word; }
   a > code {
     color: inherit; }
@@ -6936,6 +6936,11 @@ a {
 blockquote {
   font-style: italic;
   color: #6c757d; }
+
+code {
+  background-color: #f5f2f0;
+  padding: 3px 4px;
+  margin: 0 2px; }
 
 ::-moz-selection {
   color: #fff;
