@@ -25,6 +25,12 @@ blockquote {
   color: $gray-600;
 }
 
+code {
+  background-color: $code-bg;
+  padding: 3px 4px;
+  margin: 0 2px;
+}
+
 ::-moz-selection {
   color: $white;
   background: $primary;

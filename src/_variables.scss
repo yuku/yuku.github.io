@@ -10,6 +10,7 @@ $body-color: #212529; // $gray-900
 $link-color: $body-color;
 $link-decoration: underline;
 $link-hover-color: $primary;
+$code-color: $body-color;
 $h1-font-size: $font-size-base * 1.75;
 $h2-font-size: $font-size-base * 1.6;
 $h3-font-size: $font-size-base * 1.45;
@@ -19,3 +20,4 @@ $h6-font-size: $font-size-base;
 
 // Original
 $body-bg-up-lg: #e1e6ed;
+$code-bg: #f5f2f0;
