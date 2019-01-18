@@ -1,0 +1,82 @@
+import Link from "next/link"
+
+所用で Google App Engine を使うことになり
+
+- `master` ブランチへ push したら staging にリリースする
+- `/^v\d+\.\d+\.\d+$/` にマッチするタグを push のとき production にリリースする
+
+という仕様で CircleCI を使って自動デプロイを実装しました。この構成はなかなか便利で再利用する機会がありそうなので、やったことを備忘録としてまとめます。
+
+## サービスアカウントを作る
+
+CircleCI 上で Cloud SDK を認証するためのサービスアカウントを作ります:
+
+1. Google Cloud Platform Console の [サービスアカウント](https://console.cloud.google.com/iam-admin/serviceaccounts) から新しいアカウントを作成
+   - 名前はわかりやすく "circleci" とかにする
+   - 最後にキーを作って忘れずに JSON をダウンロードしておく（あとで使う）
+2. [IAM](https://console.cloud.google.com/iam-admin/iam) で先程作ったサービスアカウントに役割を付与する
+   - App Engine デプロイ担当者（`appengine.deployer`）
+   - App Engine サービス管理者（`appengine.serviceAdmin`）
+   - Cloud Build 編集者（`cloudbuild.builds.editor`）
+   - ストレージのオブジェクト作成者（`storage.objectCreator`）
+   - ステージオブジェクト閲覧者（`storage.objectViewer`）
+
+役割を付与しても実際に SDK から操作したときにその結果が反映されるまで数分単位でラグがあるので注意が必要です。
+
+また新しい GCP プロジェクトを作ると（もしかしたら App Engine を有効にしたときかも知れない） Cloud Build サービスアカウント（`cloudbuild.builds.builder`）という役割を持った `xxx@cloudbuild.gserviceaccount.com` というサービスアカウントが作られますが、このアカウントにも追加で
+
+- ステージオブジェクト閲覧者（`storage.objectViewer`）
+
+を付与する必要がありました。
+
+## CircleCI を設定する
+
+今回の Google App Engine は nodejs10 で実装されていて、いくつかの npm scripts が定義されています:
+
+- `npm run test`
+  - テストを実行する。
+- `npm run build`
+  - プロジェクトをビルドして build ディレクトリに成果物を生成する。
+  - `gcloug app deploy` でアップロードしなければならないので、デプロイ時に成果物が存在する必要がある。
+
+こういう仕様のもと以下のように実装しました。
+
+### Cloud SDK
+
+[Docker で Google Cloud SDK を使う](/blog/2019/01/google-cloud-sdk-in-docker) で使った [google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk/) をここでも使います。
+
+先程作ったサービスアカウントで Cloud SDK を認証します。ダウンロードした JSON を CircleCI の環境変数に設定します。今回は `GCLOUD_SERVICE_KEY` という名前にしました。すると、以下のコマンドで Cloud SDK を認証することができます:
+
+```bash
+echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+```
+
+### workspace
+
+とくに問題になったのがデプロイ時にビルドした成果物が必要だったことです。ビルドするには Node.js が必要ですが、 Google が提供している google/cloud-sdk という Docker イメージには当然 Node.js はインストールされていないので:
+
+1. Node.js と Cloud SDK が両方使える Docker イメージを作ってそれを使う
+2. 何かしらの方法で Node.js のコンテナでビルドした成果物を Cloud SDK のコンテナに持っていく
+
+など方法で対処する必要があります。最初は 1. でやっていたのですが改めて CircleCI のドキュメントを読み返したところ [workspace を使えば job をまたいでファイルを受け渡すことができる](https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs)ことが分かったのでそれを使うことにしました。
+
+### デプロイ
+
+App Engine へのデプロイには `gcloud app deploy` コマンドを使います。今回は目的に応じて以下のオプションを使いました:
+
+- `--version` - バージョンに名前をつける。同じ名前を使うと仮に既存のバージョンが存在している場合それを置き換えることができる。
+- `--no-promote` - デプロイ後に新しく作ったバージョンにトラフィックを回さない。 staging をデプロイしても production を変更しないためにこのオプションを使う。
+
+オプションに `--stop-previous-version` というオプションがヘルプにあって当初は各リリースで別のバージョンを作ろうと思ったのですが、ドキュメントを読んでも実際に使ってみても挙動がよく分からなかったので `--version` で置き換える方式にしています。
+
+## おわりに
+
+毎日触るならまだしも、たまにしか触らないプロジェクトはデプロイ作業はさらに頻度が下がるので、久しぶりにデプロイしようと思うたびに正しいやり方を思い出すことから始めなければならなくなったりします。
+
+こうした自動化は初期投資は少し大きくなりますがやっておいて損はないと感じます。ドキュメントとしてやり方を残しておけば、次回以降の初期投資自体が小さくなっていきますしね。
+
+## 参考
+
+- [Authorizing the Google Cloud SDK - CircleCI](https://circleci.com/docs/2.0/google-auth/)
+- [Cloud SDK ツールの承認  |  Cloud SDK のドキュメント  |  Google Cloud](https://cloud.google.com/sdk/docs/authorizing#authorizing_with_a_service_account)
+- [Using Workflows to Schedule Jobs - CircleCI](https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs)

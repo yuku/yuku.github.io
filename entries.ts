@@ -21,7 +21,7 @@ export interface IMdx extends IBase {
 export interface INotebook extends IBase {
   format: "ipynb"
 }
-
+// tslint:disable:object-literal-sort-keys
 export const entries: Record<string, IEntry> = {
   "blog/2019/01/hello-new-blog": {
     description:
@@ -36,11 +36,11 @@ export const entries: Record<string, IEntry> = {
   "blog/2019/01/twitter-card-and-ogp": {
     description: "ブログで Twitter Card と Open Graph Protocol に対応しました。",
     format: "mdx",
+    loadTwitterWidget: true,
     modifiedAt: "2019-01-07T22:47:00+09:00",
     publishedAt: "2019-01-07T22:40:00+09:00",
     tags: ["ブログ開発記"],
     title: "Twitter Card と OGP に対応した",
-    loadTwitterWidget: true,
   },
   "blog/2019/01/hello-ipynb": {
     description: "ブログ記事を Jupyter Notebook の ipynb 形式で書けるようにしました。",
@@ -64,5 +64,12 @@ export const entries: Record<string, IEntry> = {
     publishedAt: "2019-01-17T14:43:00+09:00",
     tags: ["GCP"],
     title: "Docker で Google Cloud SDK を使う",
+  },
+  "blog/2019/01/deploy-app-engine-from-circleci": {
+    description: "CircleCI を使って App Engine Node.js スタンダード環境をデプロイする方法。",
+    format: "mdx",
+    publishedAt: "2019-01-18T14:00:00+09:00",
+    tags: ["GCP"],
+    title: "CircleCI から App Engine をデプロイする",
   },
 }
