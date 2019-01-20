@@ -44,12 +44,14 @@ jobs:
           key: v1-python-dependencies-{{ checksum "Pipfile" }}
       - run: pipenv run yarn build
       - run: bash .circleci/deploy.sh
-
 workflows:
   version: 2
   test_build_and_deploy:
     jobs:
-      - test
+      - test:
+          filters:
+            branches:
+              ignore: master
       - build_and_deploy:
           requires:
             - test
