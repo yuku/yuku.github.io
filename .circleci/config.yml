@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     working_directory: ~/repo
     docker:
       - image: circleci/node:10.14
@@ -18,7 +18,7 @@ jobs:
             - node_modules
           key: v1-node-dependencies-{{ checksum "package.json" }}
       - run: yarn test
-  deploy:
+  build_and_deploy:
     docker:
       - image: circleci/python:3.7-node
         environment:
@@ -47,15 +47,12 @@ jobs:
 
 workflows:
   version: 2
-  build-and-deploy:
+  test_build_and_deploy:
     jobs:
-      - build:
-          filters:
-            branches:
-              ignore: master
-      - deploy:
+      - test
+      - build_and_deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: workspace
