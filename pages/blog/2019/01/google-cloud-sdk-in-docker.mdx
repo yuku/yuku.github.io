@@ -39,7 +39,7 @@ docker run -it --name gcloud-config \\
 
 ## SDK を使う
 
-`--volues-from gloud-config` を指定することで先程認証を行った volume をマウントすることができます。
+`--volumes-from gcloud-config` を指定することで先程認証を行った volume をマウントすることができます。
 
 ```bash
 docker run --rm --volumes-from gcloud-config \\
