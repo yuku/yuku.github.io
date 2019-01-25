@@ -36,6 +36,13 @@ gRPC-Web のプロトコルを説明したドキュメントにヒントがあ�
 
 そもそもなんで gRPC-Web とプロキシについて調べていたのかというと GAE で作った gRPC サービスに gRPC-Web からアクセスしたいと思ったからなのでした。
 
+<blockquote class="twitter-tweet" data-lang="ja">
+  <p lang="ja" dir="ltr">
+    GAEでNext.jsとGraphQLをそれぞれserviceとして立ててwebアプリ書いてみていたけど、一念発起してgRPC-Webにしてみるのも面白そうな気がしてきた
+  </p>
+  &mdash; ゆうく (@yuku_t) <a href="https://twitter.com/yuku_t/status/1088703627521273856?ref_src=twsrc%5Etfw">2019年1月25日</a>
+</blockquote>
+
 流石に GAE の前に Envoy を立てるのは面倒なので、そもそも本当にプロキシ必要なのかよ？...必要だった。他にやり方ないのか？...improbable-eng/grpc-web を発見という次第です。というわけで GAE Go で gRPC 作ってみることにします。
 
 ## 参考

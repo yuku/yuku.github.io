@@ -92,7 +92,8 @@ export const entries: Record<string, IEntry> = {
     description:
       "gRPC と gRPC-Web が通信するには Envoy のようなプロキシを立てる必要があります。プロキシが必要になる背景について調べた結果をまとめます。",
     format: "mdx",
-    modifiedAt: "2019-01-25T22:56:00+09:00",
+    loadTwitterWidget: true,
+    modifiedAt: "2019-01-25T23:26:00+09:00",
     publishedAt: "2019-01-25T22:30:00+09:00",
     tags: ["gRPC"],
     title: "gRPC-Web がプロキシを必要とする理由",
