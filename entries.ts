@@ -90,10 +90,11 @@ export const entries: Record<string, IEntry> = {
   },
   "blog/2019/01/grpc-proxy-for-grpc-web": {
     description:
-      "gRPC と gRPC-Web が通信するにはブラウザの制約から間にプロキシを立てる必要があります。 Envoy 以外に使えるプロキシについて調べました。",
+      "gRPC と gRPC-Web が通信するには Envoy のようなプロキシを立てる必要があります。プロキシが必要になる背景について調べた結果をまとめます。",
     format: "mdx",
+    modifiedAt: "2019-01-25T22:56:00+09:00",
     publishedAt: "2019-01-25T22:30:00+09:00",
     tags: ["gRPC"],
-    title: "gRPC-Web がプロキシを必要とする理由と Envoy 以外の選択肢について",
+    title: "gRPC-Web がプロキシを必要とする理由",
   },
 }
