@@ -21,6 +21,20 @@ export interface IMdx extends IBase {
 export interface INotebook extends IBase {
   format: "ipynb"
 }
+
+/*
+templates
+
+"blog/2019/01/path": {
+  description: "",
+  format: "mdx",
+  modifiedAt: "2019-01-20T09:33:00+09:00",
+  publishedAt: "2019-01-18T14:00:00+09:00",
+  tags: [""],
+  title: "",
+},
+*/
+
 // tslint:disable:object-literal-sort-keys
 export const entries: Record<string, IEntry> = {
   "blog/2019/01/hello-new-blog": {
@@ -73,5 +87,13 @@ export const entries: Record<string, IEntry> = {
     publishedAt: "2019-01-18T14:00:00+09:00",
     tags: ["GCP"],
     title: "CircleCI から App Engine をデプロイする",
+  },
+  "blog/2019/01/grpc-proxy-for-grpc-web": {
+    description:
+      "gRPC と gRPC-Web が通信するにはブラウザの制約から間にプロキシを立てる必要があります。 Envoy 以外に使えるプロキシについて調べました。",
+    format: "mdx",
+    publishedAt: "2019-01-25T22:30:00+09:00",
+    tags: ["gRPC"],
+    title: "gRPC-Web がプロキシを必要とする理由と Envoy 以外の選択肢について",
   },
 }
