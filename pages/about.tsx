@@ -13,16 +13,14 @@ export default () => (
           <h1 className="h5 mb-4 mb-lg-5 text-uppercase text-center font-weight-bold">About Me</h1>
           <img className="mb-4 img-fluid rounded" src="/static/images/about-me.jpg" />
           <p>
-            大学入学後にプログラミングと出会い、在学中に 株式会社はてな や Google Japan でのインターンを経験。
-            Increments 株式会社 へ最初の従業員として入社し、 CTO やテックリードとしてプログラマ向け情報共有サービス
-            Qiita を開発してきましたが、 2019 年 1 月末をもって退職し 2 月から次の会社で働く予定です。
+            Yuku Takahashi is a Tokyo-based software developer best known for his ex-CTO career at Increments inc., a
+            well-known acquired startup company in Japan. From browser and server-side Web application development to
+            machine learning for algorithmic marketing, he is a dedicated open source contributor of the worlds he is
+            passionate to be a part of.
           </p>
           <p>
-            社会人としては専ら Web
-            アプリケーションエンジニアとしてキャリアを積んできましたが、情報検索やレコメンデーション、機械学習などに興味があり、大学院では図書館情報学の研究室でグラフ・ネットワークの分析などを行っていました。
-          </p>
-          <p>
-            趣味はジョギング、クラシックギターとコーヒー豆を焙煎すること。一児の父として日々楽しく子育てしています。
+            His hobby is jogging, playing classical guitar and drinking his own roasted coffee. He is having fun playing
+            his child every single day.
           </p>
         </main>
       </div>

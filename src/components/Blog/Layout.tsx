@@ -75,10 +75,11 @@ const Layout = (props: WithRouterProps & IProps) => (
             <div>
               <img src={AVATAR_PATHNAME} alt="avatar" className="avatar rounded-circle mb-4 mx-auto d-block" />
               <p>
-                Increments 社最初の従業員として Qiita を開発したり CTO やったりしていました。現在有給消化中。
+                A Tokyo-based software developer known as ex-CTO of Increments.{" "}
                 <Link href="/about">
-                  <a href="/about">もっと読む</a>
+                  <a href="/about">Read more</a>
                 </Link>
+                .
               </p>
             </div>
           </Widget>
