@@ -5,7 +5,7 @@ export const FB_APP_ID = "1188125924685915"
 export const AVATAR_PATHNAME = "/static/images/haniwa.jpg"
 
 // Colors
-export const PRIMARY_COLOR = "#00BCD4"
+export const PRIMARY_COLOR = "#2e1f27"
 export const SECONDARY_COLOR = "#6c757d"
 export const SUCCESS_COLOR = "#28a745"
 export const INFO_COLOR = "#17a2b8"
