@@ -1,4 +1,4 @@
-export const SITE_NAME = "SELECT * FROM life;"
+export const SITE_NAME = "yt coffee"
 export const FB_APP_ID = "1188125924685915"
 
 // Static
