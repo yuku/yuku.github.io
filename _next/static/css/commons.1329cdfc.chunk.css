@@ -16,7 +16,7 @@
     z-index: 1;
     position: relative;
     margin: 1rem auto 2rem 0;
-    border-bottom: 1px solid #00bcd4; }
+    border-bottom: 1px solid #2e1f27; }
 
 .blogpage .avatar {
   max-width: 100%;
@@ -26,7 +26,7 @@
 .blogpage .icons a {
   color: #343a40; }
   .blogpage .icons a:hover {
-    color: #00bcd4; }
+    color: #2e1f27; }
 
 .blogpage h2 {
   margin-top: 2rem;
