@@ -99,7 +99,8 @@ export const entries: Record<string, IEntry> = {
     title: "gRPC-Web がプロキシを必要とする理由",
   },
   "blog/2019/01/authorize-iap-by-nodejs": {
-    description: "Cloud IAP で保護されたリソースに対し google-auth-library を使って Node.js で認証しアクセスする方法を解説します。",
+    description:
+      "Cloud IAP で保護されたリソースに対し google-auth-library を使って Node.js で認証しアクセスする方法を解説します。",
     format: "mdx",
     publishedAt: "2019-01-28T14:54:00+09:00",
     tags: ["GCP"],
