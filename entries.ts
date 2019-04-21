@@ -106,4 +106,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["GCP"],
     title: "Node.js から Cloud IAP で保護されたリソースを認証する",
   },
+  "blog/2019/04/pyspark-ml-vs-mllib": {
+    description: "",
+    format: "mdx",
+    publishedAt: "2019-04-22T00:04:00+09:00",
+    tags: ["pyspark"],
+    title: "pyspark.ml と pyspark.mllib のどちらを使うべきか",
+  },
 }
