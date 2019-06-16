@@ -50,15 +50,13 @@ const Layout = (props: WithRouterProps & IProps) => (
             </h1>
             <ul className="list-inline text-dark font-weight-light">
               <li className="list-inline-item">
-                <i className="fas fa-calendar-day fa-fw" />
                 <span className="ml-1">{moment(props.meta.publishedAt).format("YYYY-MM-DD HH:mm")}</span>
               </li>
               <li className="list-inline-item">
-                <i className="fas fa-tags fa-fw" />
                 {props.meta.tags.map((tag, i) => [
                   i > 0 ? "," : null,
                   <span key={i} className="ml-1">
-                    {tag}
+                    #{tag}
                   </span>,
                 ])}
               </li>

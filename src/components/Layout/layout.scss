@@ -7,18 +7,14 @@ $side-menu-width: 18rem;
 
 .layout {
   max-width: 1449px;
-  background-color: #c7ae9c;
+  background-color: #f0f4f7;
   min-height: 100vh;
-
-  .main-body {
-    background-color: #f9f7f6;
-  }
 
   .brand {
     font-family: "Damion", cursive;
     font-weight: $font-weight-bold;
     font-size: 2rem;
-    color: $primary;
+    color: $gray-900;
   }
 
   .topbar-mobile,

@@ -34,15 +34,13 @@ export default class extends React.Component<IProps> {
                 </Link>
                 <ul className="list-inline text-dark font-weight-light">
                   <li className="list-inline-item">
-                    <i className="fas fa-calendar-day fa-fw" />
                     <span className="ml-1">{moment(entry.publishedAt).format("YYYY-MM-DD HH:mm")}</span>
                   </li>
                   <li className="list-inline-item">
-                    <i className="fas fa-tags fa-fw" />
                     {entry.tags.map((tag, i) => [
                       i > 0 ? "," : null,
                       <span key={i} className="ml-1">
-                        {tag}
+                        #{tag}
                       </span>,
                     ])}
                   </li>
