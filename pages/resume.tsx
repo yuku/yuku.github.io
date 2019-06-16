@@ -18,11 +18,27 @@ const WorkExperiencesSection = () => (
       <WorkExperience
         workPlace={{
           location: "Tokyo, Japan",
+          name: "FLYWHEEL",
+        }}
+        meta={{
+          time: "2019/02 - Current",
+          title: "Software Engineer",
+        }}
+      >
+        <ul>
+          <li>Designed and maintained data pipeline for a recommender system.</li>
+          <li>Implement a chatbot for internal use and drive chatops culture in the company.</li>
+          <li>Introduced terraform and designed plan/apply workflow using GitHub and CircleCI.</li>
+        </ul>
+      </WorkExperience>
+      <WorkExperience
+        workPlace={{
+          location: "Tokyo, Japan",
           name: "Increments",
         }}
         meta={{
-          time: "2013/04 - Current",
-          title: "Senior Software Engineer",
+          time: "2013/04 - 2019/01",
+          title: "CTO, Senior Software Engineer",
         }}
       >
         <p>The first employee of the company. As a CTO (2014/01 - 2017/05):</p>
