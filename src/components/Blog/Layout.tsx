@@ -73,7 +73,7 @@ const Layout = (props: WithRouterProps & IProps) => (
             <div>
               <img src={AVATAR_PATHNAME} alt="avatar" className="avatar rounded-circle mb-4 mx-auto d-block" />
               <p>
-                A Tokyo-based software developer known as ex-CTO of Increments.{" "}
+                FLYWHEEL ソフトウェアエンジニア。ex-Qiita CTO。最近は専らレコメンドシステムを作っています。
                 <Link href="/about">
                   <a href="/about">Read more</a>
                 </Link>
