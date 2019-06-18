@@ -114,8 +114,9 @@ export const entries: Record<string, IEntry> = {
     title: "pyspark.ml と pyspark.mllib のどちらを使うべきか",
   },
   "blog/2019/06/why-i-joined-flywheel": {
-    description: "",
+    description: "何を魅力に感じて FLYWHEEL に入社しようと決めたのかの記録です。",
     format: "mdx",
+    modifiedAt: "2019-06-18T09:52:00+09:00",
     publishedAt: "2019-06-17T22:28:00+09:00",
     tags: [],
     title: "なぜ FLYWHEEL に入社したのか",
