@@ -1,10 +1,12 @@
 export type IEntry = IMdx | INotebook
 
+export type ITag = "ブログ開発記" | "essay" | "pyspark" | "GCP" | "gRPC"
+
 export interface IBase {
   description: string
   modifiedAt?: string
   publishedAt: string
-  tags: string[]
+  tags: ITag[]
   title: string
   ogImage?: string
 }
@@ -118,7 +120,7 @@ export const entries: Record<string, IEntry> = {
     format: "mdx",
     modifiedAt: "2019-06-18T09:52:00+09:00",
     publishedAt: "2019-06-17T22:28:00+09:00",
-    tags: [],
+    tags: ["essay"],
     title: "なぜ FLYWHEEL に入社したのか",
   },
 }
