@@ -24,7 +24,9 @@ const withIpynb = nextConfig => ({
         {
           loader: path.resolve("src/loaders/htmltojsx-loader.js"),
         },
-        "ipynb-loader?cellsOnly=true",
+        {
+          loader: path.resolve("src/loaders/ipynb-loader.js"),
+        },
       ],
     })
 
