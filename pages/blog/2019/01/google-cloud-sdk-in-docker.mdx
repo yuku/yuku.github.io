@@ -31,7 +31,7 @@ docker run -it --rm google/cloud-sdk:alpine gcloud version
 認証情報を永続化するために `--name` オプションを使います
 
 ```bash
-docker run -it --name gcloud-config \\
+docker run -it --name gcloud-config \
     google/cloud-sdk:alpine gcloud auth login
 ```
 
@@ -42,15 +42,15 @@ docker run -it --name gcloud-config \\
 `--volumes-from gcloud-config` を指定することで先程認証を行った volume をマウントすることができます。
 
 ```bash
-docker run --rm --volumes-from gcloud-config \\
+docker run --rm --volumes-from gcloud-config \
     google/cloud-sdk:alpine gcloud config list
 ```
 
 余計な container を残さないように `--rm` をつけつつ、今後はすべてこの volume を使ってすべての情報をコマンドラインオプションで指定することにします。 例えば Google AppEngine のバージョン一覧を表示したい場合は:
 
 ```bash
-docker run --rm --volumes-from gcloud-config \\
-    google/cloud-sdk:alpine gcloud versions list \\
+docker run --rm --volumes-from gcloud-config \
+    google/cloud-sdk:alpine gcloud versions list \
     --project YOUR_RPOJECT_NAME
 ```
 
