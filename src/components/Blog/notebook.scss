@@ -62,16 +62,6 @@
     color: #dd4a68;
   }
 
-  // .nb-input[data-prompt-number]::before {
-  //   counter-increment: input-prompt-number;
-  //   content: "In [" counter(input-prompt-number) "]";
-  // }
-
-  // .nb-output[data-prompt-number]::before {
-  //   counter-increment: output-prompt-number;
-  //   content: "Out [" counter(output-prompt-number) "]";
-  // }
-
   @for $i from 1 through 100 {
     .nb-input[data-prompt-number="#{$i}"] {
       &::before {
