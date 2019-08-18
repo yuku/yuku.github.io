@@ -8,7 +8,7 @@ My personal blog site. It is implemented on [Next.js](https://nextjs.org).
 
 ### Requirements
 
-- node v10.14.2
+- node v12
 
 ### Setup
 

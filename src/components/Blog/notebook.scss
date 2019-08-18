@@ -3,295 +3,96 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-.blogpage {
-  .notebook {
-    $prompt-width: 60px;
-    $cell-padding: 0;
+.notebook {
+  $prompt-width: 60px;
+  $cell-padding: 0;
 
-    .header {
-      margin-left: $prompt-width + $cell-padding;
+  // Came from prism.css
+  $prism-pre-padding: 1em;
+  $prism-pre-margin-y: 0.5em;
+
+  .header {
+    margin-left: $prompt-width + $cell-padding;
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
     }
+  }
 
-    .anchor-link {
-      display: none;
-    }
+  .anchor-link {
+    display: none;
+  }
 
-    .cell {
-      align-items: stretch;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      margin: 0px;
-      outline: none;
-      overflow: visible;
-      padding: $cell-padding;
-      position: relative;
-      width: 100%;
-    }
+  .nb-cell {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    overflow: visible;
+    position: relative;
+    width: 100%;
 
-    .text_cell {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-    }
-
-    .input {
-      align-items: stretch;
-      display: flex;
-      flex-direction: row;
-      page-break-inside: avoid;
-    }
-
-    .inner_cell {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      flex: 1;
-    }
-
-    .output {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .output_area {
-      padding: 0px;
-      page-break-inside: avoid;
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-
-      pre {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        vertical-align: baseline;
-        color: $body-color;
-        background-color: transparent;
-        border-radius: 0;
-      }
-    }
-
-    .output_subarea {
-      overflow-x: auto;
-      padding: 1em;
-      flex: 1;
-      max-width: calc(100% - 14ex);
-    }
-
-    .output_scroll {
-      .output_subarea {
-        overflow-x: visible;
-      }
-    }
-
-    .output_text {
-      text-align: left;
-      color: #000;
-      line-height: 1.21429em;
-    }
-
-    .output_stderr {
-      background: #fdd;
-    }
-
-    .output_latex {
-      text-align: left;
-    }
-
-    .output_javascript:empty {
-      padding: 0;
-    }
-
-    .js-error {
-      color: darkred;
-    }
-
-    .prompt {
-      width: $prompt-width;
-      padding: 5px;
-      margin: 0;
-      font-family: monospace;
-      text-align: right;
-      line-height: 1.21429em;
-      user-select: none;
-      cursor: default;
-
-      &:empty {
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-    }
+    padding-left: $prompt-width + $cell-padding;
 
     @include media-breakpoint-down(sm) {
-      .header {
-        margin-left: 5px;
-      }
-
-      .prompt {
-        text-align: left;
-      }
-      .input {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .output_area {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .text_cell > .prompt {
-        display: none;
-      }
+      padding-left: 0;
     }
+  }
 
-    .output_wrapper {
-      align-items: stretch;
-      display: flex;
-      flex-direction: column;
+  .nb-input,
+  .nb-output {
+    position: relative;
+
+    &::before {
+      font-size: $code-font-size;
       position: relative;
-      z-index: 1;
-    }
 
-    .input_prompt {
-      padding-top: 19px;
-      color: #07a;
-    }
-
-    .output_prompt {
-      padding-top: 17px;
-      color: #dd4a68;
-    }
-
-    .rendered_html {
-      table {
-        font-size: 0.8em;
-        border: none;
-      }
-      table,
-      img {
-        margin-left: 0;
-        margin-right: 0;
-      }
-      thead {
-        border-bottom: 1px solid black;
-        vertical-align: bottom;
-      }
-      tr,
-      th,
-      td {
-        text-align: right;
-        vertical-align: middle;
-        padding: 0.5em 0.5em;
-        line-height: normal;
-        white-space: normal;
-        max-width: none;
-        border: none;
-      }
-      th {
-        font-weight: bold;
-      }
-      tbody {
-        tr:nth-child(odd) {
-          background: #f5f5f5;
-        }
-        tr:hover {
-          background: rgba(66, 165, 245, 0.2);
-        }
+      @include media-breakpoint-up(md) {
+        position: absolute;
+        left: -$prompt-width;
+        top: $prism-pre-padding + $prism-pre-margin-y;
       }
     }
+  }
 
-    .dataframe {
-      tbody tr {
-        th {
-          vertical-align: top;
-        }
-        th:only-of-type {
-          vertical-align: middle;
-        }
-      }
+  .nb-input::before {
+    color: #07a;
+  }
 
-      thead th {
-        text-align: right;
-      }
-    }
+  .nb-output::before {
+    color: #dd4a68;
+  }
 
-    .unconfined,
-    .mglyph > img {
-      max-width: none;
-    }
+  // .nb-input[data-prompt-number]::before {
+  //   counter-increment: input-prompt-number;
+  //   content: "In [" counter(input-prompt-number) "]";
+  // }
 
-    .highlight {
-      background: $code-bg;
-      padding: 1em;
-      margin: 0;
-      overflow: auto;
+  // .nb-output[data-prompt-number]::before {
+  //   counter-increment: output-prompt-number;
+  //   content: "Out [" counter(output-prompt-number) "]";
+  // }
 
-      pre {
-        margin: 0px;
-        border: none;
-        padding: 0px;
-        background-color: transparent;
-      }
-
-      .c,
-      .ch,
-      .cm,
-      .c1,
-      .cpf,
-      .cs {
-        color: #708090;
-      }
-
-      .k,
-      .kd,
-      .kn,
-      .kp,
-      .kr {
-        color: #07a;
-      }
-
-      .kc {
-        color: #905;
-      }
-
-      .nb {
-        color: #690;
-      }
-
-      .s,
-      .sa,
-      .sb,
-      .sh,
-      .sc,
-      .dl,
-      .sd,
-      .s1,
-      .s2 {
-        color: #690;
-      }
-
-      .o,
-      .ow {
-        color: #9a6e3a;
-      }
-
-      .m,
-      .mb,
-      .mf,
-      .mh,
-      .mi,
-      .mo {
-        color: #905;
-      }
-
-      .nc,
-      .nf {
-        color: #dd4a68;
+  @for $i from 1 through 100 {
+    .nb-input[data-prompt-number="#{$i}"] {
+      &::before {
+        content: "In [#{$i}]:";
       }
     }
+    .nb-output[data-prompt-number="#{$i}"] {
+      &::before {
+        content: "Out [#{$i}]:";
+      }
+    }
+  }
+
+  .nb-stdout,
+  .nb-text-output {
+    padding: $prism-pre-padding;
+    margin: $prism-pre-margin-y 0;
+  }
+
+  code[class*="language"] {
+    margin: 0;
+    padding: 0;
   }
 }
