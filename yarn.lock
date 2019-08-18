@@ -6226,10 +6226,10 @@ rehype-stringify@^6.0.0:
     hast-util-to-html "^6.0.0"
     xtend "^4.0.1"
 
-remark-github@^7.0.6:
-  version "7.0.7"
-  resolved "https://registry.yarnpkg.com/remark-github/-/remark-github-7.0.7.tgz#432b030f63e32dd9e9921ccc6ca8afd45c839458"
-  integrity sha512-1E29BTyPDUNkTfb2ZdDSrat6ULn/2QjV38X2IRcwc0E2tXswawW4fscDz8SN7aorFc9gnO/Ko0xBVlu0RcG0SA==
+remark-github@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/remark-github/-/remark-github-8.0.0.tgz#f1b2189adaf1b7ffd377dcbef8bbaf36837eaf8c"
+  integrity sha512-N1gWYcvYguZesBGMwfNXBCJEquuWSlb1sSINWiun8fg5k/ea6H9FL/t5I6M4eIgeXLrz3vN8RjJUxkyGdyJQZQ==
   dependencies:
     is-alphabetical "^1.0.0"
     is-decimal "^1.0.0"
@@ -6237,7 +6237,7 @@ remark-github@^7.0.6:
     mdast-util-to-string "^1.0.1"
     unist-util-visit "^1.0.0"
 
-remark-math@^1.0.5:
+remark-math@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-1.0.6.tgz#49eb3dd15d298734c9ae21673115389793af4d1b"
   integrity sha512-I43wU/QOQpXvVFXKjA4FHp5xptK65+5F6yolm8+69/JV0EqSOB64wURUZ3JK50JtnTL8FvwLiH2PZ+fvsBxviA==
