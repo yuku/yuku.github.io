@@ -3,7 +3,7 @@ jobs:
   test:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10.14
+      - image: circleci/node:12
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
@@ -18,9 +18,10 @@ jobs:
             - node_modules
           key: v1-node-dependencies-{{ checksum "package.json" }}
       - run: yarn test
+      - run: yarn build
   build_and_deploy:
     docker:
-      - image: circleci/python:3.7-node
+      - image: circleci/node:12
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
@@ -29,20 +30,7 @@ jobs:
           keys:
             - v1-node-dependencies-{{ checksum "package.json" }}
       - run: yarn install
-      - restore_cache:
-          keys:
-            - v1-python-dependencies-{{ checksum "Pipfile" }}
-            - v1-python-dependencies-
-      - run:
-          name: install dependencies
-          command: |
-            sudo pip install pipenv
-            pipenv install
-      - save_cache:
-          paths:
-            - .venv
-          key: v1-python-dependencies-{{ checksum "Pipfile" }}
-      - run: pipenv run yarn build
+      - run: yarn build
       - run: bash .circleci/deploy.sh
 workflows:
   version: 2

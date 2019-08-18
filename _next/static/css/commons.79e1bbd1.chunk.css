@@ -1,0 +1,694 @@
+.widget .title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative; }
+  .widget .title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid #dee2e6; }
+  .widget .title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    z-index: 1;
+    position: relative;
+    margin: 1rem auto 2rem 0;
+    border-bottom: 1px solid #00bcd4; }
+
+.blogpage .avatar {
+  max-width: 100%;
+  width: 160px;
+  height: auto; }
+
+.blogpage .icons a {
+  color: #343a40; }
+  .blogpage .icons a:hover {
+    color: #00bcd4; }
+
+.blogpage h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+
+.blogpage h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 1rem; }
+
+.blogpage .mdx .body > div > p > a:first-child:last-child > img,
+.blogpage .mdx .body > div > p > img:first-child:last-child {
+  max-width: 100%;
+  height: auto; }
+
+.notebook .header {
+  margin-left: 60px; }
+  @media (max-width: 834.98px) {
+    .notebook .header {
+      margin-left: 0; } }
+
+.notebook .anchor-link {
+  display: none; }
+
+.notebook .nb-cell {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  padding-left: 60px; }
+  @media (max-width: 834.98px) {
+    .notebook .nb-cell {
+      padding-left: 0; } }
+
+.notebook .nb-input,
+.notebook .nb-output {
+  position: relative; }
+  .notebook .nb-input::before,
+  .notebook .nb-output::before {
+    font-size: 87.5%;
+    position: relative; }
+    @media (min-width: 835px) {
+      .notebook .nb-input::before,
+      .notebook .nb-output::before {
+        position: absolute;
+        left: -60px;
+        top: 1.5em; } }
+
+.notebook .nb-input::before {
+  color: #07a; }
+
+.notebook .nb-output::before {
+  color: #dd4a68; }
+
+.notebook .nb-input[data-prompt-number="1"]::before {
+  content: "In [1]:"; }
+
+.notebook .nb-output[data-prompt-number="1"]::before {
+  content: "Out [1]:"; }
+
+.notebook .nb-input[data-prompt-number="2"]::before {
+  content: "In [2]:"; }
+
+.notebook .nb-output[data-prompt-number="2"]::before {
+  content: "Out [2]:"; }
+
+.notebook .nb-input[data-prompt-number="3"]::before {
+  content: "In [3]:"; }
+
+.notebook .nb-output[data-prompt-number="3"]::before {
+  content: "Out [3]:"; }
+
+.notebook .nb-input[data-prompt-number="4"]::before {
+  content: "In [4]:"; }
+
+.notebook .nb-output[data-prompt-number="4"]::before {
+  content: "Out [4]:"; }
+
+.notebook .nb-input[data-prompt-number="5"]::before {
+  content: "In [5]:"; }
+
+.notebook .nb-output[data-prompt-number="5"]::before {
+  content: "Out [5]:"; }
+
+.notebook .nb-input[data-prompt-number="6"]::before {
+  content: "In [6]:"; }
+
+.notebook .nb-output[data-prompt-number="6"]::before {
+  content: "Out [6]:"; }
+
+.notebook .nb-input[data-prompt-number="7"]::before {
+  content: "In [7]:"; }
+
+.notebook .nb-output[data-prompt-number="7"]::before {
+  content: "Out [7]:"; }
+
+.notebook .nb-input[data-prompt-number="8"]::before {
+  content: "In [8]:"; }
+
+.notebook .nb-output[data-prompt-number="8"]::before {
+  content: "Out [8]:"; }
+
+.notebook .nb-input[data-prompt-number="9"]::before {
+  content: "In [9]:"; }
+
+.notebook .nb-output[data-prompt-number="9"]::before {
+  content: "Out [9]:"; }
+
+.notebook .nb-input[data-prompt-number="10"]::before {
+  content: "In [10]:"; }
+
+.notebook .nb-output[data-prompt-number="10"]::before {
+  content: "Out [10]:"; }
+
+.notebook .nb-input[data-prompt-number="11"]::before {
+  content: "In [11]:"; }
+
+.notebook .nb-output[data-prompt-number="11"]::before {
+  content: "Out [11]:"; }
+
+.notebook .nb-input[data-prompt-number="12"]::before {
+  content: "In [12]:"; }
+
+.notebook .nb-output[data-prompt-number="12"]::before {
+  content: "Out [12]:"; }
+
+.notebook .nb-input[data-prompt-number="13"]::before {
+  content: "In [13]:"; }
+
+.notebook .nb-output[data-prompt-number="13"]::before {
+  content: "Out [13]:"; }
+
+.notebook .nb-input[data-prompt-number="14"]::before {
+  content: "In [14]:"; }
+
+.notebook .nb-output[data-prompt-number="14"]::before {
+  content: "Out [14]:"; }
+
+.notebook .nb-input[data-prompt-number="15"]::before {
+  content: "In [15]:"; }
+
+.notebook .nb-output[data-prompt-number="15"]::before {
+  content: "Out [15]:"; }
+
+.notebook .nb-input[data-prompt-number="16"]::before {
+  content: "In [16]:"; }
+
+.notebook .nb-output[data-prompt-number="16"]::before {
+  content: "Out [16]:"; }
+
+.notebook .nb-input[data-prompt-number="17"]::before {
+  content: "In [17]:"; }
+
+.notebook .nb-output[data-prompt-number="17"]::before {
+  content: "Out [17]:"; }
+
+.notebook .nb-input[data-prompt-number="18"]::before {
+  content: "In [18]:"; }
+
+.notebook .nb-output[data-prompt-number="18"]::before {
+  content: "Out [18]:"; }
+
+.notebook .nb-input[data-prompt-number="19"]::before {
+  content: "In [19]:"; }
+
+.notebook .nb-output[data-prompt-number="19"]::before {
+  content: "Out [19]:"; }
+
+.notebook .nb-input[data-prompt-number="20"]::before {
+  content: "In [20]:"; }
+
+.notebook .nb-output[data-prompt-number="20"]::before {
+  content: "Out [20]:"; }
+
+.notebook .nb-input[data-prompt-number="21"]::before {
+  content: "In [21]:"; }
+
+.notebook .nb-output[data-prompt-number="21"]::before {
+  content: "Out [21]:"; }
+
+.notebook .nb-input[data-prompt-number="22"]::before {
+  content: "In [22]:"; }
+
+.notebook .nb-output[data-prompt-number="22"]::before {
+  content: "Out [22]:"; }
+
+.notebook .nb-input[data-prompt-number="23"]::before {
+  content: "In [23]:"; }
+
+.notebook .nb-output[data-prompt-number="23"]::before {
+  content: "Out [23]:"; }
+
+.notebook .nb-input[data-prompt-number="24"]::before {
+  content: "In [24]:"; }
+
+.notebook .nb-output[data-prompt-number="24"]::before {
+  content: "Out [24]:"; }
+
+.notebook .nb-input[data-prompt-number="25"]::before {
+  content: "In [25]:"; }
+
+.notebook .nb-output[data-prompt-number="25"]::before {
+  content: "Out [25]:"; }
+
+.notebook .nb-input[data-prompt-number="26"]::before {
+  content: "In [26]:"; }
+
+.notebook .nb-output[data-prompt-number="26"]::before {
+  content: "Out [26]:"; }
+
+.notebook .nb-input[data-prompt-number="27"]::before {
+  content: "In [27]:"; }
+
+.notebook .nb-output[data-prompt-number="27"]::before {
+  content: "Out [27]:"; }
+
+.notebook .nb-input[data-prompt-number="28"]::before {
+  content: "In [28]:"; }
+
+.notebook .nb-output[data-prompt-number="28"]::before {
+  content: "Out [28]:"; }
+
+.notebook .nb-input[data-prompt-number="29"]::before {
+  content: "In [29]:"; }
+
+.notebook .nb-output[data-prompt-number="29"]::before {
+  content: "Out [29]:"; }
+
+.notebook .nb-input[data-prompt-number="30"]::before {
+  content: "In [30]:"; }
+
+.notebook .nb-output[data-prompt-number="30"]::before {
+  content: "Out [30]:"; }
+
+.notebook .nb-input[data-prompt-number="31"]::before {
+  content: "In [31]:"; }
+
+.notebook .nb-output[data-prompt-number="31"]::before {
+  content: "Out [31]:"; }
+
+.notebook .nb-input[data-prompt-number="32"]::before {
+  content: "In [32]:"; }
+
+.notebook .nb-output[data-prompt-number="32"]::before {
+  content: "Out [32]:"; }
+
+.notebook .nb-input[data-prompt-number="33"]::before {
+  content: "In [33]:"; }
+
+.notebook .nb-output[data-prompt-number="33"]::before {
+  content: "Out [33]:"; }
+
+.notebook .nb-input[data-prompt-number="34"]::before {
+  content: "In [34]:"; }
+
+.notebook .nb-output[data-prompt-number="34"]::before {
+  content: "Out [34]:"; }
+
+.notebook .nb-input[data-prompt-number="35"]::before {
+  content: "In [35]:"; }
+
+.notebook .nb-output[data-prompt-number="35"]::before {
+  content: "Out [35]:"; }
+
+.notebook .nb-input[data-prompt-number="36"]::before {
+  content: "In [36]:"; }
+
+.notebook .nb-output[data-prompt-number="36"]::before {
+  content: "Out [36]:"; }
+
+.notebook .nb-input[data-prompt-number="37"]::before {
+  content: "In [37]:"; }
+
+.notebook .nb-output[data-prompt-number="37"]::before {
+  content: "Out [37]:"; }
+
+.notebook .nb-input[data-prompt-number="38"]::before {
+  content: "In [38]:"; }
+
+.notebook .nb-output[data-prompt-number="38"]::before {
+  content: "Out [38]:"; }
+
+.notebook .nb-input[data-prompt-number="39"]::before {
+  content: "In [39]:"; }
+
+.notebook .nb-output[data-prompt-number="39"]::before {
+  content: "Out [39]:"; }
+
+.notebook .nb-input[data-prompt-number="40"]::before {
+  content: "In [40]:"; }
+
+.notebook .nb-output[data-prompt-number="40"]::before {
+  content: "Out [40]:"; }
+
+.notebook .nb-input[data-prompt-number="41"]::before {
+  content: "In [41]:"; }
+
+.notebook .nb-output[data-prompt-number="41"]::before {
+  content: "Out [41]:"; }
+
+.notebook .nb-input[data-prompt-number="42"]::before {
+  content: "In [42]:"; }
+
+.notebook .nb-output[data-prompt-number="42"]::before {
+  content: "Out [42]:"; }
+
+.notebook .nb-input[data-prompt-number="43"]::before {
+  content: "In [43]:"; }
+
+.notebook .nb-output[data-prompt-number="43"]::before {
+  content: "Out [43]:"; }
+
+.notebook .nb-input[data-prompt-number="44"]::before {
+  content: "In [44]:"; }
+
+.notebook .nb-output[data-prompt-number="44"]::before {
+  content: "Out [44]:"; }
+
+.notebook .nb-input[data-prompt-number="45"]::before {
+  content: "In [45]:"; }
+
+.notebook .nb-output[data-prompt-number="45"]::before {
+  content: "Out [45]:"; }
+
+.notebook .nb-input[data-prompt-number="46"]::before {
+  content: "In [46]:"; }
+
+.notebook .nb-output[data-prompt-number="46"]::before {
+  content: "Out [46]:"; }
+
+.notebook .nb-input[data-prompt-number="47"]::before {
+  content: "In [47]:"; }
+
+.notebook .nb-output[data-prompt-number="47"]::before {
+  content: "Out [47]:"; }
+
+.notebook .nb-input[data-prompt-number="48"]::before {
+  content: "In [48]:"; }
+
+.notebook .nb-output[data-prompt-number="48"]::before {
+  content: "Out [48]:"; }
+
+.notebook .nb-input[data-prompt-number="49"]::before {
+  content: "In [49]:"; }
+
+.notebook .nb-output[data-prompt-number="49"]::before {
+  content: "Out [49]:"; }
+
+.notebook .nb-input[data-prompt-number="50"]::before {
+  content: "In [50]:"; }
+
+.notebook .nb-output[data-prompt-number="50"]::before {
+  content: "Out [50]:"; }
+
+.notebook .nb-input[data-prompt-number="51"]::before {
+  content: "In [51]:"; }
+
+.notebook .nb-output[data-prompt-number="51"]::before {
+  content: "Out [51]:"; }
+
+.notebook .nb-input[data-prompt-number="52"]::before {
+  content: "In [52]:"; }
+
+.notebook .nb-output[data-prompt-number="52"]::before {
+  content: "Out [52]:"; }
+
+.notebook .nb-input[data-prompt-number="53"]::before {
+  content: "In [53]:"; }
+
+.notebook .nb-output[data-prompt-number="53"]::before {
+  content: "Out [53]:"; }
+
+.notebook .nb-input[data-prompt-number="54"]::before {
+  content: "In [54]:"; }
+
+.notebook .nb-output[data-prompt-number="54"]::before {
+  content: "Out [54]:"; }
+
+.notebook .nb-input[data-prompt-number="55"]::before {
+  content: "In [55]:"; }
+
+.notebook .nb-output[data-prompt-number="55"]::before {
+  content: "Out [55]:"; }
+
+.notebook .nb-input[data-prompt-number="56"]::before {
+  content: "In [56]:"; }
+
+.notebook .nb-output[data-prompt-number="56"]::before {
+  content: "Out [56]:"; }
+
+.notebook .nb-input[data-prompt-number="57"]::before {
+  content: "In [57]:"; }
+
+.notebook .nb-output[data-prompt-number="57"]::before {
+  content: "Out [57]:"; }
+
+.notebook .nb-input[data-prompt-number="58"]::before {
+  content: "In [58]:"; }
+
+.notebook .nb-output[data-prompt-number="58"]::before {
+  content: "Out [58]:"; }
+
+.notebook .nb-input[data-prompt-number="59"]::before {
+  content: "In [59]:"; }
+
+.notebook .nb-output[data-prompt-number="59"]::before {
+  content: "Out [59]:"; }
+
+.notebook .nb-input[data-prompt-number="60"]::before {
+  content: "In [60]:"; }
+
+.notebook .nb-output[data-prompt-number="60"]::before {
+  content: "Out [60]:"; }
+
+.notebook .nb-input[data-prompt-number="61"]::before {
+  content: "In [61]:"; }
+
+.notebook .nb-output[data-prompt-number="61"]::before {
+  content: "Out [61]:"; }
+
+.notebook .nb-input[data-prompt-number="62"]::before {
+  content: "In [62]:"; }
+
+.notebook .nb-output[data-prompt-number="62"]::before {
+  content: "Out [62]:"; }
+
+.notebook .nb-input[data-prompt-number="63"]::before {
+  content: "In [63]:"; }
+
+.notebook .nb-output[data-prompt-number="63"]::before {
+  content: "Out [63]:"; }
+
+.notebook .nb-input[data-prompt-number="64"]::before {
+  content: "In [64]:"; }
+
+.notebook .nb-output[data-prompt-number="64"]::before {
+  content: "Out [64]:"; }
+
+.notebook .nb-input[data-prompt-number="65"]::before {
+  content: "In [65]:"; }
+
+.notebook .nb-output[data-prompt-number="65"]::before {
+  content: "Out [65]:"; }
+
+.notebook .nb-input[data-prompt-number="66"]::before {
+  content: "In [66]:"; }
+
+.notebook .nb-output[data-prompt-number="66"]::before {
+  content: "Out [66]:"; }
+
+.notebook .nb-input[data-prompt-number="67"]::before {
+  content: "In [67]:"; }
+
+.notebook .nb-output[data-prompt-number="67"]::before {
+  content: "Out [67]:"; }
+
+.notebook .nb-input[data-prompt-number="68"]::before {
+  content: "In [68]:"; }
+
+.notebook .nb-output[data-prompt-number="68"]::before {
+  content: "Out [68]:"; }
+
+.notebook .nb-input[data-prompt-number="69"]::before {
+  content: "In [69]:"; }
+
+.notebook .nb-output[data-prompt-number="69"]::before {
+  content: "Out [69]:"; }
+
+.notebook .nb-input[data-prompt-number="70"]::before {
+  content: "In [70]:"; }
+
+.notebook .nb-output[data-prompt-number="70"]::before {
+  content: "Out [70]:"; }
+
+.notebook .nb-input[data-prompt-number="71"]::before {
+  content: "In [71]:"; }
+
+.notebook .nb-output[data-prompt-number="71"]::before {
+  content: "Out [71]:"; }
+
+.notebook .nb-input[data-prompt-number="72"]::before {
+  content: "In [72]:"; }
+
+.notebook .nb-output[data-prompt-number="72"]::before {
+  content: "Out [72]:"; }
+
+.notebook .nb-input[data-prompt-number="73"]::before {
+  content: "In [73]:"; }
+
+.notebook .nb-output[data-prompt-number="73"]::before {
+  content: "Out [73]:"; }
+
+.notebook .nb-input[data-prompt-number="74"]::before {
+  content: "In [74]:"; }
+
+.notebook .nb-output[data-prompt-number="74"]::before {
+  content: "Out [74]:"; }
+
+.notebook .nb-input[data-prompt-number="75"]::before {
+  content: "In [75]:"; }
+
+.notebook .nb-output[data-prompt-number="75"]::before {
+  content: "Out [75]:"; }
+
+.notebook .nb-input[data-prompt-number="76"]::before {
+  content: "In [76]:"; }
+
+.notebook .nb-output[data-prompt-number="76"]::before {
+  content: "Out [76]:"; }
+
+.notebook .nb-input[data-prompt-number="77"]::before {
+  content: "In [77]:"; }
+
+.notebook .nb-output[data-prompt-number="77"]::before {
+  content: "Out [77]:"; }
+
+.notebook .nb-input[data-prompt-number="78"]::before {
+  content: "In [78]:"; }
+
+.notebook .nb-output[data-prompt-number="78"]::before {
+  content: "Out [78]:"; }
+
+.notebook .nb-input[data-prompt-number="79"]::before {
+  content: "In [79]:"; }
+
+.notebook .nb-output[data-prompt-number="79"]::before {
+  content: "Out [79]:"; }
+
+.notebook .nb-input[data-prompt-number="80"]::before {
+  content: "In [80]:"; }
+
+.notebook .nb-output[data-prompt-number="80"]::before {
+  content: "Out [80]:"; }
+
+.notebook .nb-input[data-prompt-number="81"]::before {
+  content: "In [81]:"; }
+
+.notebook .nb-output[data-prompt-number="81"]::before {
+  content: "Out [81]:"; }
+
+.notebook .nb-input[data-prompt-number="82"]::before {
+  content: "In [82]:"; }
+
+.notebook .nb-output[data-prompt-number="82"]::before {
+  content: "Out [82]:"; }
+
+.notebook .nb-input[data-prompt-number="83"]::before {
+  content: "In [83]:"; }
+
+.notebook .nb-output[data-prompt-number="83"]::before {
+  content: "Out [83]:"; }
+
+.notebook .nb-input[data-prompt-number="84"]::before {
+  content: "In [84]:"; }
+
+.notebook .nb-output[data-prompt-number="84"]::before {
+  content: "Out [84]:"; }
+
+.notebook .nb-input[data-prompt-number="85"]::before {
+  content: "In [85]:"; }
+
+.notebook .nb-output[data-prompt-number="85"]::before {
+  content: "Out [85]:"; }
+
+.notebook .nb-input[data-prompt-number="86"]::before {
+  content: "In [86]:"; }
+
+.notebook .nb-output[data-prompt-number="86"]::before {
+  content: "Out [86]:"; }
+
+.notebook .nb-input[data-prompt-number="87"]::before {
+  content: "In [87]:"; }
+
+.notebook .nb-output[data-prompt-number="87"]::before {
+  content: "Out [87]:"; }
+
+.notebook .nb-input[data-prompt-number="88"]::before {
+  content: "In [88]:"; }
+
+.notebook .nb-output[data-prompt-number="88"]::before {
+  content: "Out [88]:"; }
+
+.notebook .nb-input[data-prompt-number="89"]::before {
+  content: "In [89]:"; }
+
+.notebook .nb-output[data-prompt-number="89"]::before {
+  content: "Out [89]:"; }
+
+.notebook .nb-input[data-prompt-number="90"]::before {
+  content: "In [90]:"; }
+
+.notebook .nb-output[data-prompt-number="90"]::before {
+  content: "Out [90]:"; }
+
+.notebook .nb-input[data-prompt-number="91"]::before {
+  content: "In [91]:"; }
+
+.notebook .nb-output[data-prompt-number="91"]::before {
+  content: "Out [91]:"; }
+
+.notebook .nb-input[data-prompt-number="92"]::before {
+  content: "In [92]:"; }
+
+.notebook .nb-output[data-prompt-number="92"]::before {
+  content: "Out [92]:"; }
+
+.notebook .nb-input[data-prompt-number="93"]::before {
+  content: "In [93]:"; }
+
+.notebook .nb-output[data-prompt-number="93"]::before {
+  content: "Out [93]:"; }
+
+.notebook .nb-input[data-prompt-number="94"]::before {
+  content: "In [94]:"; }
+
+.notebook .nb-output[data-prompt-number="94"]::before {
+  content: "Out [94]:"; }
+
+.notebook .nb-input[data-prompt-number="95"]::before {
+  content: "In [95]:"; }
+
+.notebook .nb-output[data-prompt-number="95"]::before {
+  content: "Out [95]:"; }
+
+.notebook .nb-input[data-prompt-number="96"]::before {
+  content: "In [96]:"; }
+
+.notebook .nb-output[data-prompt-number="96"]::before {
+  content: "Out [96]:"; }
+
+.notebook .nb-input[data-prompt-number="97"]::before {
+  content: "In [97]:"; }
+
+.notebook .nb-output[data-prompt-number="97"]::before {
+  content: "Out [97]:"; }
+
+.notebook .nb-input[data-prompt-number="98"]::before {
+  content: "In [98]:"; }
+
+.notebook .nb-output[data-prompt-number="98"]::before {
+  content: "Out [98]:"; }
+
+.notebook .nb-input[data-prompt-number="99"]::before {
+  content: "In [99]:"; }
+
+.notebook .nb-output[data-prompt-number="99"]::before {
+  content: "Out [99]:"; }
+
+.notebook .nb-input[data-prompt-number="100"]::before {
+  content: "In [100]:"; }
+
+.notebook .nb-output[data-prompt-number="100"]::before {
+  content: "Out [100]:"; }
+
+.notebook .nb-stdout,
+.notebook .nb-text-output {
+  padding: 1em;
+  margin: 0.5em 0; }
+
+.notebook code[class*="language"] {
+  margin: 0;
+  padding: 0; }
+
