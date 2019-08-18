@@ -2,8 +2,7 @@
   "private": true,
   "repository": "yuku/yuku.github.io",
   "engines": {
-    "node": "^10.14.2",
-    "yarn": "^1.12.3"
+    "node": "^10.14.2"
   },
   "scripts": {
     "build:entries": "ts-node script/build-entries.ts",
