@@ -3,7 +3,7 @@ jobs:
   test:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10.14
+      - image: circleci/node:12
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
@@ -20,7 +20,7 @@ jobs:
       - run: yarn test
   build_and_deploy:
     docker:
-      - image: circleci/node:10.14
+      - image: circleci/node:12
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
