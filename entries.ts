@@ -123,4 +123,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["essay"],
     title: "なぜ FLYWHEEL に入社したのか",
   },
+  "blog/2019/08/ipynb-without-python": {
+    description: "Python を使わずに Jupyter Notebook 形式をサポートしました。",
+    format: "mdx",
+    publishedAt: "2019-08-18T19:10:00+09:00",
+    tags: ["ブログ開発記"],
+    title: "ブログのビルド環境から Python を排除した",
+  },
 }
