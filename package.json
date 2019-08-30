@@ -50,7 +50,6 @@
     "remark-math": "^1.0.6",
     "remark-parse": "^7.0.1",
     "remark-rehype": "^5.0.0",
-    "ts-node": "^7.0.1",
     "typescript": "^3.2.2",
     "unified": "^8.3.2",
     "webpack": "^4.39.3"
