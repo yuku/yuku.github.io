@@ -28,20 +28,18 @@ function createPageForMdx(entryName: string, pathname: string) {
       meta: IMdx
     }
 
-    export default class extends React.Component<IProps> {
-      static async getInitialProps() {
-        const { entries } = require("${ROOT}/entries")
-        return { meta: entries["${pathname.substr(6)}"] }
-      }
+    const MdxPage = ({ meta }: IProps) => (
+      <Mdx meta={meta}>
+        <Component />
+      </Mdx>
+    )
 
-      public render() {
-        return (
-          <Mdx meta={this.props.meta}>
-            <Component />
-          </Mdx>
-        )
-      }
+    MdxPage.getInitialProps = async () => {
+      const { entries } = require("${ROOT}/entries")
+      return { meta: entries["${pathname.substr(6)}"] }
     }
+
+    export default MdxPage
   `
 }
 
@@ -58,20 +56,18 @@ function createPageForIpynb(entryName: string, pathname: string) {
       meta: INotebook
     }
 
-    export default class extends React.Component<IProps> {
-      static async getInitialProps() {
-        const { entries } = require("${ROOT}/entries")
-        return { meta: entries["${pathname.substr(6)}"] }
-      }
+    const IpynbPage = ({ meta }: IProps) => (
+      <Notebook meta={meta}>
+        <Component />
+      </Notebook>
+    )
 
-      public render() {
-        return (
-          <Notebook meta={this.props.meta}>
-            <Component />
-          </Notebook>
-        )
-      }
+    IpynbPage.getInitialProps = async () => {
+      const { entries } = require("${ROOT}/entries")
+      return { meta: entries["${pathname.substr(6)}"] }
     }
+
+    export default IpynbPage
   `
 }
 

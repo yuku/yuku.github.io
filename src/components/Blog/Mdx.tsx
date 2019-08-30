@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { IMdx } from "../../../entries"
 import Layout from "./Layout"
@@ -10,22 +10,20 @@ interface IProps {
   children: React.ReactNode
 }
 
-export default class extends React.Component<IProps> {
-  public componentDidMount() {
-    if (this.props.meta.loadTwitterWidget) {
+export default function Mdx({ meta, children }: IProps) {
+  useEffect(() => {
+    if (meta.loadTwitterWidget) {
       const script = document.createElement("script")
       script.async = true
       script.src = "https://platform.twitter.com/widgets.js"
       script.charset = "utf-8"
       document.body.appendChild(script)
     }
-  }
+  }, [])
 
-  public render() {
-    return (
-      <Layout className="mdx" meta={this.props.meta}>
-        {this.props.children}
-      </Layout>
-    )
-  }
+  return (
+    <Layout className="mdx" meta={meta}>
+      {children}
+    </Layout>
+  )
 }
