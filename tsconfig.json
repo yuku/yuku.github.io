@@ -21,7 +21,5 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true
-  },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "script/build-entries.js", "script/build-entries.js"]
+  }
 }

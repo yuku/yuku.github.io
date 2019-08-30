@@ -1,18 +1,21 @@
 // Generate pages for each entries
 
-const fs = require("fs")
-const utils = require("util")
-const path = require("path")
+import fs from "fs"
+import utils from "util"
+import path from "path"
 
-const del = require("del")
-const prettier = require("prettier")
+import del from "del"
+import prettier from "prettier"
+import RSS from "rss"
+
+import { entries } from "../entries"
 
 const glob = utils.promisify(require("glob"))
 const writeFile = utils.promisify(fs.writeFile)
 
 const ROOT = path.resolve(__dirname, "../")
 
-function createPageForMdx(entryName, pathname) {
+function createPageForMdx(entryName: string, pathname: string) {
   return `
     import React from "react"
     
@@ -42,7 +45,7 @@ function createPageForMdx(entryName, pathname) {
   `
 }
 
-function createPageForIpynb(entryName, pathname) {
+function createPageForIpynb(entryName: string, pathname: string) {
   return `
     import React from "react"
 
@@ -72,7 +75,7 @@ function createPageForIpynb(entryName, pathname) {
   `
 }
 
-async function createPage(entryPath) {
+async function createPage(entryPath: string) {
   const type = entryPath.split(".")[1]
   if (type) {
     const func = type === "mdx" ? createPageForMdx : createPageForIpynb
@@ -88,6 +91,26 @@ async function createPage(entryPath) {
   }
 }
 
+const rssPath = "static/rss-feed.xml"
+
+function generateRSS() {
+  const siteUrl = "https://yuku.takahashi.coffee"
+  const feed = new RSS({
+    title: "yt coffee",
+    site_url: siteUrl,
+    feed_url: siteUrl + "/" + rssPath,
+  })
+  Object.entries(entries).forEach(([path, { title, description, publishedAt }]) => {
+    feed.item({
+      title,
+      description,
+      url: siteUrl + "/" + path,
+      date: publishedAt,
+    })
+  })
+  return feed.xml({ indent: true })
+}
+
 async function main() {
   // Unlink all blog pages
   await del("pages/blog/**/*.tsx")
@@ -95,6 +118,10 @@ async function main() {
   console.log("Create blog pages:")
   const entryPaths = await glob("pages/blog/**/*")
   await Promise.all(entryPaths.map(createPage))
+
+  const rssXML = generateRSS()
+  fs.writeFileSync(rssPath, rssXML)
+  console.log(`Saved RSS feed to ${rssPath}`)
 }
 
 main()
