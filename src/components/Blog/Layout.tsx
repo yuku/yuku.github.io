@@ -100,6 +100,14 @@ const Layout = (props: WithRouterProps & IProps) => (
                   </span>
                 </a>
               </li>
+              <li className="list-inline-item">
+                <a href="/static/rss-feed.xml">
+                  <span className="fa-stack fa-lg">
+                    <i className="fas fa-circle fa-stack-2x" />
+                    <i className="fas fa-rss fa-stack-1x fa-inverse" />
+                  </span>
+                </a>
+              </li>
             </ul>
           </Widget>
         </div>

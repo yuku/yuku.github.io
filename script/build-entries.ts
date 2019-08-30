@@ -6,6 +6,9 @@ import path from "path"
 
 import del from "del"
 import prettier from "prettier"
+import RSS from "rss"
+
+import { entries } from "../entries"
 
 const glob = utils.promisify(require("glob"))
 const writeFile = utils.promisify(fs.writeFile)
@@ -88,6 +91,26 @@ async function createPage(entryPath: string) {
   }
 }
 
+const rssPath = "static/rss-feed.xml"
+
+function generateRSS() {
+  const siteUrl = "https://yuku.takahashi.coffee"
+  const feed = new RSS({
+    title: "yt coffee",
+    site_url: siteUrl,
+    feed_url: siteUrl + "/" + rssPath,
+  })
+  Object.entries(entries).forEach(([path, { title, description, publishedAt }]) => {
+    feed.item({
+      title,
+      description,
+      url: siteUrl + "/" + path,
+      date: publishedAt,
+    })
+  })
+  return feed.xml({ indent: true })
+}
+
 async function main() {
   // Unlink all blog pages
   await del("pages/blog/**/*.tsx")
@@ -95,6 +118,10 @@ async function main() {
   console.log("Create blog pages:")
   const entryPaths = await glob("pages/blog/**/*")
   await Promise.all(entryPaths.map(createPage))
+
+  const rssXML = generateRSS()
+  fs.writeFileSync(rssPath, rssXML)
+  console.log(`Saved RSS feed to ${rssPath}`)
 }
 
 main()

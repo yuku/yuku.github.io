@@ -7,3 +7,4 @@ pages/blog/**/*.tsx
 tmp
 yarn-debug.log*
 yarn-error.log*
+static/rss-feed.xml
