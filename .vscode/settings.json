@@ -1,3 +1,17 @@
 {
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  // Set the default formatOnSave
+  "editor.formatOnSave": false,
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  }
 }
