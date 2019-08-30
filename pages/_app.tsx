@@ -40,7 +40,6 @@ class MyApp extends App {
           <meta name="google-site-verification" content="uoCr1A890A-K8B7GkFUvLlQ5ihZlFyR6gzvt4F-62u0" />
           <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700|Damion" rel="stylesheet" />
           <link rel="alternate" type="application/rss+xml" href="/static/rss-feed.xml" />
-          <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" />
         </Head>
         <Layout>
           <Component {...pageProps} />

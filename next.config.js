@@ -1,5 +1,6 @@
 const path = require("path")
 
+const withCss = require("@zeit/next-css")
 const withSass = require("@zeit/next-sass")
 
 const github = require("remark-github")
@@ -33,15 +34,17 @@ const withIpynb = nextConfig => ({
   },
 })
 
-module.exports = withSass(
-  withMDX(
-    withIpynb({
-      exportPathMap(defaultMap) {
-        return {
-          ...defaultMap,
-          "/404.html": { page: "/_error" },
-        }
-      },
-    }),
+module.exports = withCss(
+  withSass(
+    withMDX(
+      withIpynb({
+        exportPathMap(defaultMap) {
+          return {
+            ...defaultMap,
+            "/404.html": { page: "/_error" },
+          }
+        },
+      }),
+    ),
   ),
 )

@@ -5,12 +5,15 @@ import { withRouter } from "next/router"
 import { WithRouterProps } from "next/dist/client/with-router"
 import cn from "classnames"
 import moment from "moment"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { IBase } from "../../../entries"
 import { AVATAR_PATHNAME, FB_APP_ID, SITE_NAME } from "../../constants"
 import { Widget } from "../Widget"
 
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import "./blogpage.scss"
+import "../../configureFontAwesome"
 
 interface IProps {
   meta: IBase
@@ -87,24 +90,24 @@ const Layout = (props: WithRouterProps & IProps) => (
               <li className="list-inline-item">
                 <a href="https://twitter.com/yuku_t">
                   <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x" />
-                    <i className="fab fa-twitter fa-stack-1x fa-inverse" />
+                    <FontAwesomeIcon icon="circle" className="fa-stack-2x" />
+                    <FontAwesomeIcon icon={["fab", "twitter"]} inverse className="fa-stack-1x" />
                   </span>
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="https://github.com/yuku">
                   <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x" />
-                    <i className="fab fa-github fa-stack-1x fa-inverse" />
+                    <FontAwesomeIcon icon="circle" className="fa-stack-2x" />
+                    <FontAwesomeIcon icon={["fab", "github"]} inverse className="fa-stack-1x" />
                   </span>
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="/static/rss-feed.xml">
                   <span className="fa-stack fa-lg">
-                    <i className="fas fa-circle fa-stack-2x" />
-                    <i className="fas fa-rss fa-stack-1x fa-inverse" />
+                    <FontAwesomeIcon icon="circle" className="fa-stack-2x" />
+                    <FontAwesomeIcon icon="rss" inverse className="fa-stack-1x" />
                   </span>
                 </a>
               </li>
