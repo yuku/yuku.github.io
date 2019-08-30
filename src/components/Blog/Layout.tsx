@@ -1,7 +1,8 @@
 import React from "react"
 import Head from "next/head"
 import Link from "next/link"
-import { withRouter, WithRouterProps } from "next/router"
+import { withRouter } from "next/router"
+import { WithRouterProps } from "next/dist/client/with-router"
 import cn from "classnames"
 import moment from "moment"
 

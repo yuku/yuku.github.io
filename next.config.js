@@ -1,7 +1,6 @@
 const path = require("path")
 
 const withSass = require("@zeit/next-sass")
-const withTypescript = require("@zeit/next-typescript")
 
 const github = require("remark-github")
 const math = require("remark-math")
@@ -34,17 +33,15 @@ const withIpynb = nextConfig => ({
   },
 })
 
-module.exports = withTypescript(
-  withSass(
-    withMDX(
-      withIpynb({
-        exportPathMap(defaultMap) {
-          return {
-            ...defaultMap,
-            "/404.html": { page: "/_error" },
-          }
-        },
-      }),
-    ),
+module.exports = withSass(
+  withMDX(
+    withIpynb({
+      exportPathMap(defaultMap) {
+        return {
+          ...defaultMap,
+          "/404.html": { page: "/_error" },
+        }
+      },
+    }),
   ),
 )

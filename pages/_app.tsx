@@ -1,5 +1,5 @@
 import React from "react"
-import App, { Container } from "next/app"
+import App from "next/app"
 import Head from "next/head"
 import Router from "next/router"
 import withGA from "next-ga"
@@ -14,7 +14,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
 
     return (
-      <Container>
+      <>
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -44,7 +44,7 @@ class MyApp extends App {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </Container>
+      </>
     )
   }
 }

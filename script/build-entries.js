@@ -12,7 +12,7 @@ const writeFile = utils.promisify(fs.writeFile)
 
 const ROOT = path.resolve(__dirname, "../")
 
-function createPageForMdx(entryName: string, pathname: string) {
+function createPageForMdx(entryName, pathname) {
   return `
     import React from "react"
     
@@ -42,7 +42,7 @@ function createPageForMdx(entryName: string, pathname: string) {
   `
 }
 
-function createPageForIpynb(entryName: string, pathname: string) {
+function createPageForIpynb(entryName, pathname) {
   return `
     import React from "react"
 
@@ -72,7 +72,7 @@ function createPageForIpynb(entryName: string, pathname: string) {
   `
 }
 
-async function createPage(entryPath: string) {
+async function createPage(entryPath) {
   const type = entryPath.split(".")[1]
   if (type) {
     const func = type === "mdx" ? createPageForMdx : createPageForIpynb
