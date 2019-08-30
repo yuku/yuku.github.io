@@ -1,18 +1,18 @@
 // Generate pages for each entries
 
-const fs = require("fs")
-const utils = require("util")
-const path = require("path")
+import fs from "fs"
+import utils from "util"
+import path from "path"
 
-const del = require("del")
-const prettier = require("prettier")
+import del from "del"
+import prettier from "prettier"
 
 const glob = utils.promisify(require("glob"))
 const writeFile = utils.promisify(fs.writeFile)
 
 const ROOT = path.resolve(__dirname, "../")
 
-function createPageForMdx(entryName, pathname) {
+function createPageForMdx(entryName: string, pathname: string) {
   return `
     import React from "react"
     
@@ -42,7 +42,7 @@ function createPageForMdx(entryName, pathname) {
   `
 }
 
-function createPageForIpynb(entryName, pathname) {
+function createPageForIpynb(entryName: string, pathname: string) {
   return `
     import React from "react"
 
@@ -72,7 +72,7 @@ function createPageForIpynb(entryName, pathname) {
   `
 }
 
-async function createPage(entryPath) {
+async function createPage(entryPath: string) {
   const type = entryPath.split(".")[1]
   if (type) {
     const func = type === "mdx" ? createPageForMdx : createPageForIpynb

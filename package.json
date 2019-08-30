@@ -5,7 +5,7 @@
     "node": "12"
   },
   "scripts": {
-    "build:entries": "node ./script/build-entries.js",
+    "build:entries": "ts-node --project ./script/tsconfig.json ./script/build-entries.ts",
     "build:next": "next build && next export && touch ./out/.nojekyll && echo yuku.takahashi.coffee > ./out/CNAME",
     "build": "run-s build:entries build:next",
     "deploy": "gh-pages -d out -b master -t",
@@ -23,6 +23,7 @@
     "@types/classnames": "^2.2.6",
     "@types/glob": "^7.1.1",
     "@types/next": "^8.0.6",
+    "@types/prettier": "^1.18.2",
     "@types/react": "^16.9.2",
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-sass": "^1.0.1",
@@ -31,7 +32,7 @@
     "bootstrap": "^4.2.1",
     "chokidar": "^2.0.4",
     "classnames": "^2.2.6",
-    "del": "^3.0.0",
+    "del": "^5.1.0",
     "glob": "^7.1.3",
     "htmltojsx": "^0.3.0",
     "lodash.debounce": "^4.0.8",
@@ -50,7 +51,8 @@
     "remark-math": "^1.0.6",
     "remark-parse": "^7.0.1",
     "remark-rehype": "^5.0.0",
-    "typescript": "^3.2.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.6.2",
     "unified": "^8.3.2",
     "webpack": "^4.39.3"
   },
