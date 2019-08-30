@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { withRouter, WithRouterProps } from "next/router"
+import { withRouter } from "next/router"
+import { WithRouterProps } from "next/dist/client/with-router"
 import cn from "classnames"
 
 import { SITE_NAME } from "../../constants"
