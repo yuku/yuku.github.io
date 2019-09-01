@@ -130,4 +130,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["ブログ開発記"],
     title: "ブログのビルド環境から Python を排除した",
   },
+  "blog/2019/08/rss-feed": {
+    description: "ブログに RSS フィードを実装しました。",
+    format: "mdx",
+    publishedAt: "2019-08-30T19:10:00+09:00",
+    tags: ["ブログ開発記"],
+    title: "RSS フィードを実装した",
+  },
 }
