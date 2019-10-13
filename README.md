@@ -1,7 +1,5 @@
 # yuku.takahashi.coffee
 
-[![CircleCI](https://circleci.com/gh/yuku/yuku.github.io.svg?style=svg)](https://circleci.com/gh/yuku/yuku.github.io)
-
 My personal blog site. It is implemented on [Next.js](https://nextjs.org).
 
 ## Development
