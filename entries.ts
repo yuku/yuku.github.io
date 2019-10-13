@@ -137,4 +137,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["ブログ開発記"],
     title: "RSS フィードを実装した",
   },
+  "blog/2019/10/github-actions": {
+    description: "ブログの CI/CD を CircleCI から GitHub Actions に移行してみての所感など。",
+    format: "mdx",
+    publishedAt: "2019-10-13T23:57:00+09:00",
+    tags: ["ブログ開発記"],
+    title: "GitHub Actions に移行した",
+  },
 }

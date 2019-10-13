@@ -1,0 +1,23 @@
+今までブログの CI と CD を [CircleCI](https://circleci.com) を使って実装していましたが、 [GitHub Actions](https://github.com/features/actions) を使えるようになったので乗り換えてみました。
+
+## GitHub Actions を使ってみての所感
+
+GitHub Actions は他の人が開発した Action を組み込むことで簡単にワークフローを記述することができます。例えばこのブログでは [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) を使ってデプロイを行っています：
+
+```yml
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: master
+        PUBLISH_DIR: ./out
+```
+
+この「タスクを共有する」というアイディアは CircleCI でもきっと検討されたことがあるはず。しかし CircleCI 専用の何かを皆に作ってもらうというのはなかなか難しいので、まずは汎用的なツールがそのまま使えるようにすることを優先したんじゃないかと。そして、そんなことお構いなしに初手でこういう機能を入れてくるあたり、 GitHub は流石に横綱だなと思いました。
+
+長いことプライベートでも仕事でも CircleCI を使ってきたし、好きなサービスなので頑張って欲しいのですが、今後は GitHub Actions を使う頻度が増えていきそう。正直 GitHub 公式でこれをやられてしまうと相当厳しいですよね。
+
+## 参考
+
+- yuku/yuku.github.io#5: Use GitHub actions
+- [peaceiris/actions-gh-pages: GitHub Actions for GitHub Pages 🚀 Deploy static files and publish your site easily. Static-Site-Generators-friendly.](https://github.com/peaceiris/actions-gh-pages)
