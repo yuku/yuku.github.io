@@ -1,8 +1,7 @@
 name: Workspace Branch Workflow
 on:
   push:
-    branches:
-      - workspace
+    branches: [workspace]
 jobs:
   deploy:
     runs-on: ubuntu-latest

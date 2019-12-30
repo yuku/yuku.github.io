@@ -1,5 +1,7 @@
 name: Topic Branch Workflow
-on: [push]
+on:
+  push:
+    branches-ignore: [workspace]
 jobs:
   test:
     runs-on: ubuntu-latest
