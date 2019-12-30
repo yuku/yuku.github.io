@@ -116,7 +116,7 @@ async function main() {
   await Promise.all(entryPaths.map(createPage))
 
   const rssXML = generateRSS()
-  fs.writeFileSync(rssPath, rssXML)
+  fs.writeFileSync(`public/${rssPath}`, rssXML)
   console.log(`Saved RSS feed to ${rssPath}`)
 }
 
