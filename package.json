@@ -11,10 +11,8 @@
     "deploy": "gh-pages -d out -b master -t",
     "dev": "next",
     "format": "prettier --write '**/*.{scss,tsx,ts,jsx,js,mdx,json}'",
-    "start": "run-s build:entries watch",
-    "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'",
-    "watch": "run-p watch:* dev",
-    "watch:format": "onchange '**/*.{scss,tsx,ts,jsx,js,mdx,json}' -- prettier --write {{changed}}"
+    "start": "run-s build:entries dev",
+    "test": "tslint '{pages,src,types}/**/*.{tsx,ts}'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
