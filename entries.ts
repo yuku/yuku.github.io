@@ -1,6 +1,6 @@
 export type IEntry = IMdx | INotebook
 
-export type ITag = "ブログ開発記" | "essay" | "pyspark" | "GCP" | "gRPC"
+export type ITag = "ブログ開発記" | "essay" | "pyspark" | "GCP" | "gRPC" | "julia"
 
 export interface IBase {
   description: string
@@ -30,7 +30,6 @@ templates
 "blog/2019/01/path": {
   description: "",
   format: "mdx",
-  modifiedAt: "2019-01-20T09:33:00+09:00",
   publishedAt: "2019-01-18T14:00:00+09:00",
   tags: [""],
   title: "",
@@ -143,5 +142,13 @@ export const entries: Record<string, IEntry> = {
     publishedAt: "2019-10-13T23:57:00+09:00",
     tags: ["ブログ開発記"],
     title: "GitHub Actions に移行した",
+  },
+  "blog/2020/01/als-for-matrix-factorization": {
+    description:
+      "協調フィルタリングで広く使われる MF の実装の一つである ALS アルゴリズムの数学的な背景を確認し、 Julia を使って実装する。",
+    format: "ipynb",
+    publishedAt: "2020-01-06T10:09:00+09:00",
+    tags: ["julia"],
+    title: "Matrix Factorization のための ALS アルゴリズムの数理と実装",
   },
 }

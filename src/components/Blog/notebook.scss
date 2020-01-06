@@ -81,8 +81,16 @@
     margin: $prism-pre-margin-y 0;
   }
 
-  code[class*="language"] {
+  code[class*="language-"] {
     margin: 0;
     padding: 0;
+  }
+
+  .math-display {
+    overflow-x: auto;
+  }
+
+  .nb-svg-output {
+    overflow-x: auto;
   }
 }
