@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 30 Dec 2019 07:58:40 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Jan 2020 01:20:17 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[ブログの自作とツール選別の背景]]></title>
@@ -95,6 +95,13 @@
             <link>https://yuku.takahashi.coffee/blog/2019/10/github-actions</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/10/github-actions</guid>
             <pubDate>Sun, 13 Oct 2019 14:57:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Matrix Factorization のための ALS アルゴリズムの数理と実装]]></title>
+            <description><![CDATA[協調フィルタリングで広く使われる MF の実装の一つである ALS アルゴリズムの数学的な背景を確認し、 Julia を使って実装する。]]></description>
+            <link>https://yuku.takahashi.coffee/blog/2020/01/als-for-matrix-factorization</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/als-for-matrix-factorization</guid>
+            <pubDate>Mon, 06 Jan 2020 01:09:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
