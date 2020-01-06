@@ -148,6 +148,7 @@ export const entries: Record<string, IEntry> = {
       "協調フィルタリングで広く使われる MF の実装の一つである ALS アルゴリズムの数学的な背景を確認し、 Julia を使って実装する。",
     format: "ipynb",
     publishedAt: "2020-01-06T10:09:00+09:00",
+    modifiedAt: "2020-01-06T10:33:00+09:00",
     tags: ["julia"],
     title: "Matrix Factorization のための ALS アルゴリズムの数理と実装",
   },
