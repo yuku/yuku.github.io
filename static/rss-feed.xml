@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 06 Jan 2020 01:35:42 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Jan 2020 15:54:05 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[ブログの自作とツール選別の背景]]></title>
@@ -102,6 +102,13 @@
             <link>https://yuku.takahashi.coffee/blog/2020/01/als-for-matrix-factorization</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/als-for-matrix-factorization</guid>
             <pubDate>Mon, 06 Jan 2020 01:09:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[確率分布と統計モデルの最尤推定]]></title>
+            <description><![CDATA[架空の植物の集団を調査して得られたデータを説明するためにポアソン分布をあてはめ、最尤推定を用いてパラメータの推定を行う。]]></description>
+            <link>https://yuku.takahashi.coffee/blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</guid>
+            <pubDate>Sun, 12 Jan 2020 15:52:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
