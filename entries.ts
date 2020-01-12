@@ -152,4 +152,12 @@ export const entries: Record<string, IEntry> = {
     tags: ["julia"],
     title: "Matrix Factorization のための ALS アルゴリズムの数理と実装",
   },
+  "blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model": {
+    description:
+      "架空の植物の集団を調査して得られたデータを説明するためにポアソン分布をあてはめ、最尤推定を用いてパラメータの推定を行う。",
+    format: "ipynb",
+    publishedAt: "2020-01-13T00:52:00+09:00",
+    tags: ["julia"],
+    title: "確率分布と統計モデルの最尤推定",
+  },
 }
