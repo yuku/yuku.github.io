@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 12 Jan 2020 15:54:05 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Jan 2020 01:59:22 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[ブログの自作とツール選別の背景]]></title>
@@ -109,6 +109,13 @@
             <link>https://yuku.takahashi.coffee/blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</guid>
             <pubDate>Sun, 12 Jan 2020 15:52:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[一般化線形モデル - ポアソン回帰]]></title>
+            <description><![CDATA[架空植物のデータを一般化線形モデルであるポアソン回帰を用いてモデリングする。]]></description>
+            <link>https://yuku.takahashi.coffee/blog/2020/01/poisson-generalized-linear-model</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/poisson-generalized-linear-model</guid>
+            <pubDate>Sat, 18 Jan 2020 01:54:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
