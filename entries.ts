@@ -164,6 +164,7 @@ export const entries: Record<string, IEntry> = {
     description: "架空植物のデータを一般化線形モデルであるポアソン回帰を用いてモデリングする。",
     format: "ipynb",
     publishedAt: "2020-01-18T10:54:00+09:00",
+    modifiedAt: "2020-01-18T11:25:00+09:00",
     tags: ["julia"],
     title: "一般化線形モデル - ポアソン回帰",
   },
