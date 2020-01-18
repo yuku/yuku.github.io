@@ -160,4 +160,11 @@ export const entries: Record<string, IEntry> = {
     tags: ["julia"],
     title: "確率分布と統計モデルの最尤推定",
   },
+  "blog/2020/01/poisson-generalized-linear-model": {
+    description: "架空植物のデータを一般化線形モデルであるポアソン回帰を用いてモデリングする。",
+    format: "ipynb",
+    publishedAt: "2020-01-18T10:54:00+09:00",
+    tags: ["julia"],
+    title: "一般化線形モデル - ポアソン回帰",
+  },
 }
