@@ -4,11 +4,11 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 24 May 2020 07:13:30 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 May 2020 07:14:51 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[ブログの自作とツール選別の背景]]></title>
-            <description><![CDATA[2019 年になってブログを新しく自作しました。そのモチベーションと利用したツールの選別背景を解説します。]]></description>
+            <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
+            <description><![CDATA[It's 2019 and I've created a new blog of my own. I will explain the motivation and the background of the selection of the tools I used.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/hello-new-blog</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-new-blog</guid>
             <pubDate>Sat, 05 Jan 2019 04:52:00 GMT</pubDate>
