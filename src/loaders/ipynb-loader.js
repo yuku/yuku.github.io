@@ -21,16 +21,13 @@ const markdownProcessor = unified()
   .use(rehypeKatex)
   .use(rehypeStringify)
 
-const htmlProcessor = unified()
-  .use(rehypeParse)
-  .use(rehypePrism)
-  .use(rehypeStringify)
+const htmlProcessor = unified().use(rehypeParse).use(rehypePrism).use(rehypeStringify)
 
-nb.markdown = function(markdown) {
+nb.markdown = function (markdown) {
   return markdownProcessor.processSync(markdown).toString()
 }
 
-nb.highlighter = function(text, pre, code, lang) {
+nb.highlighter = function (text, pre, code, lang) {
   if (code != null) {
     // Add a class attribute for prism.
     code.className = `language-${lang || "text"}`
@@ -38,6 +35,6 @@ nb.highlighter = function(text, pre, code, lang) {
   return text
 }
 
-module.exports = function(content) {
+module.exports = function (content) {
   return htmlProcessor.processSync(nb.parse(JSON.parse(content)).render().outerHTML).toString()
 }

@@ -11,8 +11,6 @@ import { IBase } from "../../../entries"
 import { AVATAR_PATHNAME, FB_APP_ID, SITE_NAME } from "../../constants"
 import { Widget } from "../Widget"
 
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import "./blogpage.scss"
 import "../../configureFontAwesome"
 
 interface IProps {

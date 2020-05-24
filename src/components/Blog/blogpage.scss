@@ -1,8 +1,3 @@
-@import "../../variables";
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-
 .blogpage {
   .avatar {
     max-width: 100%;
@@ -28,5 +23,16 @@
   h3 {
     margin-top: 1.8rem;
     margin-bottom: 1rem;
+  }
+
+  .mdx {
+    .body {
+      & > div > p {
+        > a:first-child:last-child > img,
+        > img:first-child:last-child {
+          @include img-fluid;
+        }
+      }
+    }
   }
 }

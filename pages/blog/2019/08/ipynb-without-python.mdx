@@ -2,7 +2,11 @@ import EntryLink from "../../../../src/components/Entry/Link"
 
 これまで ipynb ファイルのレンダリングに Python が必要だったのを Node.js で完結するように変更しました。ほとんどブログを更新しないのに何の意味があるのかという気もしますが、めったに触らないからこそ開発環境は単純であるべきだろうと思います。
 
-<p>実装としては <a href="https://github.com/n6g7/ipynb-loader">ipynb-loader</a> が内部で行っていたことを Python を使わずに Node.js だけでやる、というのが基本的な内容です。以前の実装については <EntryLink id="blog/2019/01/hello-ipynb" /> を参照してください。</p>
+<p>
+  実装としては <a href="https://github.com/n6g7/ipynb-loader">ipynb-loader</a> が内部で行っていたことを Python
+  を使わずに Node.js だけでやる、というのが基本的な内容です。以前の実装については{" "}
+  <EntryLink id="blog/2019/01/hello-ipynb" /> を参照してください。
+</p>
 
 ## Node.js で ipynb ファイルを扱う
 
@@ -23,7 +27,7 @@ const remarkMath = require("remark-math")
 const remarkParse = require("remark-parse")
 const remarkRehype = require("remark-rehype")
 
-nb.markdown = function(markdown) {
+nb.markdown = function (markdown) {
   // Jupyter の Markdown cell を MDX と同じルールで変換する
   return unified()
     .data("settings", {
@@ -42,7 +46,7 @@ nb.markdown = function(markdown) {
     .toString()
 }
 
-nb.highlighter = function(text, pre, code, lang) {
+nb.highlighter = function (text, pre, code, lang) {
   if (code != null) {
     // Prism のために class="language-python" 属性を付与する
     code.className = `language-${lang || "text"}`
@@ -50,16 +54,11 @@ nb.highlighter = function(text, pre, code, lang) {
   return text
 }
 
-module.exports = function(content) {
+module.exports = function (content) {
   const html = nb.parse(JSON.parse(content)).render().outerHTML
 
   // notebookjs で生成した HTML に Prism を適用する
-  return unified()
-    .use(rehypeParse)
-    .use(rehypePrism)
-    .use(rehypeStringify)
-    .processSync(html)
-    .toString()
+  return unified().use(rehypeParse).use(rehypePrism).use(rehypeStringify).processSync(html).toString()
 }
 ```
 

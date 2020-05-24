@@ -3,8 +3,6 @@ import React, { useEffect } from "react"
 import { IMdx } from "../../../entries"
 import Layout from "./Layout"
 
-import "./mdx.scss"
-
 interface IProps {
   meta: IMdx
   children: React.ReactNode

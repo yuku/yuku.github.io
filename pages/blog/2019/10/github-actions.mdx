@@ -5,12 +5,12 @@
 GitHub Actions は他の人が開発した Action を組み込むことで簡単にワークフローを記述することができます。例えばこのブログでは [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) を使ってデプロイを行っています：
 
 ```yml
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2.5.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./out
+- name: Deploy
+  uses: peaceiris/actions-gh-pages@v2.5.0
+  env:
+    ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    PUBLISH_BRANCH: master
+    PUBLISH_DIR: ./out
 ```
 
 この「タスクを共有する」というアイディアは CircleCI でもきっと検討されたことがあるはず。しかし CircleCI 専用の何かを皆に作ってもらうというのはなかなか難しいので、まずは汎用的なツールがそのまま使えるようにすることを優先したんじゃないかと。そして、そんなことお構いなしに初手でこういう機能を入れてくるあたり、 GitHub は流石に横綱だなと思いました。

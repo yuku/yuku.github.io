@@ -1,5 +1,3 @@
-import "./timeline.scss"
-
 interface IProps {
   children?: React.ReactNode
 }

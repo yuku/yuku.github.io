@@ -1,7 +1,5 @@
 import cn from "classnames"
 
-import "./widget.scss"
-
 interface IProps {
   className?: string
   title: string

@@ -13,7 +13,7 @@ function Index({ entries }: IProps) {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          {entries.map(entry => (
+          {entries.map((entry) => (
             <article key={entry.id} className="mb-4">
               <Link href={entry.id}>
                 <a href={entry.id} className="text-decoration-none">
@@ -44,7 +44,7 @@ function Index({ entries }: IProps) {
 Index.getInitialProps = async () => {
   const data: Record<string, IEntry> = require("../entries").entries
   const entries: Array<IEntry & { id: string }> = Object.keys(data)
-    .map(id => ({
+    .map((id) => ({
       id,
       ...data[id],
     }))

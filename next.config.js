@@ -1,8 +1,5 @@
 const path = require("path")
 
-const withCss = require("@zeit/next-css")
-const withSass = require("@zeit/next-sass")
-
 const github = require("remark-github")
 const math = require("remark-math")
 const prism = require("@mapbox/rehype-prism")
@@ -14,7 +11,7 @@ const withMDX = require("@zeit/next-mdx")({
   },
 })
 
-const withIpynb = nextConfig => ({
+const withIpynb = (nextConfig) => ({
   ...nextConfig,
   webpack(config, options) {
     config.module.rules.push({
@@ -34,17 +31,13 @@ const withIpynb = nextConfig => ({
   },
 })
 
-module.exports = withCss(
-  withSass(
-    withMDX(
-      withIpynb({
-        exportPathMap(defaultMap) {
-          return {
-            ...defaultMap,
-            "/404.html": { page: "/_error" },
-          }
-        },
-      }),
-    ),
-  ),
+module.exports = withMDX(
+  withIpynb({
+    exportPathMap(defaultMap) {
+      return {
+        ...defaultMap,
+        "/404.html": { page: "/_error" },
+      }
+    },
+  }),
 )

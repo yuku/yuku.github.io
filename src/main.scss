@@ -1,5 +1,12 @@
 @import "./variables";
+@import "~@fortawesome/fontawesome-svg-core/styles.css";
 @import "~bootstrap/scss/bootstrap";
+
+@import "./components/Layout/layout";
+@import "./components/Blog/blogpage";
+@import "./components/Blog/notebook";
+@import "./components/Resume/timeline";
+@import "./components/Widget/widget";
 
 @include media-breakpoint-up(lg) {
   body {

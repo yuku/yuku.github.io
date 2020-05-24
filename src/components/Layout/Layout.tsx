@@ -1,8 +1,6 @@
 import React, { useState, useCallback } from "react"
 import cn from "classnames"
 
-import "./layout.scss"
-
 import TopBarMobile from "./TopBarMobile"
 import SideMenu from "./SideMenu"
 import Footer from "./Footer"
