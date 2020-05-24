@@ -1,73 +1,73 @@
-新しくブログを自作する過程で技術的、経済的あるいは時間的な制約のもとにいろいろな選択をしました。この記事では将来自分がメンテナンス時に読むことを想定して、どういった制約があってその中でどういった選択をしたのか書きます。
+In the process of creating a new blog on my own, I made a variety of choices under technical, financial or time constraints. In this article, I write about what constraints I had and what choices I made within those constraints, in case I read it in the future.
 
-注意: これが 2019 年にブログを自作するのに最適な構成であると主張するものではありません。
+Note: I'm not claiming that this is the best configuration for creating a blog for yourself in 2019.
 
 ## TL;DR
 
-- 転職後にキャッチアップした Web 技術を実践したり、レコメンデーション機能を実装する場所が欲しくてブログを作ることにした。
-- [GitHub Pages] 上にデプロイされており、 [Next.js] をフレームワークとして使っている。記事は Markdown の中に JSX を書けるようにした [MDX] 記法を使って書いている。
+- I decided to create a blog because I wanted a place to practice the web skills I'd caught up on after my job change and implement recommendations.
+- It's deployed on [GitHub Pages] and uses [Next.js] as a framework. The article is written using MDX notation, which allows you to write JSX in Markdown.
 
-## 背景、モチベーション
+## Background and Motivation
 
-そもそも 2019 年にもなって何故ブログを自作する必要があるのでしょう。ブログを持つことが目的ならそのためのサービスを使えばいいのだから、実装しそれをメンテナンスしていくことそれ自体にも意味があるのは言うまでもありません。
+Why do I need to create my own blog in 2019? If the goal is to have a blog, then use a service for that, so it goes without saying that implementing and maintaining it makes sense in and of itself.
 
-長年 Web アプリケーションエンジニアとして仕事してきましたが、1 月末で転職し次の職場では若干 Web から遠ざかる予定でいます。ですが Web 標準や周辺技術のキャッチアップは続けたいと考えていて、そのキャッチアップした知識を実践する場所が欲しいと思い、このブログを作ることにしました。ブログサービスは便利な半面、自分で触れる領域に制約があるのでこの目的には合いません。
+I've been working as a web application engineer for several years, but at the end of this month I'll be changing jobs and doing something different from web application development at my next job. However, I want to continue catching up on web technologies, and I want a place to put that catch-up knowledge into practice. So I decided to create this blog. While blogging services are convenient, there are many things you can't do from a security standpoint, so they don't serve this purpose.
 
-また 2 月からはデータサイエンスの立場から検索やレコメンデーションといった領域に取り組みます。これらの領域にも静的な文書や画像、表を用いた書籍やブログはたくさんありますが、せっかく自分は Web の技術を持っているのだからそれをいかして動的に内容を変更できるようなコンテンツを作れないかと考えました。そのためには自由に JavaScript を実行できる環境が必要で、かつそのコードを git 管理できなければいけません。また学んだレコメンデーションや検索の知識そのものを実践する場所としても使っていく予定です。
+From February, I will be working on areas such as search and recommendation from a data science perspective. There are many books and blogs that use static documents in these areas, but since I'm familiar with the web technology, I thought that I could make use of it to create content that can be changed dynamically. To do so, I need to be able to run JavaScript freely, and I want to manage that code with git. I also plan to use it as a place to put the recommendations and search knowledge I've learned into practice.
 
-## 制約
+### Development Requirements
 
-有給消化期間中に余裕を持って構築し、それでいて今後もメンテナンスし続けられることが重要です。そのためには今回のために一から新しい技術を学ぶのではなく、今自分の手元にある知識を活かせるものでなければ実現は難しいでしょう。それでいてすぐには廃れない、廃れたとしても乗り換えが容易な構成であることが望ましいです。
+When it came to building a blog, it was important to me that I could build it before my next job started, and that I could continue to maintain it in the future. It will be difficult to achieve this unless I can make use of the knowledge I have at hand, rather than learning a new technique from scratch for this project.
 
-運用を容易にするためにもシンプルにサーバサイドは静的なファイルをホスティングするだけにします。かといって生の HTML / JavaScript / CSS を書いていくのはメンテナンスの観点からも無理があるので何かしらの静的サイトジェネレータは必要です。ブログなので文章がメインだけど、リッチコンテンツを組み込んでいきたいので文書と JavaScript の統合にサポートが必要です。
+The configuration should also be simple for ease of operation. However, writing raw HTML / JavaScript / CSS is hard to maintain, so I decided to use a static site generator. It's a blog, so it's contents are mainly static text, but I want to incorporate rich content, so I needed support for document and JavaScript integration.
 
-2019 年なので静的サイトと言えども HTTPS は必須としました。
+Since it's 2019, HTTPS is a must, even for a static site.
 
-## 構成
+## Technology Stack
 
-以上を踏まえて次のような構成にしました:
+On the basis of the above, the following stack has been adopted::
 
-- [GitHub Pages] でホスティング
-- [Travis CI] の [GitHub Pages Deployment] を使ってデプロイ
-- 静的サイトジェネレータとして [Next.js] を使う
-- ブログコンテンツは [MDX] で記述する
+- Host on [GitHub Pages]
+- Deploy with [GitHub Pages Deployment] of [Travis CI].
+- Use [Next.js] as a static site generator.
+- Write blog contents in [MDX].
 
-### ホスティングサービス
+UPDATE: This blog is deployed by GitHub Actions now. Travis CI is no longer used. ([Read more.](/blog/2019/10/github-actions))
 
-GitHub Pages は GitHub と統合された静的ファイルのホスティングサービスです。[最近ついにカスタムドメインも HTTPS がサポートされました](https://blog.github.com/2018-05-01-github-pages-custom-domains-https/)。
+### Static Site Hosting Services
 
-[Netlify](https://www.netlify.com/) など静的なファイルをホスティングするだけなら他にもいろいろな選択肢がありますが、 GitHub の他のプロジェクトページもブログと同じドメインでホスティングしたかったのと単純に使い慣れているので GitHub Pages を使うことにしました。
+GitHub Pages is a static file hosting service that integrates with GitHub. [Recently, HTTPS was finally supported for custom domains](https://blog.github.com/2018-05-01-github-pages-custom-domains-https/).
 
-### デプロイ自動化
+There are many other options for hosting static site, but I decided to use GitHub Pages because I wanted to host my other project pages on GitHub in the same domain as my blog, and because I'm simply used to using it.
 
-GitHub Pages を使うのでデプロイは GitHub への git push で行われます。この作業を自動化するために CI サービスとして Travis CI と [CircleCI](https://circleci.com/) を検討しました。どちらかといえば使い慣れているのは CircleCI でしたが、 GitHub Pages Deployment というそのものズバリの機能が使えるので Travis CI を採用しました。
+### Deployment Automation
 
-GitHub の yuku/yuku.github.io リポジトリの workspace ブランチに push すると Travis CI から自動的にデプロイされます。
+Since I'm using GitHub Pages, the deployment is done with a git push to GitHub. I looked at Travis CI and [CircleCI](https://circleci.com/) as CI services to automate this work. I'm used to using CircleCI, but I've adopted Travis CI because I can use [GitHub Pages Deployment].
 
-### 静的サイトジェネレータ
+If I push to the workspace branch of the yuku/yuku.github.io repository on GitHub, it will be automatically deployed to GitHub Pages from Travis CI.
 
-手元の知識を活かすためにクライアントサイド JavaScript では [React](https://reactjs.org/) を使うことを決めていたので [Next.js] と [Gatsby](https://www.gatsbyjs.org/) を検討しました。
+### Static Site Generator
 
-Gatsby は静的サイトにより特化している雰囲気がある点が魅力的でしたが、 Next.js も static export 機能を使って https://nextjs.org を[作っている](https://www.reddit.com/r/reactjs/comments/992n2r/next_vs_gatsby/e4lrffl/)ので突然サポートを終了するとは考えにくく、結局
+I had decided to use [React](https://reactjs.org/) for client-side JavaScript to make use of the knowledge at hand, so I looked at [Next.js] and [Gatsby](https://www.gatsbyjs.org/).
 
-- 過去に少し触ったことがある
-- ドキュメントが読みやすかった
+Gatsby was attractive because it has a more specialized atmosphere for static sites, but since Next.js also uses static export to create https://nextjs.org, it's hard to think that it will suddenly end support. In the end, I decided to use Next.js for the following reasons:
 
-という理由で Next.js にしました。
+- I've used a bit in the past.
+- The documentation was easy to read (for me).
 
 [![Next.js vs Gatsby](/static/images/2019/01/next-vs-gatsby.png)](https://www.npmtrends.com/gatsby-vs-next)
 
-npm パッケージのダウンロード数や開発の活発さの比較では両者の違いはあまりなさそうでした。
+There didn't seem to be much of a difference between the two in terms of the number of NPM packages downloaded or how active their development was.
 
 ### MDX
 
-ブログコンテンツの中で JavaScript を使おうとすると、本文のテキストデータと JavaScript のコードをどのように連携されるのかが問題になります。記事自体は Markdown で書くとして、 Markdown の中で `<script>` を書くの避けたいです。
+When trying to use JavaScript in blog content, the problem is how to load JavaScript code, and I wanted to avoid writing `<script>` directly in an article.
 
-[MDX] は Markdown の中で JSX を使えうようにしたフォーマットです。簡単な話が JSX 記法が書かれた場所に対応する React コンポーネントが自動的にマウントされます。広く普及しているツールではありませんが、 Next.js を開発している ZEIT が開発しているのでその点は安心感があります。仮に MDX 記法が仮に使えなくなったとしてもそれまで JSX を書いていた場所に DOM 要素を作り、それに対して React コンポーネントを明示的にマウントするようにすればいいだけなので移行するのは比較的簡単だと判断しました。
+[MDX] is a format that allows you to use JSX in Markdown. In a nutshell, the React component is automatically mounted in the place where JSX is written. It is not a widely used tool, but it is developed by ZEIT, the developer of Next.js. Even if MDX will be shut down, all I have to do is create a DOM element in the place where I wrote JSX, and explicitly mount React components to it. It's easy to migrate.
 
-## おわりに
+## Conclusion
 
-ブログを自作することにした理由と、選択したツールについて簡単にまとめました。冒頭でも書いたように、これが万人に対しておすすめできる構成とは考えていませんが、未来の自分を含むどこかの誰かの参考になれば幸いです。
+In this article, I gave a brief summary of why I decided to create my own blog and the tools I chose. As I wrote at the beginning, I don't think this is something I can recommend to everyone, but I hope it's a reference for anyone, including my future self.
 
 [github pages]: https://pages.github.com/
 [github pages deployment]: https://docs.travis-ci.com/user/deployment/pages/

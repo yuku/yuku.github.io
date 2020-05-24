@@ -1,6 +1,6 @@
 export type IEntry = IMdx | INotebook
 
-export type ITag = "ブログ開発記" | "essay" | "pyspark" | "GCP" | "gRPC" | "julia"
+export type ITag = "Blog dev" | "essay" | "pyspark" | "GCP" | "gRPC" | "julia"
 
 export interface IBase {
   description: string
@@ -40,13 +40,13 @@ templates
 export const entries: Record<string, IEntry> = {
   "blog/2019/01/hello-new-blog": {
     description:
-      "2019 年になってブログを新しく自作しました。そのモチベーションと利用したツールの選別背景を解説します。",
+      "It's 2019 and I've created a new blog of my own. I will explain the motivation and the background of the selection of the tools I used.",
     format: "mdx",
     modifiedAt: "2019-01-07T21:49:00+09:00",
     ogImage: "https://yuku.takahashi.coffee/static/images/2019/01/next-vs-gatsby.png",
     publishedAt: "2019-01-05T13:52:00+09:00",
-    tags: ["ブログ開発記"],
-    title: "ブログの自作とツール選別の背景",
+    tags: ["Blog dev"],
+    title: "Background on Blog Homebrewing and Tool Selection in 2019",
   },
   "blog/2019/01/twitter-card-and-ogp": {
     description: "ブログで Twitter Card と Open Graph Protocol に対応しました。",
@@ -54,7 +54,7 @@ export const entries: Record<string, IEntry> = {
     loadTwitterWidget: true,
     modifiedAt: "2019-01-07T22:47:00+09:00",
     publishedAt: "2019-01-07T22:40:00+09:00",
-    tags: ["ブログ開発記"],
+    tags: ["Blog dev"],
     title: "Twitter Card と OGP に対応した",
   },
   "blog/2019/01/hello-ipynb": {
@@ -62,7 +62,7 @@ export const entries: Record<string, IEntry> = {
     format: "ipynb",
     modifiedAt: "2019-01-16T13:51:00+09:00",
     publishedAt: "2019-01-15T20:17:00+09:00",
-    tags: ["ブログ開発記"],
+    tags: ["Blog dev"],
     title: "Jupyter Notebook でブログを書けるようにした",
   },
   "blog/2019/01/hello-pyspark": {
@@ -126,21 +126,21 @@ export const entries: Record<string, IEntry> = {
     description: "Python を使わずに Jupyter Notebook 形式をサポートしました。",
     format: "mdx",
     publishedAt: "2019-08-18T19:10:00+09:00",
-    tags: ["ブログ開発記"],
+    tags: ["Blog dev"],
     title: "ブログのビルド環境から Python を排除した",
   },
   "blog/2019/08/rss-feed": {
     description: "ブログに RSS フィードを実装しました。",
     format: "mdx",
     publishedAt: "2019-08-30T19:10:00+09:00",
-    tags: ["ブログ開発記"],
+    tags: ["Blog dev"],
     title: "RSS フィードを実装した",
   },
   "blog/2019/10/github-actions": {
     description: "ブログの CI/CD を CircleCI から GitHub Actions に移行してみての所感など。",
     format: "mdx",
     publishedAt: "2019-10-13T23:57:00+09:00",
-    tags: ["ブログ開発記"],
+    tags: ["Blog dev"],
     title: "GitHub Actions に移行した",
   },
   "blog/2020/01/als-for-matrix-factorization": {
