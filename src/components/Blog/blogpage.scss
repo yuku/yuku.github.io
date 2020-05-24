@@ -27,7 +27,7 @@
 
   .mdx {
     .body {
-      & > div > p {
+      & > p {
         > a:first-child:last-child > img,
         > img:first-child:last-child {
           @include img-fluid;
