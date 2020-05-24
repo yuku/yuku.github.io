@@ -1,7 +1,7 @@
 import Head from "next/head"
 
-import { SITE_NAME } from "../src/constants"
-import { Education, PublicationEntry, Section, Timeline, WorkExperience } from "../src/components/Resume"
+import { SITE_NAME } from "src/constants"
+import { Education, PublicationEntry, Section, Timeline, WorkExperience } from "src/components/Resume"
 
 const SummarySection = () => (
   <Section title="Summary">

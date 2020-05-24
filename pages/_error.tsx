@@ -1,6 +1,6 @@
 import Head from "next/head"
 
-import { SITE_NAME } from "../src/constants"
+import { SITE_NAME } from "src/constants"
 
 export default () => (
   <div>

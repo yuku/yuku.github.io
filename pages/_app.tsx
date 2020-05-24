@@ -6,8 +6,8 @@ import withGA from "next-ga"
 
 import "../src/main.scss"
 
-import { SITE_NAME } from "../src/constants"
-import Layout from "../src/components/Layout/Layout"
+import { SITE_NAME } from "src/constants"
+import Layout from "src/components/Layout/Layout"
 
 class MyApp extends App {
   public render() {
