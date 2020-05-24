@@ -1,5 +1,6 @@
 import Link from "next/link"
 import cn from "classnames"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { SITE_NAME } from "../../constants"
 
@@ -16,7 +17,7 @@ const TopBarMobile = (props: IProps) => (
       </a>
     </Link>
     <button className="border-0 bg-transparent text-black-50" onClick={props.onClickToggler}>
-      <i className="fas fa-bars" />
+      <FontAwesomeIcon icon="bars" />
     </button>
   </nav>
 )
