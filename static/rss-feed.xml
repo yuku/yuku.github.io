@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 29 May 2020 14:46:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 May 2020 15:44:49 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
@@ -21,8 +21,8 @@
             <pubDate>Mon, 07 Jan 2019 13:40:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Jupyter Notebook でブログを書けるようにした]]></title>
-            <description><![CDATA[ブログ記事を Jupyter Notebook の ipynb 形式で書けるようにしました。]]></description>
+            <title><![CDATA[Display Jupyter Notebook on Next.js]]></title>
+            <description><![CDATA[Jupyter Notebook can now be displayed on this blog. I'm going to use it to publish my study records of machine learning and data analysis. This article describes the details of the implementation.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/hello-ipynb</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-ipynb</guid>
             <pubDate>Tue, 15 Jan 2019 11:17:00 GMT</pubDate>
