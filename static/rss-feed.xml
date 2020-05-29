@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 24 May 2020 07:16:31 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 May 2020 14:43:43 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
@@ -14,8 +14,8 @@
             <pubDate>Sat, 05 Jan 2019 04:52:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Twitter Card と OGP に対応した]]></title>
-            <description><![CDATA[ブログで Twitter Card と Open Graph Protocol に対応しました。]]></description>
+            <title><![CDATA[Twitter Card and OGP Support]]></title>
+            <description><![CDATA[Twitter Card and Open Graph Protocol are now supported on the blog.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/twitter-card-and-ogp</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/twitter-card-and-ogp</guid>
             <pubDate>Mon, 07 Jan 2019 13:40:00 GMT</pubDate>
