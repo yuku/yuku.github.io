@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 29 May 2020 15:44:49 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 May 2020 23:36:21 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
@@ -28,8 +28,8 @@
             <pubDate>Tue, 15 Jan 2019 11:17:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Docker を使って pyspark に入門する]]></title>
-            <description><![CDATA[Jupyter Lab が提供している Docker イメージで作った動作環境を使って pyspark に入門します。]]></description>
+            <title><![CDATA[Getting started with pyspark using Docker]]></title>
+            <description><![CDATA[An introduction to pyspark using the Docker image environment provided by Jupyter Lab.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/hello-pyspark</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-pyspark</guid>
             <pubDate>Wed, 16 Jan 2019 11:50:00 GMT</pubDate>
