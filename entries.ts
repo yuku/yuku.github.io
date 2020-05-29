@@ -67,12 +67,12 @@ export const entries: Record<string, IEntry> = {
     title: "Display Jupyter Notebook on Next.js",
   },
   "blog/2019/01/hello-pyspark": {
-    description: "Jupyter Lab が提供している Docker イメージで作った動作環境を使って pyspark に入門します。",
+    description: "An introduction to pyspark using the Docker image environment provided by Jupyter Lab.",
     format: "ipynb",
     modifiedAt: "2019-01-17T17:54:00+09:00",
     publishedAt: "2019-01-16T20:50:00+09:00",
     tags: ["pyspark"],
-    title: "Docker を使って pyspark に入門する",
+    title: "Getting started with pyspark using Docker",
   },
   "blog/2019/01/google-cloud-sdk-in-docker": {
     description: "Google Cloud SDK をローカルマシンではなく Docker 内にインストールして使う手順を説明します。",
