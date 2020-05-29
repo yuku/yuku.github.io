@@ -1,6 +1,6 @@
 Commit: https://github.com/yuku/yuku.github.io/commit/5fe34e4bee6893000c88db02e353c3ae69400876
 
-[Open Graph protocol (OGP)](http://ogp.me/) と [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started) に対応して Twitter や Facebook でブログ記事の URL が共有されたときにリッチスニペットが表示されるようにしました。
+Rich snippets are now displayed when the URL of a blog post is shared on Twitter or Facebook, in support of [Open Graph protocol (OGP)](http://ogp.me/) and [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started).
 
 <blockquote className="twitter-tweet" data-lang="ja">
   <p lang="ja" dir="ltr">
@@ -9,9 +9,9 @@ Commit: https://github.com/yuku/yuku.github.io/commit/5fe34e4bee6893000c88db02e3
   &mdash; ゆうく (@yuku_t) <a href="https://twitter.com/yuku_t/status/1082265069449240578?ref_src=twsrc%5Etfw">2019年1月7日</a>
 </blockquote>
 
-開発時はそれぞれのリンク先のドキュメントを参照しつつ実装し、 Facebook と Twitter が用意しているデバッガーを使って動作確認をします:
+During development, I implemented it by referring to the documents, and checked it using the debuggers provided by Facebook and Twitter:
 
 - [Card Validator | Twitter Developers](https://cards-dev.twitter.com/validator)
-- [シェアデバッガー - 開発者向け Facebook](https://developers.facebook.com/tools/debug/sharing/)
+- [Sharing Debugger -  Facebook for Developers](https://developers.facebook.com/tools/debug/sharing/)
 
-[Facebook の仕様](https://developers.facebook.com/docs/sharing/webmasters)として `fb:app_id` が求められたので、新しく本ブログ用のプロジェクトを Facebook に作り、その ID を登録しました。 Web 上の古い情報によると昔は `fb:admins` などもサポートされていましたが、現在は `fb:app_id` に一本化されたようです。
+[The Facebook's spec](https://developers.facebook.com/docs/sharing/webmasters) requires `fb:app_id`, so I created a new project for this blog on Facebook and registered that ID as `fb:app_id`. According to the old information on the web, `fb:admin` was also supported in the past, but now it seems to be unified into `fb:app_id`.

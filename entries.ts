@@ -49,13 +49,13 @@ export const entries: Record<string, IEntry> = {
     title: "Background on Blog Homebrewing and Tool Selection in 2019",
   },
   "blog/2019/01/twitter-card-and-ogp": {
-    description: "ブログで Twitter Card と Open Graph Protocol に対応しました。",
+    description: "Twitter Card and Open Graph Protocol are now supported on the blog.",
     format: "mdx",
     loadTwitterWidget: true,
     modifiedAt: "2019-01-07T22:47:00+09:00",
     publishedAt: "2019-01-07T22:40:00+09:00",
     tags: ["Blog dev"],
-    title: "Twitter Card と OGP に対応した",
+    title: "Twitter Card and OGP Support",
   },
   "blog/2019/01/hello-ipynb": {
     description: "ブログ記事を Jupyter Notebook の ipynb 形式で書けるようにしました。",
