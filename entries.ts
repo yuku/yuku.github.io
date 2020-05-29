@@ -58,12 +58,13 @@ export const entries: Record<string, IEntry> = {
     title: "Twitter Card and OGP Support",
   },
   "blog/2019/01/hello-ipynb": {
-    description: "ブログ記事を Jupyter Notebook の ipynb 形式で書けるようにしました。",
+    description:
+      "Jupyter Notebook can now be displayed on this blog. I'm going to use it to publish my study records of machine learning and data analysis. This article describes the details of the implementation.",
     format: "ipynb",
     modifiedAt: "2019-01-16T13:51:00+09:00",
     publishedAt: "2019-01-15T20:17:00+09:00",
     tags: ["Blog dev"],
-    title: "Jupyter Notebook でブログを書けるようにした",
+    title: "Display Jupyter Notebook on Next.js",
   },
   "blog/2019/01/hello-pyspark": {
     description: "Jupyter Lab が提供している Docker イメージで作った動作環境を使って pyspark に入門します。",
