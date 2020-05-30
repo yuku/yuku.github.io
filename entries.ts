@@ -75,12 +75,13 @@ export const entries: Record<string, IEntry> = {
     title: "Getting started with pyspark using Docker",
   },
   "blog/2019/01/google-cloud-sdk-in-docker": {
-    description: "Google Cloud SDK をローカルマシンではなく Docker 内にインストールして使う手順を説明します。",
+    description:
+      "This article explains how to install and use the Google Cloud SDK in Docker rather than on the local machine.",
     format: "mdx",
     modifiedAt: "2019-01-20T09:23:00+09:00",
     publishedAt: "2019-01-17T14:43:00+09:00",
     tags: ["GCP"],
-    title: "Docker で Google Cloud SDK を使う",
+    title: "How to Use Google Cloud SDK Using Docker",
   },
   "blog/2019/01/deploy-app-engine-from-circleci": {
     description: "CircleCI を使って App Engine Node.js スタンダード環境をデプロイする方法。",

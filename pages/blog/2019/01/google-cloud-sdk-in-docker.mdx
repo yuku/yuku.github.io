@@ -1,24 +1,19 @@
-GCP を使う際に避けて通れないのが [Google Cloud SDK](https://cloud.google.com/sdk/) ですが、システムの Python 2.7 を期待しているのが微妙だったり、独自に状態を保持しているため気がつくとこの PC でだけデプロイできるみたいなことになりがちです。そもそもシステムに不用意にツールをインストールしたくないという気持ちの問題もあります。
+The one thing you can't avoid when using GCP is the [Google Could SDK](https://cloud.google.com/sdk/). However, I don't want to install a tool on the local machine's system globals if possible.
 
-そこで [google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk/) という Google 公式の Docker イメージをローカル環境でも使ってみることにしました。
+So I decided to use [google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk/), the official Google Docker image, in my local environment.
 
-## Docker イメージを用意する
+## Prepare Docker Images
 
-google/cloud-sdk は大きく分けて 3 種類存在しています:
+There are three types of tags for google/cloud-sdk:
 
-- `latest`, `VERSION` - Debian ベースで[すべてのコンポーネント](https://cloud.google.com/sdk/downloads#apt-get)がインストールされた大きいイメージ
-- `slim`, `VERSION-slim` - Debian ベースでコンポーネントがインストールされていない
-- `alpine`, `VERSION-alpine` - Alpine ベースでコンポーネントがインストールされていない
+- `latest`, `VERSION`: Large image with [additional components](https://cloud.google.com/sdk/downloads#apt-get) pre-installed, Debian-based.
+- `slim`, `VERSION-slim`: Smaller image with no components pre-installed, Debian-based.
+- `alpine`, `VERSION-alpine`: Smallest image with no additional components installed, Alpine-based.
 
-Google AppEngine を使いたかった & AppEngine のコンポーネントは標準でついてくるので、今回はサイズが一番小さい `alpine` にしました:
+I wanted to use Google AppEngine & AppEngine components is included in the default components, so I decided to use `alpine`:
 
 ```bash
 docker pull google/cloud-sdk:alpine
-```
-
-インストールされていたツールは以下の通りです。なので `229.0.0-alpine` でも同じイメージを使うことができるはずです。
-
-```bash
 docker run -it --rm google/cloud-sdk:alpine gcloud version
 # Google Cloud SDK 229.0.0
 # bq 2.0.39
@@ -26,35 +21,27 @@ docker run -it --rm google/cloud-sdk:alpine gcloud version
 # gsutil 4.35
 ```
 
-## 認証する
+## Auth
 
-認証情報を永続化するために `--name` オプションを使います
+Specify `--name` option to persist auth information:
 
 ```bash
 docker run -it --name gcloud-config \
     google/cloud-sdk:alpine gcloud auth login
 ```
 
-表示された URL をブラウザにコピペして指示に従って操作していき、最終的に画面に表示された verification code を今度はターミナルにコピペすれば認証完了です。
+Copy and paste the displayed URL into the browser and follow the instructions, and finally copy and paste the verification code displayed on the screen into the terminal.
 
-## SDK を使う
+## Use SDK
 
-`--volumes-from gcloud-config` を指定することで先程認証を行った volume をマウントすることができます。
+Use `--volumes-from gcloud-config` to mount the volume containing the auth information:
 
 ```bash
 docker run --rm --volumes-from gcloud-config \
     google/cloud-sdk:alpine gcloud config list
 ```
 
-余計な container を残さないように `--rm` をつけつつ、今後はすべてこの volume を使ってすべての情報をコマンドラインオプションで指定することにします。 例えば Google AppEngine のバージョン一覧を表示したい場合は:
+## References
 
-```bash
-docker run --rm --volumes-from gcloud-config \
-    google/cloud-sdk:alpine gcloud versions list \
-    --project YOUR_RPOJECT_NAME
-```
-
-## 参考
-
-- [Mac OS X 用のクイックスタート  |  Cloud SDK のドキュメント  |  Google Cloud](https://cloud.google.com/sdk/docs/quickstart-mac-os-x?hl=ja)
+- [Quickstart for macOS  |  Cloud SDK Documentation  |  Google Cloud](https://cloud.google.com/sdk/docs/quickstart-mac-os-x)
 - [google/cloud-sdk - Docker Hub](https://hub.docker.com/r/google/cloud-sdk/)
