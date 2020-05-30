@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 29 May 2020 23:39:48 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 May 2020 00:23:07 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
@@ -35,8 +35,8 @@
             <pubDate>Wed, 16 Jan 2019 11:50:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Docker で Google Cloud SDK を使う]]></title>
-            <description><![CDATA[Google Cloud SDK をローカルマシンではなく Docker 内にインストールして使う手順を説明します。]]></description>
+            <title><![CDATA[How to Use Google Cloud SDK Using Docker]]></title>
+            <description><![CDATA[This article explains how to install and use the Google Cloud SDK in Docker rather than on the local machine.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/google-cloud-sdk-in-docker</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/google-cloud-sdk-in-docker</guid>
             <pubDate>Thu, 17 Jan 2019 05:43:00 GMT</pubDate>
