@@ -42,7 +42,7 @@ export const entries: Record<string, IEntry> = {
     description:
       "It's 2019 and I've created a new blog of my own. I will explain the motivation and the background of the selection of the tools I used.",
     format: "mdx",
-    modifiedAt: "2019-01-07T21:49:00+09:00",
+    modifiedAt: "2020-05-24T16:15:21+09:00",
     ogImage: "https://yuku.takahashi.coffee/static/images/2019/01/next-vs-gatsby.png",
     publishedAt: "2019-01-05T13:52:00+09:00",
     tags: ["Blog dev"],
@@ -52,7 +52,7 @@ export const entries: Record<string, IEntry> = {
     description: "Twitter Card and Open Graph Protocol are now supported on the blog.",
     format: "mdx",
     loadTwitterWidget: true,
-    modifiedAt: "2019-01-07T22:47:00+09:00",
+    modifiedAt: "2020-05-29T23:41:46+09:00",
     publishedAt: "2019-01-07T22:40:00+09:00",
     tags: ["Blog dev"],
     title: "Twitter Card and OGP Support",
@@ -61,7 +61,7 @@ export const entries: Record<string, IEntry> = {
     description:
       "Jupyter Notebook can now be displayed on this blog. I'm going to use it to publish my study records of machine learning and data analysis. This article describes the details of the implementation.",
     format: "ipynb",
-    modifiedAt: "2019-01-16T13:51:00+09:00",
+    modifiedAt: "2020-05-30T00:43:29+09:00",
     publishedAt: "2019-01-15T20:17:00+09:00",
     tags: ["Blog dev"],
     title: "Display Jupyter Notebook on Next.js",
@@ -69,7 +69,7 @@ export const entries: Record<string, IEntry> = {
   "blog/2019/01/hello-pyspark": {
     description: "An introduction to pyspark using the Docker image environment provided by Jupyter Lab.",
     format: "ipynb",
-    modifiedAt: "2019-01-17T17:54:00+09:00",
+    modifiedAt: "2020-05-30T08:34:49+09:00",
     publishedAt: "2019-01-16T20:50:00+09:00",
     tags: ["pyspark"],
     title: "Getting started with pyspark using Docker",
@@ -78,7 +78,7 @@ export const entries: Record<string, IEntry> = {
     description:
       "This article explains how to install and use the Google Cloud SDK in Docker rather than on the local machine.",
     format: "mdx",
-    modifiedAt: "2019-01-20T09:23:00+09:00",
+    modifiedAt: "2020-05-30T09:21:13+09:00",
     publishedAt: "2019-01-17T14:43:00+09:00",
     tags: ["GCP"],
     title: "How to Use Google Cloud SDK Using Docker",
