@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 30 May 2020 00:30:11 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Jun 2020 13:31:46 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
@@ -42,8 +42,8 @@
             <pubDate>Thu, 17 Jan 2019 05:43:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[CircleCI から App Engine をデプロイする]]></title>
-            <description><![CDATA[CircleCI を使って App Engine Node.js スタンダード環境をデプロイする方法。]]></description>
+            <title><![CDATA[Deploy AppEngine Apps Using CircleCI]]></title>
+            <description><![CDATA[How to deploy ann app running on AppEngine Node.js standard environment using CircleCI]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/deploy-app-engine-from-circleci</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/deploy-app-engine-from-circleci</guid>
             <pubDate>Fri, 18 Jan 2019 05:00:00 GMT</pubDate>
