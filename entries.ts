@@ -84,12 +84,12 @@ export const entries: Record<string, IEntry> = {
     title: "How to Use Google Cloud SDK Using Docker",
   },
   "blog/2019/01/deploy-app-engine-from-circleci": {
-    description: "CircleCI を使って App Engine Node.js スタンダード環境をデプロイする方法。",
+    description: "How to deploy ann app running on AppEngine Node.js standard environment using CircleCI",
     format: "mdx",
     modifiedAt: "2019-01-20T09:33:00+09:00",
     publishedAt: "2019-01-18T14:00:00+09:00",
     tags: ["GCP"],
-    title: "CircleCI から App Engine をデプロイする",
+    title: "Deploy AppEngine Apps Using CircleCI",
   },
   "blog/2019/01/grpc-proxy-for-grpc-web": {
     description:
