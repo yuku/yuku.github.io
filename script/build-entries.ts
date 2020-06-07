@@ -97,14 +97,16 @@ function generateRSS() {
     site_url: siteUrl,
     feed_url: siteUrl + "/" + rssPath,
   })
-  Object.entries(entries).forEach(([path, { title, description, publishedAt }]) => {
-    feed.item({
-      title,
-      description,
-      url: siteUrl + "/" + path,
-      date: publishedAt,
+  Object.entries(entries)
+    .sort((a, b) => Date.parse(b[1].publishedAt) - Date.parse(a[1].publishedAt))
+    .forEach(([path, { title, description, publishedAt }]) => {
+      feed.item({
+        title,
+        description,
+        url: siteUrl + "/" + path,
+        date: publishedAt,
+      })
     })
-  })
   return feed.xml({ indent: true })
 }
 
