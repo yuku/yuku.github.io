@@ -8,15 +8,14 @@ const rehypeStringify = require("rehype-stringify")
 const remarkGithub = require("remark-github")
 const remarkMath = require("remark-math")
 const remarkParse = require("remark-parse")
+const remarkFootnotes = require("remark-footnotes")
 const remarkRehype = require("remark-rehype")
 
 const markdownProcessor = unified()
-  .data("settings", {
-    footnotes: true,
-  })
   .use(remarkParse)
   .use(remarkMath)
   .use(remarkGithub, { repository: "dummy/repo", mentionStrong: false })
+  .use(remarkFootnotes)
   .use(remarkRehype)
   .use(rehypeKatex)
   .use(rehypeStringify)
