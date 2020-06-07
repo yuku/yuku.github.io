@@ -4,7 +4,8 @@ import Head from "next/head"
 import Router from "next/router"
 import withGA from "next-ga"
 
-import "../src/main.scss"
+import "src/main.scss"
+import "src/configureFontAwesome"
 
 import { SITE_NAME } from "src/constants"
 import Layout from "src/components/Layout/Layout"
