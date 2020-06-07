@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { FC, useEffect } from "react"
 
 import { IMdx } from "../../../entries"
 import Layout from "./Layout"
@@ -8,7 +8,7 @@ interface IProps {
   children: React.ReactNode
 }
 
-export default function Mdx({ meta, children }: IProps) {
+const Mdx: FC<IProps> = ({ meta, children }) => {
   useEffect(() => {
     if (meta.loadTwitterWidget) {
       const script = document.createElement("script")
@@ -25,3 +25,5 @@ export default function Mdx({ meta, children }: IProps) {
     </Layout>
   )
 }
+
+export default Mdx

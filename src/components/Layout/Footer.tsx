@@ -1,6 +1,8 @@
+import React, { FC } from "react"
+
 const currentYear = new Date().getFullYear()
 
-export default () => (
+const Footer: FC = () => (
   <footer className="text-center mt-4">
     <p className="mb-0 text-dark">
       <small>
@@ -10,3 +12,5 @@ export default () => (
     </p>
   </footer>
 )
+
+export default Footer

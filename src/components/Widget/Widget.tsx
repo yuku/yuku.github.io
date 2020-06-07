@@ -1,3 +1,4 @@
+import React, { FC } from "react"
 import cn from "classnames"
 
 interface IProps {
@@ -6,9 +7,11 @@ interface IProps {
   children?: React.ReactNode
 }
 
-export default (props: IProps) => (
+const Widget: FC<IProps> = (props) => (
   <aside className={cn("widget mb-4", props.className)}>
     <h1 className="title font-weight-bold">{props.title}</h1>
     {props.children}
   </aside>
 )
+
+export default Widget

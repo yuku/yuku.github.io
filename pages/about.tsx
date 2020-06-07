@@ -1,8 +1,9 @@
+import React, { FC } from "react"
 import Head from "next/head"
 
 import { SITE_NAME } from "src/constants"
 
-export default () => (
+const About: FC = () => (
   <div className="container">
     <Head>
       <title>About Me - {SITE_NAME}</title>
@@ -27,3 +28,5 @@ export default () => (
     </div>
   </div>
 )
+
+export default About

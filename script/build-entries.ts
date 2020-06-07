@@ -7,10 +7,11 @@ import path from "path"
 import del from "del"
 import prettier from "prettier"
 import RSS from "rss"
+import _glob from "glob"
 
 import { entries } from "../entries"
 
-const glob = utils.promisify(require("glob"))
+const glob = utils.promisify(_glob)
 const writeFile = utils.promisify(fs.writeFile)
 
 const ROOT = path.resolve(__dirname, "../")

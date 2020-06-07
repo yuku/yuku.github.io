@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, FC } from "react"
 import cn from "classnames"
 
 import TopBarMobile from "./TopBarMobile"
@@ -9,7 +9,7 @@ interface IProps {
   children: React.ReactNode
 }
 
-export default function Layout({ children }: IProps) {
+const Layout: FC<IProps> = ({ children }) => {
   const [expanded, setExpanded] = useState(false)
   const collapse = useCallback(() => setExpanded(false), [])
   const toggle = useCallback(() => setExpanded(!expanded), [expanded])
@@ -25,3 +25,5 @@ export default function Layout({ children }: IProps) {
     </div>
   )
 }
+
+export default Layout

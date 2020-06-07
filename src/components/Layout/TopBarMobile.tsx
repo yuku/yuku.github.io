@@ -1,3 +1,4 @@
+import React, { FC } from "react"
 import Link from "next/link"
 import cn from "classnames"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -9,7 +10,7 @@ interface IProps {
   className?: string
 }
 
-const TopBarMobile = (props: IProps) => (
+const TopBarMobile: FC<IProps> = (props) => (
   <nav className={cn("topbar-mobile d-flex justify-content-between", props.className)}>
     <Link href="/">
       <a href="/" className="brand">

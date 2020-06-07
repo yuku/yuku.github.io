@@ -1,3 +1,4 @@
+import React, { FC } from "react"
 import cn from "classnames"
 
 interface IProps {
@@ -7,7 +8,7 @@ interface IProps {
   description?: React.ReactNode
 }
 
-const Item = (props: IProps) => (
+const Item: FC<IProps> = (props) => (
   <div className={cn("timeline-item", props.className)}>
     <div className="head">{props.head}</div>
     <div className="left">{props.left}</div>

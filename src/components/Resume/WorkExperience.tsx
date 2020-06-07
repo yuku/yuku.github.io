@@ -1,3 +1,4 @@
+import React, { FC } from "react"
 import TimelineItem from "./TimelineItem"
 
 interface IProps {
@@ -12,7 +13,7 @@ interface IProps {
   children?: React.ReactNode
 }
 
-const WorkExperience = (props: IProps) => (
+const WorkExperience: FC<IProps> = (props) => (
   <TimelineItem
     head={
       <div>
