@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 07 Jun 2020 02:07:56 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jun 2020 03:01:08 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[一般化線形モデル - ポアソン回帰]]></title>
@@ -69,8 +69,8 @@
             <pubDate>Mon, 28 Jan 2019 05:54:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[gRPC-Web がプロキシを必要とする理由]]></title>
-            <description><![CDATA[gRPC と gRPC-Web が通信するには Envoy のようなプロキシを立てる必要があります。プロキシが必要になる背景について調べた結果をまとめます。]]></description>
+            <title><![CDATA[Why gRPC-Web Needs Proxy]]></title>
+            <description><![CDATA[In order for gRPC to communicate with gRPC-Web, you need to set up a proxy, such as Envoy. This article describes why gRPC-Web needs a proxy.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/grpc-proxy-for-grpc-web</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/grpc-proxy-for-grpc-web</guid>
             <pubDate>Fri, 25 Jan 2019 13:30:00 GMT</pubDate>
