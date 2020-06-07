@@ -1,13 +1,13 @@
 import React, { FC } from "react"
-import { INotebook } from "../../../entries"
+import { Notebook as NotebookData } from "../../../entries"
 import Layout from "./Layout"
 
-interface IProps {
-  meta: INotebook
+interface Props {
+  meta: NotebookData
   children: React.ReactNode
 }
 
-const Notebook: FC<IProps> = (props) => (
+const Notebook: FC<Props> = (props) => (
   <Layout className="notebook" meta={props.meta}>
     {props.children}
   </Layout>

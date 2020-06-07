@@ -1,14 +1,14 @@
 import React, { FC, useEffect } from "react"
 
-import { IMdx } from "../../../entries"
+import { Mdx as MdxData } from "../../../entries"
 import Layout from "./Layout"
 
-interface IProps {
-  meta: IMdx
+interface Props {
+  meta: MdxData
   children: React.ReactNode
 }
 
-const Mdx: FC<IProps> = ({ meta, children }) => {
+const Mdx: FC<Props> = ({ meta, children }) => {
   useEffect(() => {
     if (meta.loadTwitterWidget) {
       const script = document.createElement("script")

@@ -23,13 +23,13 @@ function createPageForMdx(entryName: string, pathname: string) {
     import { Mdx } from "${ROOT}/src/components/Blog"
     import Component from "./${entryName}"
 
-    import { IMdx } from "${ROOT}/entries"
+    import { Mdx as MdxData } from "${ROOT}/entries"
 
-    interface IProps {
-      meta: IMdx
+    interface Props {
+      meta: MdxData
     }
 
-    const MdxPage = ({ meta }: IProps) => (
+    const MdxPage = ({ meta }: Props) => (
       <Mdx meta={meta}>
         <Component />
       </Mdx>
@@ -51,13 +51,13 @@ function createPageForIpynb(entryName: string, pathname: string) {
     import { Notebook } from "${ROOT}/src/components/Blog"
     import Component from "./${entryName}"
 
-    import { INotebook } from "${ROOT}/entries"
+    import { Notebook as NotebookData } from "${ROOT}/entries"
 
-    interface IProps {
-      meta: INotebook
+    interface Props {
+      meta: NotebookData
     }
 
-    const IpynbPage = ({ meta }: IProps) => (
+    const IpynbPage = ({ meta }: Props) => (
       <Notebook meta={meta}>
         <Component />
       </Notebook>

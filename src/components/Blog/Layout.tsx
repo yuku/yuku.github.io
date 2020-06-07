@@ -7,21 +7,21 @@ import cn from "classnames"
 import moment from "moment"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import { IBase } from "../../../entries"
+import { Base } from "../../../entries"
 import { AVATAR_PATHNAME, FB_APP_ID, SITE_NAME } from "../../constants"
 import { Widget } from "../Widget"
 
 import "../../configureFontAwesome"
 
-interface IProps {
-  meta: IBase
+interface Props {
+  meta: Base
   className?: string
   children: React.ReactNode
 }
 
 const image = (ogImage?: string) => ogImage || `https://yuku.takahashi.coffee${AVATAR_PATHNAME}`
 
-const Layout = (props: WithRouterProps & IProps) => (
+const Layout = (props: WithRouterProps & Props) => (
   <div className="blogpage container">
     <Head>
       <title>

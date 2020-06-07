@@ -2,13 +2,13 @@ import React, { FC } from "react"
 import Link from "next/link"
 import moment from "moment"
 
-import { IEntry } from "../entries"
+import { Entry } from "../entries"
 
-interface IProps {
-  entries: Array<IEntry & { id: string }>
+interface Props {
+  entries: Array<Entry & { id: string }>
 }
 
-const Index: FC<IProps> = ({ entries }) => (
+const Index: FC<Props> = ({ entries }) => (
   <div className="container">
     <div className="row">
       <div className="col-12">
@@ -42,8 +42,8 @@ const Index: FC<IProps> = ({ entries }) => (
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ;(Index as any).getInitialProps = async () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const data: Record<string, IEntry> = require("../entries").entries
-  const entries: Array<IEntry & { id: string }> = Object.keys(data)
+  const data: Record<string, Entry> = require("../entries").entries
+  const entries: Array<Entry & { id: string }> = Object.keys(data)
     .map((id) => ({
       id,
       ...data[id],

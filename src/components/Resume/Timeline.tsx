@@ -1,9 +1,9 @@
 import React, { FC } from "react"
 
-interface IProps {
+interface Props {
   children?: React.ReactNode
 }
 
-const Timeline: FC<IProps> = (props) => <div className="timeline">{props.children}</div>
+const Timeline: FC<Props> = (props) => <div className="timeline">{props.children}</div>
 
 export default Timeline

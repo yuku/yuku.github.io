@@ -1,11 +1,11 @@
 import React, { FC } from "react"
 import { entries } from "../../../entries"
 
-interface IProps {
+interface Props {
   id: keyof typeof entries
   text?: string
 }
 
-const Link: FC<IProps> = ({ id, text }) => <a href={`/${id}`}>{text || entries[id].title}</a>
+const Link: FC<Props> = ({ id, text }) => <a href={`/${id}`}>{text || entries[id].title}</a>
 
 export default Link

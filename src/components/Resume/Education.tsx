@@ -1,14 +1,14 @@
 import React, { FC } from "react"
 import TimelineItem from "./TimelineItem"
 
-interface IProps {
+interface Props {
   degree: string
   time: string
   name: string
   children?: React.ReactNode
 }
 
-const Education: FC<IProps> = (props) => (
+const Education: FC<Props> = (props) => (
   <TimelineItem
     className="education"
     head={

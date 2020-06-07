@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { SITE_NAME } from "../../constants"
 
-interface IProps {
+interface Props {
   onClickToggler?: () => void
   className?: string
 }
 
-const TopBarMobile: FC<IProps> = (props) => (
+const TopBarMobile: FC<Props> = (props) => (
   <nav className={cn("topbar-mobile d-flex justify-content-between", props.className)}>
     <Link href="/">
       <a href="/" className="brand">

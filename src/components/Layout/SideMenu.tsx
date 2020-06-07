@@ -6,11 +6,11 @@ import cn from "classnames"
 
 import { SITE_NAME } from "../../constants"
 
-interface IProps {
+interface Props {
   className?: string
 }
 
-const SideMenu = (props: WithRouterProps & IProps) => (
+const SideMenu = (props: WithRouterProps & Props) => (
   <div className={cn("side-menu", props.className)}>
     <div className="side-menu-inner">
       <Link href="/">

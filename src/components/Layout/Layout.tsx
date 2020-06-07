@@ -5,11 +5,11 @@ import TopBarMobile from "./TopBarMobile"
 import SideMenu from "./SideMenu"
 import Footer from "./Footer"
 
-interface IProps {
+interface Props {
   children: React.ReactNode
 }
 
-const Layout: FC<IProps> = ({ children }) => {
+const Layout: FC<Props> = ({ children }) => {
   const [expanded, setExpanded] = useState(false)
   const collapse = useCallback(() => setExpanded(false), [])
   const toggle = useCallback(() => setExpanded(!expanded), [expanded])

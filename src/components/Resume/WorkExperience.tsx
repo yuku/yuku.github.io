@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import TimelineItem from "./TimelineItem"
 
-interface IProps {
+interface Props {
   workPlace: {
     name: string
     location: string
@@ -13,7 +13,7 @@ interface IProps {
   children?: React.ReactNode
 }
 
-const WorkExperience: FC<IProps> = (props) => (
+const WorkExperience: FC<Props> = (props) => (
   <TimelineItem
     head={
       <div>

@@ -1,8 +1,8 @@
-export type IEntry = IMdx | INotebook
+export type Entry = Mdx | Notebook
 
 export type ITag = "Blog dev" | "essay" | "pyspark" | "GCP" | "gRPC" | "julia"
 
-export interface IBase {
+export interface Base {
   description: string
   modifiedAt?: string
   publishedAt: string
@@ -11,7 +11,7 @@ export interface IBase {
   ogImage?: string
 }
 
-export interface IMdx extends IBase {
+export interface Mdx extends Base {
   format: "mdx"
   /**
    * Insert <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -20,7 +20,7 @@ export interface IMdx extends IBase {
   loadTwitterWidget?: boolean
 }
 
-export interface INotebook extends IBase {
+export interface Notebook extends Base {
   format: "ipynb"
 }
 
@@ -37,7 +37,7 @@ templates
 */
 
 // tslint:disable:object-literal-sort-keys
-export const entries: Record<string, IEntry> = {
+export const entries: Record<string, Entry> = {
   "blog/2019/01/hello-new-blog": {
     description:
       "It's 2019 and I've created a new blog of my own. I will explain the motivation and the background of the selection of the tools I used.",
