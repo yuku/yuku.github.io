@@ -12,14 +12,14 @@ This configuration is quite useful and I'm sure I'll have a chance to reuse it. 
 At first, I created a service account that will be used to authenticate Cloud SDK in CircleCI:
 
 1. Create a new account at [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) of Google Cloud Platform Console:
-  - Named "circleci" to make it easy to guess what is's for.
-  - Created a key and download it in JSON.
+   - Named "circleci" to make it easy to guess what is's for.
+   - Created a key and download it in JSON.
 2. Attach roles to the created service account at [IAM](https://console.cloud.google.com/iam-admin/iam) page:
-  - App Engine Deployer (`appengine.deployer`)
-  - App Engine Service Admin (`appengine.serviceAdmin`)
-  - Cloud Build Editor (`cloudbuild.builds.editor`)
-  - Storage Object Creator (`storage.objectCreator`)
-  - Storage Object Viewer (`storage.objectViewer`)
+   - App Engine Deployer (`appengine.deployer`)
+   - App Engine Service Admin (`appengine.serviceAdmin`)
+   - Cloud Build Editor (`cloudbuild.builds.editor`)
+   - Storage Object Creator (`storage.objectCreator`)
+   - Storage Object Viewer (`storage.objectViewer`)
 
 Note that it may take a few minutes for the results to be reflected.
 
