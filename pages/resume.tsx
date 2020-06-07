@@ -27,9 +27,8 @@ const WorkExperiencesSection = () => (
         }}
       >
         <ul>
-          <li>Designed and maintained data pipeline for a recommender system.</li>
+          <li>Designed and maintained data pipeline for a recommender system that handles 1M+ products.</li>
           <li>Implement a chatbot for internal use and drive chatops culture in the company.</li>
-          <li>Introduced terraform and designed plan/apply workflow using GitHub and CircleCI.</li>
         </ul>
       </WorkExperience>
       <WorkExperience

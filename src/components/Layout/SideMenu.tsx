@@ -29,7 +29,7 @@ const SideMenu = (props: WithRouterProps & Props) => (
         </li>
         <li className={cn({ "font-weight-bold": props.router!.pathname === "/about" })}>
           <Link href="/about">
-            <a href="/about">About</a>
+            <a href="/about">About Me</a>
           </Link>
         </li>
         <li className={cn({ "font-weight-bold": props.router!.pathname === "/resume" })}>
