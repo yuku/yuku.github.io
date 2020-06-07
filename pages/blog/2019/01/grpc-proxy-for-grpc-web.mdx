@@ -1,51 +1,34 @@
-gRPC-Web のドキュメントを読むとこれと言った説明もなく唐突に [Envoy](https://www.envoyproxy.io/) が出てきて面食らいます（そもそも Envoy とはなんぞやというのは割愛）
+When I read the gRPC-Web documentation, I was surprised to see [Envoy](https://www.envoyproxy.io/) used without any explanation:
 
 > In this example, we will use the [Envoy](https://www.envoyproxy.io/) proxy to forward the gRPC browser request to the backend server. - [gRPC Basics - Web](https://grpc.io/docs/tutorials/basic/web.html)
 
-gRPC は HTTP/2 を使いますが、最近のブラウザは HTTP/2 で通信できるのだからサポートブラウザを限定すればわざわざプロキシを立てる必要性はなさそうな気がします。にも関わらずなぜプロキシが必要なのでしょう？
+gRPC uses HTTP2. Since modern browsers are able to communicate over HTTP2, I don't see the need to set up a proxy if I support only such browsers. Why do I need a proxy like Envoy nonetheless?
 
-## ブラウザの制約
+## Browser Restriction
 
-gRPC-Web のプロトコルを説明したドキュメントにヒントがありました:
+There is a hint in the documentation describing the gRPC-Web protocol:
 
 > decouple from HTTP/2 framing which is not, and will never, be directly exposed by browsers - [grpc/PROTOCOL-WEB.md at master · grpc/grpc](https://github.com/grpc/grpc/blob/f0bfcd864c7a2395ad82ff9db8e39d0c51d49ee0/doc/PROTOCOL-WEB.md)
 
-つまり
+In short:
 
-- ブラウザ上で動作する JavaScript からは HTTP/2 を完全にコントロールすることができない
-- gRPC はプロトコルの中でその JavaScript からコントロールできない機能を使っている
-- なのでプロキシが必要
+- JavaScript running in the browser does not provide full control over HTTP2.
+- The gRPC protocol uses features of HTTP/2 that cannot be controlled by JavaScript.
+- So that a proxy is required.
 
-ということのようです。
+And I think the restriction will never be removed.
 
-## なぜコントロールできない
+## Why Restricted?
 
-なぜブラウザで絶対にコントロールできるようにならないと言い切れるのか。その理由はブラウザというかパブリック Web での HTTP/2 の立ち位置が関係しています。
+Why am I so sure that browser will keep the restriction?
 
-長いこと Web では HTTP/1.1 が使われてきました。なので Web サーバが HTTP/1.1 で通信できることは期待できます（というかそれが Web サーバの定義か）が、 HTTP/2 で通信できるかどうかは不明です。ブラウザは HTTP/2 で通信できればそうしますが、できない場合は HTTP/1.1 を勝手に使います。
+The reason can be explained by considering the position of HTTP2 in the public Web. HTTP/1.1 has been used on the Web for a long time. So you can expect your web servers to be able to communicate over HTTP/1.1. However, it is not clear whether they can communicate over HTTP2. Therefore, a browser uses HTTP2 if it can communicate with a web server over HTTP2, but otherwise, it will fall back to HTTP/1.1.
 
-また通信プロトコルはレイヤーアーキテクチャなので、上位に位置する Web アプリケーションが下位で使われているのが HTTP/2 なのか、あるいは HTTP/1.1 なのかを意識するべきではありません。つまり HTTP/1.1 と HTTP/2 を透過的に扱えなければならない以上、片方にしか存在しない機能を操作する API が提供されることはない、そして gRPC ではその領域に属する機能を使っているわけなのです。
+Also, because of the concept of layered architecture, Web application must not know whether HTTP2 or HTTP/1.1 is used under the hood. This means HTTP/1.1 and HTTP2 must be able to be handled transparently so that browser will never provide a way to control a feature only available in HTTP2 by JavaScript.
 
-## Envoy 以外の選択肢
+gRPC uses the such HTTP2-only feature.
 
-それはさておき Envoy は gRPC-Web 用のプロキシ実装の一つに過ぎません。他にもいろいろあるはずです。
-
-で調べてみたのだけど、結局まともに使えそうなのが [improbable-eng/grpc-web](https://github.com/improbable-eng/grpc-web) しか見つけることができませんでした。improbable-eng/grpc-web は Go で書かれたプロキシ実装で、 Go プログラムから標準の `http.Handler` をラップして使うか、 Envoy のように `grpcwebproxy` コマンドでプロキシを立てることができるようです。これを使えば Go で書いた gRPC サーバが直接 gRPC-Web と通信することはできそうです。
-
-## GAE で gRPC-Web 使うには
-
-そもそもなんで gRPC-Web とプロキシについて調べていたのかというと GAE で作った gRPC サービスに gRPC-Web からアクセスしたいと思ったからなのでした。
-
-<blockquote class="twitter-tweet" data-lang="ja">
-  <p lang="ja" dir="ltr">
-    GAEでNext.jsとGraphQLをそれぞれserviceとして立ててwebアプリ書いてみていたけど、一念発起してgRPC-Webにしてみるのも面白そうな気がしてきた
-  </p>
-  &mdash; ゆうく (@yuku_t) <a href="https://twitter.com/yuku_t/status/1088703627521273856?ref_src=twsrc%5Etfw">2019年1月25日</a>
-</blockquote>
-
-流石に GAE の前に Envoy を立てるのは面倒なので、そもそも本当にプロキシ必要なのかよ？...必要だった。他にやり方ないのか？...improbable-eng/grpc-web を発見という次第です。というわけで GAE Go で gRPC 作ってみることにします。
-
-## 参考
+## References
 
 - [grpc/PROTOCOL-WEB.md · grpc/grpc](https://github.com/grpc/grpc/blob/f0bfcd8/doc/PROTOCOL-WEB.md)
 - [grpc/PROTOCOL-HTTP2.md · grpc/grpc](https://github.com/grpc/grpc/blob/f0bfcd864c7a2395ad82ff9db8e39d0c51d49ee0/doc/PROTOCOL-HTTP2.md)
