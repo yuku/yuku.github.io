@@ -1,4 +1,5 @@
-import React, { useState, useCallback, FC } from "react"
+import React, { useState, useCallback, useEffect, FC } from "react"
+import Router from "next/router"
 import cn from "classnames"
 
 import TopBarMobile from "./TopBarMobile"
@@ -13,6 +14,11 @@ const Layout: FC<Props> = ({ children }) => {
   const [expanded, setExpanded] = useState(false)
   const collapse = useCallback(() => setExpanded(false), [])
   const toggle = useCallback(() => setExpanded(!expanded), [expanded])
+
+  useEffect(() => {
+    Router.events.on("routeChangeComplete", collapse)
+    return () => Router.events.off("routeChangeComplete", collapse)
+  }, [collapse])
 
   return (
     <div className={cn("layout mx-md-auto d-md-flex", { expanded })}>
