@@ -109,13 +109,13 @@ export const entries: Record<string, Entry> = {
   },
   "blog/2019/01/grpc-proxy-for-grpc-web": {
     description:
-      "gRPC と gRPC-Web が通信するには Envoy のようなプロキシを立てる必要があります。プロキシが必要になる背景について調べた結果をまとめます。",
+      "In order for gRPC to communicate with gRPC-Web, you need to set up a proxy, such as Envoy. This article describes why gRPC-Web needs a proxy.",
     format: "mdx",
     loadTwitterWidget: true,
     modifiedAt: "2019-01-25T23:26:00+09:00",
     publishedAt: "2019-01-25T22:30:00+09:00",
     tags: ["gRPC"],
-    title: "gRPC-Web がプロキシを必要とする理由",
+    title: "Why gRPC-Web Needs Proxy",
   },
   "blog/2019/01/deploy-app-engine-from-circleci": {
     description: "How to deploy ann app running on AppEngine Node.js standard environment using CircleCI",
