@@ -6,7 +6,7 @@
   },
   "scripts": {
     "build:entries": "ts-node --project ./script/tsconfig.json ./script/build-entries.ts",
-    "build:next": "next build && next export && touch ./out/.nojekyll && echo yuku.takahashi.coffee > ./out/CNAME",
+    "build:next": "next build && next export",
     "build": "run-s build:entries build:next",
     "dev": "next",
     "format:eslint": "yarn lint --fix",
