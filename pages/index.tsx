@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { GetStaticProps } from "next"
 import Link from "next/link"
 import moment from "moment"
 
@@ -39,8 +40,7 @@ const Index: FC<Props> = ({ entries }) => (
   </div>
 )
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-;(Index as any).getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const data: Record<string, Entry> = require("../entries").entries
   const entries: Array<Entry & { id: string }> = Object.keys(data)
@@ -49,7 +49,7 @@ const Index: FC<Props> = ({ entries }) => (
       ...data[id],
     }))
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
-  return { entries }
+  return { props: { entries } }
 }
 
 export default Index
