@@ -1,8 +1,8 @@
 import React, { FC } from "react"
 import Head from "next/head"
 
-import { SITE_NAME } from "src/constants"
 import { Education, PublicationEntry, Section, Timeline, WorkExperience } from "src/components/Resume"
+import Title from "src/components/Title"
 
 const SummarySection = () => (
   <Section title="Summary">
@@ -205,7 +205,7 @@ const PublicationSection = () => (
 const Resume: FC = () => (
   <div className="container">
     <Head>
-      <title>Resume - {SITE_NAME}</title>
+      <Title>Resume</Title>
     </Head>
     <div className="row">
       <div className="col-12">

@@ -1,12 +1,12 @@
 import React, { FC } from "react"
 import Head from "next/head"
 
-import { SITE_NAME } from "src/constants"
+import Title from "src/components/Title"
 
 const About: FC = () => (
   <div className="container">
     <Head>
-      <title>About Me - {SITE_NAME}</title>
+      <Title>About Me</Title>
     </Head>
     <div className="row">
       <div className="col-12">
