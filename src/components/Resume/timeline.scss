@@ -1,8 +1,7 @@
-$leftWidth: 200px;
+$leftWidth: 170px;
 $borderWidth: 3px;
 
 .timeline {
-  border-left: $borderWidth solid $gray-600;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   position: relative;
@@ -12,33 +11,6 @@ $borderWidth: 3px;
   .timeline-item {
     position: relative;
     margin-bottom: 45px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: -43px;
-      top: 5px;
-      display: inline-block;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background-clip: padding-box;
-      background: $white;
-      border: $borderWidth solid $gray-800;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: -37px;
-      top: 11px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-clip: padding-box;
-      background: $gray-800;
-      z-index: 10;
-    }
   }
 
   .head {
