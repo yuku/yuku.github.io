@@ -10,6 +10,13 @@ interface Props {
   className?: string
 }
 
+const MENUS = [
+  ["/", "Home"],
+  ["/showcase", "Showcase"],
+  ["/about", "About Me"],
+  ["/resume", "Resume"],
+]
+
 const SideMenu = (props: WithRouterProps & Props) => (
   <div className={cn("side-menu", props.className)}>
     <div className="side-menu-inner">
@@ -22,21 +29,13 @@ const SideMenu = (props: WithRouterProps & Props) => (
         <small>Study hard, play harder.</small>
       </p>
       <ul className="list list-unstyled">
-        <li className={cn({ "font-weight-bold": props.router!.pathname === "/" })}>
-          <Link href="/">
-            <a href="/">Home</a>
-          </Link>
-        </li>
-        <li className={cn({ "font-weight-bold": props.router!.pathname === "/about" })}>
-          <Link href="/about">
-            <a href="/about">About Me</a>
-          </Link>
-        </li>
-        <li className={cn({ "font-weight-bold": props.router!.pathname === "/resume" })}>
-          <Link href="/resume">
-            <a href="/resume">Resume</a>
-          </Link>
-        </li>
+        {MENUS.map(([pathname, text]) => (
+          <li key={pathname} className={cn({ "font-weight-bold": props.router!.pathname === pathname })}>
+            <Link href={pathname}>
+              <a href={pathname}>{text}</a>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
