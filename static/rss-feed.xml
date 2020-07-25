@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 16 Jun 2020 01:04:33 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Jul 2020 09:58:18 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[一般化線形モデル - ポアソン回帰]]></title>
