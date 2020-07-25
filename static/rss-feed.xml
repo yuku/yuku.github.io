@@ -4,8 +4,15 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 25 Jul 2020 09:58:18 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Jul 2020 13:45:14 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Connect to a Resource Behind a k8s Cluster From Local Machine]]></title>
+            <description><![CDATA[Sometimes, especially in production environment, resources such as databases are only accessable from a k8s cluster for security purposes and cannot be accessed directly from your local machine. In this case, if you want to access the resource from your local machine, you need to create a tunnel service in the cluster. This blog post explains how to create a such service.]]></description>
+            <link>https://yuku.takahashi.coffee/blog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine</guid>
+            <pubDate>Sat, 25 Jul 2020 13:42:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[一般化線形モデル - ポアソン回帰]]></title>
             <description><![CDATA[架空植物のデータを一般化線形モデルであるポアソン回帰を用いてモデリングする。]]></description>
@@ -90,7 +97,7 @@
             <pubDate>Thu, 17 Jan 2019 05:43:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Getting started with pyspark using Docker]]></title>
+            <title><![CDATA[Getting Started With Pyspark Using Docker]]></title>
             <description><![CDATA[An introduction to pyspark using the Docker image environment provided by Jupyter Lab.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/hello-pyspark</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-pyspark</guid>
