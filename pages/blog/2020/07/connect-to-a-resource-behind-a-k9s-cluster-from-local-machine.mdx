@@ -1,0 +1,41 @@
+Sometimes, especially in production environment, resources such as databases are only accessable from a k8s cluster for security purposes and cannot be accessed directly from your local machine. In this case, if you want to access the resource from your local machine, you need to create a tunnel service in the cluster.
+
+Suppose the resource's `PORT` is accessible as `ENDPOINT` from the cluster, you can create a such tunnel service named `SERVICE_NAME` by this command:
+
+```bash
+kubectl run ${SERVICE_NAME} --generator=run-pod/v1 --image=alpine/socat \
+  -it --tty --rm --expose=true --port=${PORT} \
+  tcp-listen:${PORT},fork,reuseaddr \
+  tcp-connect:${ENDPOINT}:${PORT}
+```
+
+and then forward local port to the service (execute in another terminal):
+
+```bash
+kubectl port-forward service/${SERVICE_NAME} ${PORT}:${PORT}
+```
+
+Now you can access the resource by accessing the local `PORT`.
+
+## Scenario: Amazon Aurora Behind Amazon EKS
+
+Let's consider a realistic scenario: you have a k8s cluster running on Amazon EKS and a MySQL instance `my-mysql` running on Amazon Aurora. The database's security group rejects all requests except from the EKS.
+
+In this case the `PORT` is `3306` (MySQL's default port number), and you can obtain `ENDPOINT` using aws-cli as follows:
+
+```bash
+PORT=3306
+
+ENDPOINT=$(aws rds describe-db-clusters \
+  --db-cluster-identifier=my-mysql \
+  --query="DBClusters[0].Endpoint" \
+  --output=text)
+
+SERVICE_NAME=mysql-tunnel
+```
+
+When you create a tunnel service and star port-forwarding as described above, you can open a MySQL console to the Amazon Aurora by this command:
+
+```bash
+mysql -h 127.0.0.1 -u $MYSQL_USER -p
+```

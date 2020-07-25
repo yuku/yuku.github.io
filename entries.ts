@@ -1,6 +1,6 @@
 export type Entry = Mdx | Notebook
 
-export type ITag = "Blog dev" | "essay" | "pyspark" | "GCP" | "gRPC" | "julia"
+export type ITag = "Blog dev" | "essay" | "pyspark" | "GCP" | "gRPC" | "julia" | "k8s"
 
 export interface Base {
   description: string
@@ -38,6 +38,14 @@ templates
 
 // tslint:disable:object-literal-sort-keys
 export const entries: Record<string, Entry> = {
+  "blog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine": {
+    title: "Connect to a Resource Behind a k8s Cluster From Local Machine",
+    description:
+      "Sometimes, especially in production environment, resources such as databases are only accessable from a k8s cluster for security purposes and cannot be accessed directly from your local machine. In this case, if you want to access the resource from your local machine, you need to create a tunnel service in the cluster. This blog post explains how to create a such service.",
+    format: "mdx",
+    publishedAt: "2020-07-25T22:42:00+09:00",
+    tags: ["k8s"],
+  },
   "blog/2020/01/poisson-generalized-linear-model": {
     description: "架空植物のデータを一般化線形モデルであるポアソン回帰を用いてモデリングする。",
     format: "ipynb",
@@ -140,7 +148,7 @@ export const entries: Record<string, Entry> = {
     modifiedAt: "2020-05-30T08:34:49+09:00",
     publishedAt: "2019-01-16T20:50:00+09:00",
     tags: ["pyspark"],
-    title: "Getting started with pyspark using Docker",
+    title: "Getting Started With Pyspark Using Docker",
   },
   "blog/2019/01/hello-ipynb": {
     description:
