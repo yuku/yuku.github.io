@@ -19,7 +19,7 @@ Now you can access the resource by accessing the local `PORT`.
 
 ## Scenario: Amazon Aurora Behind Amazon EKS
 
-Let's consider a realistic scenario: you have a k8s cluster running on Amazon EKS and a MySQL instance `my-mysql` running on Amazon Aurora. The database's security group rejects all requests except from the EKS.
+Let's consider a realistic scenario: you have a k8s cluster running on Amazon EKS and a MySQL instance `my-mysql` running on Amazon Aurora. The database's security group rejects all requests except from the k8s cluster.
 
 In this case the `PORT` is `3306` (MySQL's default port number), and you can obtain `ENDPOINT` using aws-cli as follows:
 
@@ -34,7 +34,7 @@ ENDPOINT=$(aws rds describe-db-clusters \
 SERVICE_NAME=mysql-tunnel
 ```
 
-When you create a tunnel service and star port-forwarding as described above, you can open a MySQL console to the Amazon Aurora by this command:
+When you create a tunnel service and start port-forwarding as described above, you can open a MySQL console to the Amazon Aurora by this command:
 
 ```bash
 mysql -h 127.0.0.1 -u $MYSQL_USER -p

@@ -44,6 +44,7 @@ export const entries: Record<string, Entry> = {
       "Sometimes, especially in production environment, resources such as databases are only accessable from a k8s cluster for security purposes and cannot be accessed directly from your local machine. In this case, if you want to access the resource from your local machine, you need to create a tunnel service in the cluster. This blog post explains how to create a such service.",
     format: "mdx",
     publishedAt: "2020-07-25T22:42:00+09:00",
+    modifiedAt: "2020-07-25T22:49:00+09:00",
     tags: ["k8s"],
   },
   "blog/2020/01/poisson-generalized-linear-model": {
