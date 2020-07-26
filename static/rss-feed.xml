@@ -4,7 +4,7 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 25 Jul 2020 13:50:58 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Jul 2020 08:17:51 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Connect to a Resource Behind a k8s Cluster From Local Machine]]></title>
@@ -69,8 +69,8 @@
             <pubDate>Sun, 21 Apr 2019 15:04:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Node.js から Cloud IAP で保護されたリソースを認証する]]></title>
-            <description><![CDATA[Cloud IAP で保護されたリソースに対し google-auth-library を使って Node.js で認証しアクセスする方法を解説します。]]></description>
+            <title><![CDATA[Access a Cloud IAP-Protected Resource With Node.js]]></title>
+            <description><![CDATA[This post explains how to use google-auth-library to authenticate and access resources protected by Cloud IAP with Node.js.]]></description>
             <link>https://yuku.takahashi.coffee/blog/2019/01/authorize-iap-by-nodejs</link>
             <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/authorize-iap-by-nodejs</guid>
             <pubDate>Mon, 28 Jan 2019 05:54:00 GMT</pubDate>
