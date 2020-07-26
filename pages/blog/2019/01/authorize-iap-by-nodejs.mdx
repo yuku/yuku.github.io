@@ -42,10 +42,10 @@ The google-auth-library automatically creates a client based on our environment,
 ```js
 const { JWT } = require("google-auth-library")
 const client = new JWT({
-  email: SERVICE_ACCOUNT_EMAIL,  // 2.
-  key: SERVICE_ACCOUNT_PRIVATE_KEY,  // 3.
+  email: SERVICE_ACCOUNT_EMAIL,  // 2. Service account email address
+  key: SERVICE_ACCOUNT_PRIVATE_KEY,  // 3. Service account private key
   additionalClaims: {
-    target_audience: OAUTH2CLIENT_ID,  // 1.
+    target_audience: OAUTH2CLIENT_ID,  // 1. Client ID for OAuth2 authentication in Cloud IAP
   },
 })
 ```

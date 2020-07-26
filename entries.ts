@@ -113,7 +113,7 @@ export const entries: Record<string, Entry> = {
       "This post explains how to use google-auth-library to authenticate and access resources protected by Cloud IAP with Node.js.",
     format: "mdx",
     publishedAt: "2019-01-28T14:54:00+09:00",
-    modifiedAt: "2020-07-26T17:17:00+09:00",
+    modifiedAt: "2020-07-26T17:29:00+09:00",
     tags: ["GCP"],
     title: "Access a Cloud IAP-Protected Resource With Node.js",
   },
