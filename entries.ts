@@ -110,11 +110,12 @@ export const entries: Record<string, Entry> = {
   },
   "blog/2019/01/authorize-iap-by-nodejs": {
     description:
-      "Cloud IAP で保護されたリソースに対し google-auth-library を使って Node.js で認証しアクセスする方法を解説します。",
+      "This post explains how to use google-auth-library to authenticate and access resources protected by Cloud IAP with Node.js.",
     format: "mdx",
     publishedAt: "2019-01-28T14:54:00+09:00",
+    modifiedAt: "2020-07-26T17:13:00+09:00",
     tags: ["GCP"],
-    title: "Node.js から Cloud IAP で保護されたリソースを認証する",
+    title: "Access a Cloud IAP-Protected Resource With Node.js",
   },
   "blog/2019/01/grpc-proxy-for-grpc-web": {
     description:

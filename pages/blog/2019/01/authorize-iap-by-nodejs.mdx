@@ -1,98 +1,89 @@
-[Google の公式ドキュメント](https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_service_account)で Node.js での実装方法が紹介されていないこともあって、Cloud IAP で保護された GAE リソースに対し Node.js からアクセスするのにとても大変でした。
+Because [Google's official document](https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_service_account) doesn't explain how to do it in Node.js, it was difficult for me to access Cloud IAP-protected GAE resources from Node.js, 
 
-結論としては[このサンプル](https://github.com/googleapis/google-auth-library-nodejs/blob/master/samples/iap.js)の通りやればそれで万事 OK なのだけど、そこにいきつくまでの過程で分かったことを含めて記録として残します。
+In short, I could do that by following [this example](https://github.com/googleapis/google-auth-library-nodejs/blob/d3fb55e0a710/samples/iap.js). In this blog post, I'll leave a record of what I learned on the way there.
 
-## Cloud IAP とは
+## What is Cloud IAP
 
-[Cloud Identity-Aware Proxy](https://cloud.google.com/iap/) （Cloud IAP）は Google Cloud Platform のサービスの一つで、 GCP 上のリソースに対する認証機能を提供します。
+[Cloud Identity-Aware Proxy](https://cloud.google.com/iap/) (Cloud IAP) is a service of Google Cloud Platform that provides authentication to resources on GCP.
 
-簡単な話が Cloud IAP の後ろにいるアプリには認証を通ったリクエストだけが到達するので、自分で認証機能を実装しなくていいので楽ができたり、自分で実装しない分安全性を担保しやすかったりします。
+Because only authenticated requests reach an app behind Cloud IAP, you don't need to implement authentication to the app by yourself.
 
-具体的には Cloud IAP を使うと特定の G Suite アカウントに紐付いたユーザーだけを認可する、というようなことができます。なので社内向けシステムを作ったりするときとか便利だったりします。
+With Cloud IAP, you can authorize only the users linked to a specific G Suite account. So it's especially useful when creating a company internal system.
 
-## 認証に必要な情報
+## Information required for authentication
 
-プログラムから認証するには以下の 3 つの情報が必要です:
+To let Cloud IAP authenticate your request, three pieces of information are required:
 
-- Cloud IAP の OAuth2 認証のクライアント ID
-- サービスアカウントのメールアドレス
-- サービスアカウントのプライベートキー
+1. Client ID for OAuth2 authentication in Cloud IAP
+2. Service account email address
+3. Service account private key
 
-これらを渡せば Google Cloud Platform は次のことを確認できることが直感的に分かります:
+If you give them to GCP, it's pretty intuitive that GCP can check
 
-- 何に対してアクセスしようとしているのか
-- 誰がアクセスしてきていて、それは本人なのか
-- そいつはアクセス権限を持っているのか
+- What you're trying to access
+- Who is accessing the site and is it him?
+- Does he have access to it?
 
-また事前にサービスアカウントに権限を設定しておく必要があることも明らかでしょう。
+You will also obviously need to set up permissions on your service account in advance.
 
-### 具体的な操作
+### Authenticate with Node.js
 
-まずサービスアカウントを作り、 Cloud IAP のアクセスリストに追加します。具体的には Cloud Console の Identity-Aware Proxy からサービスアカウントを IAP-secured Web App User に追加しました。このユーザアカウントではないけど、他に適切そうなものが見当たらないので...。
+First of all, you need to create a service account and add it to the "IAP-secured Web App User". While creating the account, you can obtain its Client ID.
 
-> - Cloud IAP の OAuth2 認証のクライアント ID
+> 2. Service account email address.
+> 3. Service account private key
 
-公式ドキュメントでは「画面を表示してメモしておく」というふわっとしたやり方で取得するよう言及されていますが、画面上部の「JSON ダウンロード」で JSON ファイルとしてダウンロードしてもいいかも知れません。
+They are included in the JSON file that you can download when you issue a key on the service account page. Make sure that you don't git commit your private key because you should never spill it to the outside world. This is necessary regardless of the programming language.
 
-> - サービスアカウントのメールアドレス
-> - サービスアカウントのプライベートキー
+Then, we can use [google-auth-library](https://npmjs.com/package/google-auth-library) to authenticate with Node.js.
 
-サービスアカウントの画面でキーを発行するとダウンロードできる JSON ファイルの中に含まれています。メールアドレスはどうでもいいのですが、プライベートキーは絶対に外部にもらしてはならないものなので git コミットしないようにする必要があります。
-
-## Node.js から認証する
-
-ここまではプログラミング言語によらず必要な処理です。用意した情報を用いて Node.js で認証するには [google-auth-library](https://npmjs.com/package/google-auth-library) を使うのが簡単です。
-
-google-auth-library は環境情報から自動的にクライアントを用意してくれる機能があってそれを使うのが一般的と書かれているのですが、今回の場合 Cloud IAP のドキュメントで
-
-> クライアント ID を必要とする `target_audience` 追加要求を使用します
-
-と書かれている部分を行わなければならない都合上 `JWT` インスタンスを直接作ります。
+The google-auth-library automatically creates a client based on our environment, but in this case, we'll create a `JWT` instance by ourself:
 
 ```js
 const { JWT } = require("google-auth-library")
 const client = new JWT({
-  email: SERVICE_ACCOUNT_EMAIL,
-  key: SERVICE_ACCOUNT_PRIVATE_KEY,
+  email: SERVICE_ACCOUNT_EMAIL,  // 2.
+  key: SERVICE_ACCOUNT_PRIVATE_KEY,  // 3.
   additionalClaims: {
-    target_audience: OAUTH2CLIENT_ID,
+    target_audience: OAUTH2CLIENT_ID,  // 1.
   },
 })
 ```
 
-この `client` は Cloud IAP の認証を通るために必要な情報をすべて持っていることが分かります。 `SERVICE_ACCOUNT_EMAIL` と `SERVICE_ACCOUNT_PRIVATE_KEY` はダウンロードした JSON から作ります。
+As you can see, the `client` has the three information described above.
 
-リソースにアクセスするにはアクセストークンを取得し `Authorization` ヘッダーを組み立てますが、 `getRequestHeaders()` という便利メソッドがあるのでそれを使うと楽です。 Cloud IAP の場合、アクセスするリソースの URL を引数で指定する必要がある点に注意が必要です。
+To access a resource, we need to get an access token and assemble an `Authorization` header, and there is a handy method called `getRequestHeaders()`.
 
 ```js
+// URL of resource protected by Cloud IAP
 const url = "http://example.appspot.com/path/to/endpoint"
 
 // { Authorization: 'Bearer <access_token_value>' }
 const headers = await client.getRequestHeaders(url)
 ```
 
-このような形をしたオブジェクトを返してくれるので、このオブジェクトをクライアントライブラリに渡せば認証することができます。例えば [axios](https://npmjs.com/package/axios) を使っているならこんな具合です。
+If you are using [axios](https://npmjs.com/package/axios), you can use the `url` and `headers` as:
 
 ```js
 const axios = require("axios")
 axios.request({ url, headers })
 ```
 
-ただこのような操作はよくあるので、こんな感じで簡単にリクエストを送信できるようになっています。内部では axios と互換性のある gaxios というライブラリが使われています。
+However, this is quite common, so `client` provides a method to send a request which internally uses gaxios that is compatible with axios.
 
 ```js
-// ↑の axios の呼び出しとほぼ同じ
+// Almost same as the sample code using axios above.
 client.request({ url })
 ```
 
-以上をまとめるとこんな感じで Node.js から Cloud IAP で保護されたリソースにアクセスすることができます。
+Consequently, you can access a resource protected by Cloud IAP as follows:
 
 ```js
 const { JWT } = require("google-auth-library")
 
 const OAUTH2_CLIENT_ID = "..."
 
-// ダウンロードした　JSON ファイル
+// Downloaded credentials JSON file.
 const credentials = require("./service-account-credentials.json")
 const SERVICE_ACCOUNT_EMAIL = credentials.client_email
 const SERVICE_ACCOUNT_PRIVATE_KEY = credentials.private_key
@@ -113,7 +104,7 @@ async function main() {
 main().catch(console.error)
 ```
 
-## 参考
+## References
 
-- [プログラムによる認証  |  Identity-Aware Proxy のドキュメント  |  Google Cloud](https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_service_account)
-- [google-auth-library-nodejs/iap.js at master · googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs/blob/master/samples/iap.js)
+- [Programmatic authentication  |  Identity-Aware Proxy  |  Google Cloud](https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_service_account)
+- [google-auth-library-nodejs/iap.js at d3fb55e · googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs/blob/d3fb55e0a710/samples/iap.js)
