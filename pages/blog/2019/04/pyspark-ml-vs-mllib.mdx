@@ -1,26 +1,26 @@
-Pyspark は 2.4.1 時点で [`pyspark.ml`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.ml.html) と [`pyspark.mllib`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.mllib.html) という２つの機械学習用のパッケージを提供しています。
+Pyspark 2.4.1 provides two packages for machine learning, [`pyspark.ml`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.ml.html) and [`pyspark.mllib`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.mllib.html).
 
-こういう用途の似たパッケージが複数存在する場合、片方がより原始的な実装になっていて細かな制御ができる一方、多くの用途では柔軟すぎて使いづらいのでそれを使いやすくラップしたものを用意している場合がありますが、今回はどうやらそういう訳ではなく純粋に `pyspark.mllib` から `pyspark.ml` に移行している途中のようです。どうしてこのようなことになっているのでしょうか。
+When there are two packages for similar purposes, one of them may have a more primitive implementation with finer control, while it may be too flexible and difficult to use, thus the other one wraps it for ease of use. However, it seems that we are in the process of transitioning from `pyspark.mllib` to `pyspark.ml`.
 
 ## RDD → DataFrame / Dataset
 
-Spark は内部で RDD (Resilient Distributed Dataset) と呼ばれるデータ構造を複数マシンのクラスタに分散して処理を実行します。RDD に格納するデータは構造化されている必要がないので、メディアストリームなどを格納することもできます。
+Spark internally distributes a data structure called RDD (Resilient Distributed Dataset) across a cluster while processing. Since RDD does not need to be structured, it can contain whatever kind of data, for example media streams.
 
-一方で分散処理タスクで対象となるデータはある種の構造を持っていることが大半です。たとえば二次元の行列演算であれば一つ一つのデータは行と列と値の三組で表すことができます。ここに最適化の余地があり DataFrame / Dataset という新しいデータ構造が RDD の上に構築されました。
+On the other hand, most of the data targeted by distributed processing tasks have some kind of structure. For example, in a two-dimensional matrix operation, each piece of data can be represented by three sets of rows, columns, and values. There is room for optimization here, and a new data structure called DataFrame / Dataset has been built on top of RDD.
 
-Dataset は構造化されたデータを扱えるだけでなく、強く型付けされた API と型なしの API に分類することができ、特にこの型が無い API を DataFrame と呼びます。名前からも分かるように Pandas の DataFrame と似た構造を持っています。Python にはコンパイル時の型安全がないので、 DataFrame だけを使うことができます。
+Dataset can not only handle structured data, but can also be categorized into strongly typed and untyped APIs, with the untyped API being called a DataFrame. As you can see from the name, it has a similar structure to Pandas' DataFrame, and since Python does not have compile-time type safety, you can use only DataFrame.
 
-DataFrame を使うことでメモリ使用量を削減したりパフォーマンスが改善するだけでなく、抽象度の高い機能を用いることによる生産性の向上や、 Jupyter Notebook 上でデータを表形式で綺麗に表示することができるなどのメリットがあります。
+Using a DataFrame not only reduces memory usage and improves performance, but also increases productivity by using more abstract functions, and allows you to display your data neatly in a tabular format in a Jupyter Notebook.
 
 ## pyspark.mllib → pyspark.ml
 
-`pyspark.mllib` と `pyspark.ml` はそれぞれ RDD と DataFrame をベースにした API を提供しています。機械学習のアルゴリズムは行列演算として定式化されていることが多いので、まさに DataFrame に乗せかえるのにうってつけです。
+`pyspark.mllib` and `pyspark.ml` provide APIs based on RDD and DataFrame, respectively.
 
-DataFrame を使っているということはその分パフォーマンスも優れているはずなので、今後は `pyspark.ml` を使えば良さそうです。
+Since machine learning algorithms are often formulated as matrix operations, they are a perfect fit for DataFrame replacement.
 
-むしろ `pyspark.mllib` はすでにメンテナンスモードに入っていて Spark 3.0 で廃止されるみたいなので使うべきではないですね。
+It seems `pyspark.mllib` is already in maintenance mode and will be deprecated in Spark 3.0, so you should use `pyspark.ml`.
 
-## 参考
+## See also
 
 - [RDD vs DataFrames and Datasets: A Tale of Three Apache Spark APIs](https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html)
 - [Comparison between RDD vs DataSets- Apache Spark – TechVidvan](https://techvidvan.com/tutorials/apache-spark-rdd-vs-datasets/)

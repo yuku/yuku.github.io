@@ -106,7 +106,7 @@ export const entries: Record<string, Entry> = {
     format: "mdx",
     publishedAt: "2019-04-22T00:04:00+09:00",
     tags: ["pyspark"],
-    title: "pyspark.ml と pyspark.mllib のどちらを使うべきか",
+    title: "Which should I use, pyspark.ml or pyspark.mllib?",
   },
   "blog/2019/01/authorize-iap-by-nodejs": {
     description:
