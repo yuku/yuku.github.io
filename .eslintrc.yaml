@@ -21,3 +21,8 @@ ignorePatterns:
 rules:
   react/prop-types: 'off'
   '@typescript-eslint/no-non-null-assertion': 'off'
+overrides:
+  - files:
+      - '**/*.js'
+    rules:
+      '@typescript-eslint/no-var-requires': 'off'
