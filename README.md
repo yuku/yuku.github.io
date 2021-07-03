@@ -6,7 +6,7 @@ My personal blog site. It is implemented on [Next.js](https://nextjs.org).
 
 ### Requirements
 
-- node v12
+- node v16
 
 ### Setup
 
