@@ -5,7 +5,7 @@ const math = require("remark-math")
 const remarkFootnotes = require("remark-footnotes")
 const prism = require("@mapbox/rehype-prism")
 const katex = require("rehype-katex")
-const withMDX = require("@zeit/next-mdx")({
+const withMDX = require("@next/mdx")({
   options: {
     remarkPlugins: [remarkFootnotes, math, [github, { repository: "dummy/repo", mentionStrong: false }]],
     rehypePlugins: [prism, katex],
