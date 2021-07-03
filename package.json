@@ -2,7 +2,7 @@
   "private": true,
   "repository": "yuku/yuku.github.io",
   "engines": {
-    "node": "12"
+    "node": "16"
   },
   "scripts": {
     "build:entries": "ts-node --project ./script/tsconfig.json ./script/build-entries.ts",
