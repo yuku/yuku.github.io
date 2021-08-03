@@ -7,8 +7,8 @@ import Title from "src/components/Title"
 const SummarySection = () => (
   <Section title="Summary">
     <p>
-      Energetic software engineer with 7+ years experiences developing Web applications. The first employee of
-      Increments, a well-known successful startup company in Japan. Increased the site scale of qiita.com 100+ times.
+      Energetic software engineer with 7+ years experiences developing Web applications and with 2+ years experiences
+      developing recommender system.
     </p>
   </Section>
 )
@@ -28,8 +28,23 @@ const WorkExperiencesSection = () => (
       >
         <ul>
           <li>Designed and maintained data pipeline for a recommender system that handles 1M+ products.</li>
-          <li>Implement a chatbot for internal use and drive chatops culture in the company.</li>
+          <li>Improved the performance of the recommender system by data driven analyzation.</li>
+          <li>Implemented a chatbot for internal use and drive chatops culture in the company.</li>
+          <li>Automated complex deployment workflow that can be triggered by chat.</li>
         </ul>
+        <p>
+          Tools:
+          <span className="badge bg-secondary ms-1">Python</span>
+          <span className="badge bg-secondary ms-1">TypeScript</span>
+          <span className="badge bg-secondary ms-1">Apache Spark</span>
+          <span className="badge bg-secondary ms-1">Apache Pulsar</span>
+          <span className="badge bg-secondary ms-1">gRPC</span>
+          <span className="badge bg-secondary ms-1">Kubernetes</span>
+          <span className="badge bg-secondary ms-1">Bazel</span>
+          <span className="badge bg-secondary ms-1">Slack Bolt</span>
+          <span className="badge bg-secondary ms-1">AWS</span>
+          <span className="badge bg-secondary ms-1">GCP</span>
+        </p>
       </WorkExperience>
       <WorkExperience
         workPlace={{
@@ -62,6 +77,13 @@ const WorkExperiencesSection = () => (
           <li>Diagnose and resolve technical issues.</li>
           <li>Work well within a team environment, showing solid relationship-building skills.</li>
         </ul>
+        <p>
+          Tools:
+          <span className="badge bg-secondary ms-1">Ruby</span>
+          <span className="badge bg-secondary ms-1">TypeScript</span>
+          <span className="badge bg-secondary ms-1">Ruby on Rails</span>
+          <span className="badge bg-secondary ms-1">AWS</span>
+        </p>
       </WorkExperience>
       <WorkExperience
         workPlace={{

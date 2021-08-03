@@ -25,7 +25,7 @@ const About: FC = () => (
           </p>
           <p>
             His hobby is jogging, playing classical guitar and drinking his own roasted coffee. He enjoys playing with
-            his kid every day.
+            his daughters every day.
           </p>
         </main>
       </div>
