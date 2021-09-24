@@ -1,3 +1,10 @@
+export const metadata = {
+  description: "",
+  publishedAt: "2019-04-22T00:04:00+09:00",
+  tags: ["pyspark"],
+  title: "Which should I use, pyspark.ml or pyspark.mllib?",
+}
+
 Pyspark 2.4.1 provides two packages for machine learning, [`pyspark.ml`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.ml.html) and [`pyspark.mllib`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.mllib.html).
 
 When there are two packages for similar purposes, one of them may have a more primitive implementation with finer control, while it may be too flexible and difficult to use, thus the other one wraps it for ease of use. However, it seems that we are in the process of transitioning from `pyspark.mllib` to `pyspark.ml`.

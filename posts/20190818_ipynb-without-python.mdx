@@ -1,11 +1,18 @@
-import EntryLink from "src/components/Entry/Link"
+import Link from "next/link"
+
+export const metadata = {
+  description: "Python を使わずに Jupyter Notebook 形式をサポートしました。",
+  publishedAt: "2019-08-18T19:10:00+09:00",
+  tags: ["Blog dev"],
+  title: "ブログのビルド環境から Python を排除した",
+}
 
 これまで ipynb ファイルのレンダリングに Python が必要だったのを Node.js で完結するように変更しました。ほとんどブログを更新しないのに何の意味があるのかという気もしますが、めったに触らないからこそ開発環境は単純であるべきだろうと思います。
 
 <p>
   実装としては <a href="https://github.com/n6g7/ipynb-loader">ipynb-loader</a> が内部で行っていたことを Python
   を使わずに Node.js だけでやる、というのが基本的な内容です。以前の実装については{" "}
-  <EntryLink id="blog/2019/01/hello-ipynb" /> を参照してください。
+  <Link id="/blog/2019/01/hello-ipynb" /> を参照してください。
 </p>
 
 ## Node.js で ipynb ファイルを扱う
