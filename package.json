@@ -5,15 +5,14 @@
     "node": "16"
   },
   "scripts": {
-    "build:entries": "ts-node --project ./script/tsconfig.json ./script/build-entries.ts",
     "build:next": "next build && next export",
-    "build": "run-s build:entries build:next",
+    "build": "run-s build:next",
     "dev": "next",
     "format:eslint": "yarn lint --fix",
     "format:prettier": "prettier --write '**/*.{scss,tsx,ts,jsx,js,mdx,json}'",
     "format": "run-s format:prettier format:eslint",
     "lint": "eslint '{pages,src,types}/**/*.{tsx,ts}'",
-    "start": "run-s build:entries dev",
+    "start": "run-s dev",
     "test": "run-s lint build"
   },
   "dependencies": {
