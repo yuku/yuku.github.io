@@ -38,9 +38,9 @@ export const getSortedPostsData = async (): Promise<Post[]> => {
   const allPostsData = await Promise.all(
     fileNames.map(async (fileName): Promise<Post> => {
       const ext = path.extname(fileName)
-      const [ymd, ...names] = path.basename(fileName, ext).split("_")
+      const [yyyymm, ...names] = path.basename(fileName, ext).split("_")
       const slug = names.join("_")
-      const [year, month] = [ymd.substr(0, 4), ymd.substr(4, 2)]
+      const [year, month] = [yyyymm.substr(0, 4), yyyymm.substr(4)]
       const postPath = ["blog", year, month, slug].join("/")
 
       let partial: PostWithoutId
