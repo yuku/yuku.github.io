@@ -3,7 +3,6 @@
 node_modules
 npm-debug.log*
 out
-pages/blog/**/*.tsx
 tmp
 yarn-debug.log*
 yarn-error.log*

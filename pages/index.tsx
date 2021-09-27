@@ -3,7 +3,7 @@ import { GetStaticProps } from "next"
 import Link from "next/link"
 import moment from "moment"
 
-import { Post, getSortedPostsData } from "../src/posts"
+import { Post, getSortedPostsData } from "src/posts"
 
 interface Props {
   posts: Post[]

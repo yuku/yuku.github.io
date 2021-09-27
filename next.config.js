@@ -41,6 +41,7 @@ module.exports = withMDX(
         "/404.html": { page: "/_error" },
       }
     },
+    pageExtensions: ["tsx", "mdx", "ipynb"],
     webpack(config) {
       config.resolveLoader.modules.push(path.resolve(__dirname, "src"))
       return config

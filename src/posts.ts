@@ -1,11 +1,10 @@
-import fs from "fs"
 import path from "path"
+import { promisify } from "util"
+
+import glob from "glob"
 
 export interface Post {
   path: string
-  year: string
-  month: string
-  slug: string
   title: string
   description: string
   tags: string[]
@@ -15,35 +14,31 @@ export interface Post {
   ogImage?: string
 }
 
-type PostWithoutId = Omit<Post, "id" | "slug" | "year" | "month">
-
-const postsDirectory = path.join(process.cwd(), "posts")
+const blogDirectory = path.join(process.cwd(), "pages/blog")
+const pattern = path.join(blogDirectory, "*/*/*.@(mdx|ipynb)")
+const globAsync = promisify(glob)
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validateMetadata = (arg: any): arg is PostWithoutId => {
+const validateMetadata = (arg: any): arg is Omit<Post, "path"> => {
   if (!Array.isArray(arg.tags)) return false
   // TODO: implement
   return true
 }
 
 export const getSortedPostsData = async (): Promise<Post[]> => {
-  const fileNames = await fs.promises.readdir(postsDirectory)
-  const allPostsData = await Promise.all(
-    fileNames.map(async (fileName): Promise<Post> => {
-      const ext = path.extname(fileName)
-      const [yyyymm, ...names] = path.basename(fileName, ext).split("_")
-      const slug = names.join("_")
-      const [year, month] = [yyyymm.substr(0, 4), yyyymm.substr(4)]
-      const postPath = ["blog", year, month, slug].join("/")
+  const fullPaths = await globAsync(pattern)
 
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const { metadata } = require(`../posts/${fileName}`)
-      if (!validateMetadata(metadata)) {
-        throw new Error(`Invalid metadata ${fileName}: ${JSON.stringify(metadata)}`)
-      }
-      return { ...metadata, path: postPath, slug, year, month }
-    }),
-  )
+  const allPostsData = fullPaths.map((fullPath) => {
+    const extension = path.extname(fullPath)
+    const pagePath = "blog" + fullPath.substr(blogDirectory.length) // e.g. blog/2019/01/hello.mdx
+    const postPath = pagePath.substr(0, pagePath.length - extension.length)
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { metadata } = require(`../pages/${pagePath}`)
+    if (!validateMetadata(metadata)) {
+      throw new Error(`Invalid metadata ${pagePath}: ${JSON.stringify(metadata)}`)
+    }
+    return { ...metadata, path: postPath }
+  })
 
   return allPostsData.sort(({ publishedAt: a }, { publishedAt: b }) => (a < b ? 1 : a > b ? -1 : 0))
 }
