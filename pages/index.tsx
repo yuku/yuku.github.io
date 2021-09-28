@@ -4,6 +4,7 @@ import Link from "next/link"
 import moment from "moment"
 
 import { Post, getSortedPostsData } from "src/posts"
+import { generateRSS } from "src/rss"
 
 interface Props {
   posts: Post[]
@@ -42,6 +43,7 @@ const Index: FC<Props> = ({ posts }) => (
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = await getSortedPostsData()
+  await generateRSS(posts)
   return { props: { posts } }
 }
 

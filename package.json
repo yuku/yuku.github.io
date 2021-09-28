@@ -5,14 +5,12 @@
     "node": "16"
   },
   "scripts": {
-    "build:next": "next build && next export",
-    "build": "run-s build:next",
-    "dev": "next",
+    "build": "next build && next export",
     "format:eslint": "yarn lint --fix",
     "format:prettier": "prettier --write '**/*.{scss,tsx,ts,jsx,js,mdx,json}'",
     "format": "run-s format:prettier format:eslint",
     "lint": "eslint '{pages,src,types}/**/*.{tsx,ts}'",
-    "start": "run-s dev",
+    "start": "next",
     "test": "run-s lint build"
   },
   "dependencies": {

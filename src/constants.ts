@@ -2,7 +2,9 @@ export const SITE_NAME = "yt coffee"
 export const FB_APP_ID = "1188125924685915"
 
 // Static
-export const AVATAR_PATHNAME = "/static/images/haniwa.jpg"
+export const SITE_URL = "https://yuku.takahashi.coffee"
+export const STATIC_IMAGE = SITE_URL + "/static/images"
+export const AVATAR_PATHNAME = STATIC_IMAGE + "/haniwa.jpg"
 
 // Colors
 export const PRIMARY_COLOR = "#00BCD4"
