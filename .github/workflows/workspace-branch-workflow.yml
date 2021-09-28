@@ -16,5 +16,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          publish_branch: master
+          publish_branch: main
           cname: yuku.takahashi.coffee
