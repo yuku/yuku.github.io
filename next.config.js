@@ -12,7 +12,7 @@ const withMDX = require("@next/mdx")({
   },
 })
 
-const withNotebook = require("./src/withNotebook")({
+const withNotebook = require("./src/notebook-loader").withNotebook({
   options: {
     inner: {
       remarkPlugins: [footnotes, math, [github, { repository: "dummy/repo", mentionStrong: false }]],

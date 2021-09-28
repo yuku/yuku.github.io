@@ -10,6 +10,30 @@ const { getOptions } = require("loader-utils")
 let isNotebookjsInitialized = false
 const converter = new HTMLtoJSX({ createClass: false })
 
+const initNotebookjs = (options = {}) => {
+  if (isNotebookjsInitialized) {
+    throw new Error("notebookjs has already been initialized")
+  }
+  isNotebookjsInitialized = true
+
+  const mdProcessor = unified()
+    .use(remarkParse)
+    .use(options.remarkPlugins || [])
+    .use(remarkRehype)
+    .use(options.rehypePlugins || [])
+    .use(rehypeStringify)
+
+  Object.assign(
+    nb,
+    {
+      markdown(markdown) {
+        return mdProcessor.processSync(markdown).toString()
+      },
+    },
+    options?.notebookjs,
+  )
+}
+
 module.exports = function (content) {
   if (!isNotebookjsInitialized) {
     throw new Error("notebookjs isn't initialized")
@@ -40,26 +64,27 @@ module.exports = function (content) {
   })
 }
 
-module.exports.initNotebookjs = (options = {}) => {
-  if (isNotebookjsInitialized) {
-    throw new Error("notebookjs has already been initialized")
-  }
-  isNotebookjsInitialized = true
+module.exports.withNotebook =
+  (pluginOptions = {}) =>
+  (nextConfig = {}) => {
+    const extension = pluginOptions.extension || /\.ipynb$/
 
-  const mdProcessor = unified()
-    .use(remarkParse)
-    .use(options.remarkPlugins || [])
-    .use(remarkRehype)
-    .use(options.rehypePlugins || [])
-    .use(rehypeStringify)
+    initNotebookjs(pluginOptions.options?.inner)
 
-  Object.assign(
-    nb,
-    {
-      markdown(markdown) {
-        return mdProcessor.processSync(markdown).toString()
+    return Object.assign({}, nextConfig, {
+      webpack(config, options) {
+        config.module?.rules?.push({
+          test: extension,
+          use: [
+            options.defaultLoaders.babel,
+            {
+              loader: "notebook-loader",
+              options: pluginOptions.options?.outer,
+            },
+          ],
+        })
+
+        return nextConfig.webpack ? nextConfig.webpack(config, options) : config
       },
-    },
-    options?.notebookjs,
-  )
-}
+    })
+  }
