@@ -1,3 +1,12 @@
+export const metadata = {
+  description: "ブログに RSS フィードを実装しました。",
+  publishedAt: "2019-08-30T19:10:00+09:00",
+  tags: ["Blog dev"],
+  title: "RSS フィードを実装した",
+}
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
+
 [RSS フィード](/static/rss-feed.xml) を実装しました。このご時世にどれほど使われるか不明ですが。
 
 このブログではエントリのメタデータ一覧を entries.ts というファイルで管理しているので、そのファイルのデータから [rss](https://www.npmjs.com/package/rss) という npm パッケージを使って XML を作っています。

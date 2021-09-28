@@ -1,3 +1,13 @@
+export const metadata = {
+  description: "How to deploy ann app running on AppEngine Node.js standard environment using CircleCI",
+  modifiedAt: "2019-01-20T09:33:00+09:00",
+  publishedAt: "2019-01-18T14:00:00+09:00",
+  tags: ["GCP"],
+  title: "Deploy AppEngine Apps Using CircleCI",
+}
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
+
 I have implemented continuous delivery of Google AppEngine applications using CircleCI:
 
 - Deploy to staging on pushing to `master` branch.

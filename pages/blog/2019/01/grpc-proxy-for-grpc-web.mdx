@@ -1,3 +1,14 @@
+export const metadata = {
+  description: "In order for gRPC to communicate with gRPC-Web, you need to set up a proxy, such as Envoy. This article describes why gRPC-Web needs a proxy.",
+  loadTwitterWidget: true,
+  modifiedAt: "2019-01-25T23:26:00+09:00",
+  publishedAt: "2019-01-25T22:30:00+09:00",
+  tags: ["gRPC"],
+  title: "Why gRPC-Web Needs Proxy",
+}
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
+
 When I read the gRPC-Web documentation, I was surprised to see [Envoy](https://www.envoyproxy.io/) used without any explanation:
 
 > In this example, we will use the [Envoy](https://www.envoyproxy.io/) proxy to forward the gRPC browser request to the backend server. - [gRPC Basics - Web](https://grpc.io/docs/tutorials/basic/web.html)

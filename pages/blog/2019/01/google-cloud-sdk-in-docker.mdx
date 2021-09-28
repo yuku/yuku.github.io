@@ -1,3 +1,13 @@
+export const metadata = {
+  description: "This article explains how to install and use the Google Cloud SDK in Docker rather than on the local machine.",
+  modifiedAt: "2020-05-30T09:21:13+09:00",
+  publishedAt: "2019-01-17T14:43:00+09:00",
+  tags: ["GCP"],
+  title: "How to Use Google Cloud SDK Using Docker",
+}
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
+
 The one thing you can't avoid when using GCP is the [Google Could SDK](https://cloud.google.com/sdk/). However, I don't want to install a tool on the local machine's system globals if possible.
 
 So I decided to use [google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk/), the official Google Docker image, in my local environment.

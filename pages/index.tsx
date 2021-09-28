@@ -3,20 +3,21 @@ import { GetStaticProps } from "next"
 import Link from "next/link"
 import moment from "moment"
 
-import { Entry } from "../entries"
+import { Post, getSortedPostsData } from "src/posts"
+import { generateRSS } from "src/rss"
 
 interface Props {
-  entries: Array<Entry & { id: string }>
+  posts: Post[]
 }
 
-const Index: FC<Props> = ({ entries }) => (
+const Index: FC<Props> = ({ posts }) => (
   <div className="container">
     <div className="row">
       <div className="col-12">
-        {entries.map((entry) => (
-          <article key={entry.id} className="mb-4">
-            <Link href={entry.id}>
-              <a href={entry.id} className="text-decoration-none">
+        {posts.map((entry) => (
+          <article key={entry.path} className="mb-4">
+            <Link href={entry.path}>
+              <a href={entry.path} className="text-decoration-none">
                 <h1>{entry.title}</h1>
               </a>
             </Link>
@@ -40,16 +41,10 @@ const Index: FC<Props> = ({ entries }) => (
   </div>
 )
 
-export const getStaticProps: GetStaticProps = async () => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const data: Record<string, Entry> = require("../entries").entries
-  const entries: Array<Entry & { id: string }> = Object.keys(data)
-    .map((id) => ({
-      id,
-      ...data[id],
-    }))
-    .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
-  return { props: { entries } }
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const posts = await getSortedPostsData()
+  await generateRSS(posts)
+  return { props: { posts } }
 }
 
 export default Index

@@ -1,44 +1,50 @@
 const path = require("path")
-
 const github = require("remark-github")
 const math = require("remark-math")
-const remarkFootnotes = require("remark-footnotes")
+const footnotes = require("remark-footnotes")
 const prism = require("@mapbox/rehype-prism")
 const katex = require("rehype-katex")
+
 const withMDX = require("@next/mdx")({
   options: {
-    remarkPlugins: [remarkFootnotes, math, [github, { repository: "dummy/repo", mentionStrong: false }]],
+    remarkPlugins: [footnotes, math, [github, { repository: "dummy/repo", mentionStrong: false }]],
     rehypePlugins: [prism, katex],
   },
 })
 
-const withIpynb = (nextConfig) => ({
-  ...nextConfig,
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.ipynb$/,
-      use: [
-        options.defaultLoaders.babel,
-        {
-          loader: path.resolve("src/loaders/htmltojsx-loader.js"),
+const withNotebook = require("./src/notebook-loader").withNotebook({
+  options: {
+    inner: {
+      remarkPlugins: [footnotes, math, [github, { repository: "dummy/repo", mentionStrong: false }]],
+      remarkPlugins: [katex],
+      notebookjs: {
+        highlighter(text, pre, code, lang) {
+          if (code != null) {
+            // Add a class attribute for prism.
+            code.className = `language-${lang || "text"}`
+          }
+          return text
         },
-        {
-          loader: path.resolve("src/loaders/ipynb-loader.js"),
-        },
-      ],
-    })
-
-    return nextConfig.webpack ? nextConfig.webpack(config, options) : config
+      },
+    },
+    outer: {
+      rehypePlugins: [prism],
+    },
   },
 })
 
 module.exports = withMDX(
-  withIpynb({
+  withNotebook({
     exportPathMap(defaultMap) {
       return {
         ...defaultMap,
         "/404.html": { page: "/_error" },
       }
+    },
+    pageExtensions: ["tsx", "mdx", "ipynb"],
+    webpack(config) {
+      config.resolveLoader.modules.push(path.resolve(__dirname, "src"))
+      return config
     },
   }),
 )

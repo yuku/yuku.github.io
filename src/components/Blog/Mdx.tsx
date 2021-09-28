@@ -1,10 +1,10 @@
 import React, { FC, useEffect } from "react"
 
-import { Mdx as MdxData } from "../../../entries"
-import Layout from "./Layout"
+import { Metadata } from "src/posts"
+import Layout from "src/components/Blog/Layout"
 
 interface Props {
-  meta: MdxData
+  meta: Metadata
   children: React.ReactNode
 }
 
@@ -14,10 +14,9 @@ const Mdx: FC<Props> = ({ meta, children }) => {
       const script = document.createElement("script")
       script.async = true
       script.src = "https://platform.twitter.com/widgets.js"
-      script.charset = "utf-8"
       document.body.appendChild(script)
     }
-  }, [])
+  }, [meta.loadTwitterWidget])
 
   return (
     <Layout className="mdx" meta={meta}>

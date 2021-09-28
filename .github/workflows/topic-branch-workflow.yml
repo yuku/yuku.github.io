@@ -12,4 +12,5 @@ jobs:
         node-version: 16.x
     - run: yarn install
     - run: yarn build
+    - run: '[ -e public/static/rss-feed.xml ]'
     - run: yarn test
