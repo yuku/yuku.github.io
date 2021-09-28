@@ -4,124 +4,124 @@
         <description><![CDATA[yt coffee]]></description>
         <link>https://yuku.takahashi.coffee</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 16 Jul 2021 07:28:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Sep 2021 11:03:36 GMT</lastBuildDate>
         <atom:link href="https://yuku.takahashi.coffee/static/rss-feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Connect to a Resource Behind a k8s Cluster From Local Machine]]></title>
             <description><![CDATA[Sometimes, especially in production environment, resources such as databases are only accessable from a k8s cluster for security purposes and cannot be accessed directly from your local machine. In this case, if you want to access the resource from your local machine, you need to create a tunnel service in the cluster. This blog post explains how to create a such service.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine</guid>
-            <pubDate>Sat, 25 Jul 2020 13:42:00 GMT</pubDate>
+            <link>https://yuku.takahashi.coffeeblog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2020/07/connect-to-a-resource-behind-a-k9s-cluster-from-local-machine</guid>
+            <pubDate>Fri, 16 Jul 2021 07:26:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[一般化線形モデル - ポアソン回帰]]></title>
             <description><![CDATA[架空植物のデータを一般化線形モデルであるポアソン回帰を用いてモデリングする。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2020/01/poisson-generalized-linear-model</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/poisson-generalized-linear-model</guid>
+            <link>https://yuku.takahashi.coffeeblog/2020/01/poisson-generalized-linear-model</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2020/01/poisson-generalized-linear-model</guid>
             <pubDate>Sat, 18 Jan 2020 01:54:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[確率分布と統計モデルの最尤推定]]></title>
             <description><![CDATA[架空の植物の集団を調査して得られたデータを説明するためにポアソン分布をあてはめ、最尤推定を用いてパラメータの推定を行う。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</guid>
+            <link>https://yuku.takahashi.coffeeblog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2020/01/maximum-likelihood-estimation-of-probability-distribution-and-statistical-model</guid>
             <pubDate>Sun, 12 Jan 2020 15:52:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Matrix Factorization のための ALS アルゴリズムの数理と実装]]></title>
             <description><![CDATA[協調フィルタリングで広く使われる MF の実装の一つである ALS アルゴリズムの数学的な背景を確認し、 Julia を使って実装する。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2020/01/als-for-matrix-factorization</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2020/01/als-for-matrix-factorization</guid>
+            <link>https://yuku.takahashi.coffeeblog/2020/01/als-for-matrix-factorization</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2020/01/als-for-matrix-factorization</guid>
             <pubDate>Mon, 06 Jan 2020 01:09:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[GitHub Actions に移行した]]></title>
             <description><![CDATA[ブログの CI/CD を CircleCI から GitHub Actions に移行してみての所感など。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/10/github-actions</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/10/github-actions</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/10/github-actions</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/10/github-actions</guid>
             <pubDate>Sun, 13 Oct 2019 14:57:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[RSS フィードを実装した]]></title>
             <description><![CDATA[ブログに RSS フィードを実装しました。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/08/rss-feed</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/08/rss-feed</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/08/rss-feed</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/08/rss-feed</guid>
             <pubDate>Fri, 30 Aug 2019 10:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[ブログのビルド環境から Python を排除した]]></title>
             <description><![CDATA[Python を使わずに Jupyter Notebook 形式をサポートしました。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/08/ipynb-without-python</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/08/ipynb-without-python</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/08/ipynb-without-python</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/08/ipynb-without-python</guid>
             <pubDate>Sun, 18 Aug 2019 10:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[なぜ FLYWHEEL に入社したのか]]></title>
             <description><![CDATA[何を魅力に感じて FLYWHEEL に入社しようと決めたのかの記録です。]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/06/why-i-joined-flywheel</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/06/why-i-joined-flywheel</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/06/why-i-joined-flywheel</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/06/why-i-joined-flywheel</guid>
             <pubDate>Mon, 17 Jun 2019 13:28:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Which should I use, pyspark.ml or pyspark.mllib?]]></title>
-            <link>https://yuku.takahashi.coffee/blog/2019/04/pyspark-ml-vs-mllib</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/04/pyspark-ml-vs-mllib</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/04/pyspark-ml-vs-mllib</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/04/pyspark-ml-vs-mllib</guid>
             <pubDate>Sun, 21 Apr 2019 15:04:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Access a Cloud IAP-Protected Resource With Node.js]]></title>
             <description><![CDATA[This post explains how to use google-auth-library to authenticate and access resources protected by Cloud IAP with Node.js.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/authorize-iap-by-nodejs</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/authorize-iap-by-nodejs</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/authorize-iap-by-nodejs</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/authorize-iap-by-nodejs</guid>
             <pubDate>Mon, 28 Jan 2019 05:54:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Why gRPC-Web Needs Proxy]]></title>
             <description><![CDATA[In order for gRPC to communicate with gRPC-Web, you need to set up a proxy, such as Envoy. This article describes why gRPC-Web needs a proxy.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/grpc-proxy-for-grpc-web</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/grpc-proxy-for-grpc-web</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/grpc-proxy-for-grpc-web</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/grpc-proxy-for-grpc-web</guid>
             <pubDate>Fri, 25 Jan 2019 13:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Deploy AppEngine Apps Using CircleCI]]></title>
             <description><![CDATA[How to deploy ann app running on AppEngine Node.js standard environment using CircleCI]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/deploy-app-engine-from-circleci</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/deploy-app-engine-from-circleci</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/deploy-app-engine-from-circleci</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/deploy-app-engine-from-circleci</guid>
             <pubDate>Fri, 18 Jan 2019 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How to Use Google Cloud SDK Using Docker]]></title>
             <description><![CDATA[This article explains how to install and use the Google Cloud SDK in Docker rather than on the local machine.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/google-cloud-sdk-in-docker</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/google-cloud-sdk-in-docker</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/google-cloud-sdk-in-docker</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/google-cloud-sdk-in-docker</guid>
             <pubDate>Thu, 17 Jan 2019 05:43:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Getting Started With Pyspark Using Docker]]></title>
             <description><![CDATA[An introduction to pyspark using the Docker image environment provided by Jupyter Lab.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/hello-pyspark</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-pyspark</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/hello-pyspark</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/hello-pyspark</guid>
             <pubDate>Wed, 16 Jan 2019 11:50:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Display Jupyter Notebook on Next.js]]></title>
             <description><![CDATA[Jupyter Notebook can now be displayed on this blog. I'm going to use it to publish my study records of machine learning and data analysis. This article describes the details of the implementation.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/hello-ipynb</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-ipynb</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/hello-ipynb</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/hello-ipynb</guid>
             <pubDate>Tue, 15 Jan 2019 11:17:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Twitter Card and OGP Support]]></title>
             <description><![CDATA[Twitter Card and Open Graph Protocol are now supported on the blog.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/twitter-card-and-ogp</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/twitter-card-and-ogp</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/twitter-card-and-ogp</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/twitter-card-and-ogp</guid>
             <pubDate>Mon, 07 Jan 2019 13:40:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Background on Blog Homebrewing and Tool Selection in 2019]]></title>
             <description><![CDATA[It's 2019 and I've created a new blog of my own. I will explain the motivation and the background of the selection of the tools I used.]]></description>
-            <link>https://yuku.takahashi.coffee/blog/2019/01/hello-new-blog</link>
-            <guid isPermaLink="true">https://yuku.takahashi.coffee/blog/2019/01/hello-new-blog</guid>
+            <link>https://yuku.takahashi.coffeeblog/2019/01/hello-new-blog</link>
+            <guid isPermaLink="true">https://yuku.takahashi.coffeeblog/2019/01/hello-new-blog</guid>
             <pubDate>Sat, 05 Jan 2019 04:52:00 GMT</pubDate>
         </item>
     </channel>
