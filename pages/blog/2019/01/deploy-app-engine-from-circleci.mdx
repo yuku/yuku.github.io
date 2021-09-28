@@ -5,6 +5,8 @@ export const metadata = {
   tags: ["GCP"],
   title: "Deploy AppEngine Apps Using CircleCI",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 I have implemented continuous delivery of Google AppEngine applications using CircleCI:
 

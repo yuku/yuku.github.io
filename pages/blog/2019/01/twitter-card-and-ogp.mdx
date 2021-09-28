@@ -6,6 +6,8 @@ export const metadata = {
   tags: ["Blog dev"],
   title: "Twitter Card and OGP Support",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 Commit: https://github.com/yuku/yuku.github.io/commit/5fe34e4bee6893000c88db02e353c3ae69400876
 

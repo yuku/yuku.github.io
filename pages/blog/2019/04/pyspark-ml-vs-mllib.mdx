@@ -4,6 +4,8 @@ export const metadata = {
   tags: ["pyspark"],
   title: "Which should I use, pyspark.ml or pyspark.mllib?",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 Pyspark 2.4.1 provides two packages for machine learning, [`pyspark.ml`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.ml.html) and [`pyspark.mllib`](https://spark.apache.org/docs/2.4.1/api/python/pyspark.mllib.html).
 

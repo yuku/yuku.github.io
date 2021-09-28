@@ -6,6 +6,8 @@ export const metadata = {
   tags: ["Blog dev"],
   title: "ブログのビルド環境から Python を排除した",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 これまで ipynb ファイルのレンダリングに Python が必要だったのを Node.js で完結するように変更しました。ほとんどブログを更新しないのに何の意味があるのかという気もしますが、めったに触らないからこそ開発環境は単純であるべきだろうと思います。
 

@@ -4,6 +4,8 @@ export const metadata = {
   tags: ["Blog dev"],
   title: "RSS フィードを実装した",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 [RSS フィード](/static/rss-feed.xml) を実装しました。このご時世にどれほど使われるか不明ですが。
 

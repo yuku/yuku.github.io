@@ -5,6 +5,8 @@ export const metadata = {
   tags: ["essay"],
   title: "なぜ FLYWHEEL に入社したのか",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 [FLYWHEEL](https://www.flywheel.jp/) に入社して 4 ヶ月が経ち、採用面接や面談をする機会も増えてきました。そんな中、ある候補者から「なぜ FLYWHEEL に入ろうと思ったのか」と質問されました。秘密にしなければならない内容ではないし、僕自身が忘れないためにも改めて考えをまとめて書き残しておこうと思います。
 

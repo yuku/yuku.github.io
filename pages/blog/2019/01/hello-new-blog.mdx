@@ -6,6 +6,8 @@ export const metadata = {
   tags: ["Blog dev"],
   title: "Background on Blog Homebrewing and Tool Selection in 2019",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 In the process of creating a new blog on my own, I made a variety of choices under technical, financial or time constraints. In this article, I write about what constraints I had and what choices I made within those constraints, in case I read it in the future.
 

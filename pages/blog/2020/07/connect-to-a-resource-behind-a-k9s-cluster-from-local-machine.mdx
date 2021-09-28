@@ -5,6 +5,8 @@ export const metadata = {
   modifiedAt: "2020-07-25T22:42:00+09:00",
   tags: ["k8s"],
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 Sometimes, especially in production environment, resources such as databases are only accessable from a k8s cluster for security purposes and cannot be accessed directly from your local machine. In this case, if you want to access the resource from your local machine, you need to create a tunnel service in the cluster.
 

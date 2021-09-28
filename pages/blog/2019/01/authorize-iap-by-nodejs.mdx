@@ -5,6 +5,8 @@ export const metadata = {
   tags: ["GCP"],
   title: "Access a Cloud IAP-Protected Resource With Node.js",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 Because [Google's official document](https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_service_account) doesn't explain how to do it in Node.js, it was difficult for me to access Cloud IAP-protected GAE resources from Node.js.
 

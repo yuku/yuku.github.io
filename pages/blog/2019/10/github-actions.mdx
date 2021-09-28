@@ -4,6 +4,8 @@ export const metadata = {
   tags: ["Blog dev"],
   title: "GitHub Actions に移行した",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 今までブログの CI と CD を [CircleCI](https://circleci.com) を使って実装していましたが、 [GitHub Actions](https://github.com/features/actions) を使えるようになったので乗り換えてみました。
 

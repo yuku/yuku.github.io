@@ -56,8 +56,9 @@ module.exports = function (content) {
       null,
       `
       import React from "react"
+      import Notebook from "src/components/Blog/Notebook"
       export const metadata = ${JSON.stringify(obj.metadata.post_metadata)}
-      const Page = () => ${converter.convert(html)}
+      const Page = () => <Notebook meta={metadata}>${converter.convert(html)}</Notebook>
       export default Page
       `,
     )

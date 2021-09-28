@@ -5,6 +5,8 @@ export const metadata = {
   tags: ["GCP"],
   title: "How to Use Google Cloud SDK Using Docker",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 The one thing you can't avoid when using GCP is the [Google Could SDK](https://cloud.google.com/sdk/). However, I don't want to install a tool on the local machine's system globals if possible.
 

@@ -3,8 +3,9 @@ import { promisify } from "util"
 
 import glob from "glob"
 
-export interface Post {
-  path: string
+// Metadata represents a configuration of a blog post.
+// Each .mdx and .ipynb need to export the object as metadata.
+export interface Metadata {
   title: string
   description: string
   tags: string[]
@@ -12,6 +13,10 @@ export interface Post {
   modifiedAt?: string
   loadTwitterWidget?: boolean
   ogImage?: string
+}
+
+export interface Post extends Metadata {
+  path: string
 }
 
 const blogDirectory = path.join(process.cwd(), "pages/blog")

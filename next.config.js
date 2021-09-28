@@ -17,18 +17,18 @@ const withNotebook = require("./src/notebook-loader").withNotebook({
     inner: {
       remarkPlugins: [footnotes, math, [github, { repository: "dummy/repo", mentionStrong: false }]],
       remarkPlugins: [katex],
+      notebookjs: {
+        highlighter(text, pre, code, lang) {
+          if (code != null) {
+            // Add a class attribute for prism.
+            code.className = `language-${lang || "text"}`
+          }
+          return text
+        },
+      },
     },
     outer: {
       rehypePlugins: [prism],
-    },
-    notebookjs: {
-      highlighter(text, pre, code, lang) {
-        if (code != null) {
-          // Add a class attribute for prism.
-          code.className = `language-${lang || "text"}`
-        }
-        return text
-      },
     },
   },
 })

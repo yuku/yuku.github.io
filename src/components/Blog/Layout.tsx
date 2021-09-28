@@ -7,12 +7,12 @@ import cn from "classnames"
 import moment from "moment"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import { Base } from "../../../entries"
-import { AVATAR_PATHNAME, FB_APP_ID, SITE_NAME } from "../../constants"
-import { Widget } from "../Widget"
+import { Metadata } from "src/posts"
+import { AVATAR_PATHNAME, FB_APP_ID, SITE_NAME } from "src/constants"
+import { Widget } from "src/components/Widget"
 
 interface Props {
-  meta: Base
+  meta: Metadata
   className?: string
   children: React.ReactNode
 }

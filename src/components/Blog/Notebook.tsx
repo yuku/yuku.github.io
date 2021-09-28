@@ -1,9 +1,10 @@
 import React, { FC } from "react"
-import { Notebook as NotebookData } from "../../../entries"
-import Layout from "./Layout"
+
+import { Metadata } from "src/posts"
+import Layout from "src/components/Blog/Layout"
 
 interface Props {
-  meta: NotebookData
+  meta: Metadata
   children: React.ReactNode
 }
 

@@ -6,6 +6,8 @@ export const metadata = {
   tags: ["gRPC"],
   title: "Why gRPC-Web Needs Proxy",
 }
+import Mdx from "src/components/Blog/Mdx"
+export default ({children}) => <Mdx meta={metadata}>{children}</Mdx>
 
 When I read the gRPC-Web documentation, I was surprised to see [Envoy](https://www.envoyproxy.io/) used without any explanation:
 
